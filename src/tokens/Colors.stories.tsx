@@ -14,8 +14,7 @@ const meta: Meta = {
 
 Two-layer colour architecture:
 
-**Palette** — raw named values (greys, primary, success, warning, danger). Do not
-reference palette tokens in component code; always use semantic tokens.
+**Palette** — raw named values sourced from the [Brand — Foundations](https://www.figma.com/design/Ac90Diav91cBdIGET9uCXs/Brand---Foundations) Figma file (Primitives collection). Do not reference palette tokens in component code; always use semantic tokens.
 
 **Semantic tokens** — purpose-driven aliases (text, background, border, action,
 feedback). These are the tokens components should consume.
@@ -39,14 +38,17 @@ export default meta;
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
-function hexToRgb(hex: string) {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  if (!result) return "";
-  return `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}`;
+function toRgbChannels(value: string): [number, number, number] | null {
+  const hex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(value);
+  if (hex) return [parseInt(hex[1], 16), parseInt(hex[2], 16), parseInt(hex[3], 16)];
+  const rgba = /rgba?\(\s*(\d+),\s*(\d+),\s*(\d+)/.exec(value);
+  if (rgba) return [Number(rgba[1]), Number(rgba[2]), Number(rgba[3])];
+  return null;
 }
 
-function luminance(hex: string) {
-  const rgb = hexToRgb(hex).split(", ").map(Number);
+function luminance(value: string) {
+  const rgb = toRgbChannels(value);
+  if (!rgb) return 1;
   const [r, g, b] = rgb.map((c) => {
     const n = c / 255;
     return n <= 0.03928 ? n / 12.92 : Math.pow((n + 0.055) / 1.055, 2.4);
@@ -54,8 +56,8 @@ function luminance(hex: string) {
   return 0.2126 * r + 0.0722 * b + 0.0722 * g;
 }
 
-function isDark(hex: string) {
-  return luminance(hex) < 0.35;
+function isDark(value: string) {
+  return luminance(value) < 0.35;
 }
 
 // ─── Palette story ────────────────────────────────────────────────────────────
@@ -67,24 +69,64 @@ type PaletteGroup = {
 
 const paletteGroups: PaletteGroup[] = [
   {
-    label: "Neutrals",
-    keys: ["white", "grey50", "grey100", "grey200", "grey300", "grey400", "grey500", "grey600", "grey700", "grey800", "grey900", "black"],
+    label: "Neutral",
+    keys: ["neutralWhite", "neutral50", "neutral100", "neutral200", "neutral300", "neutral400", "neutral500", "neutral600", "neutral700", "neutralBlack"],
   },
   {
-    label: "Primary",
-    keys: ["primary50", "primary100", "primary200", "primary300", "primary400", "primary500", "primary600", "primary700", "primary800", "primary900"],
+    label: "Pink",
+    keys: ["pink100", "pink200", "pink300", "pink400", "pink500", "pink600", "pink700", "pink800", "pink900"],
   },
   {
-    label: "Success",
-    keys: ["success50", "success100", "success200", "success300", "success400", "success500", "success600", "success700", "success800", "success900"],
+    label: "Green",
+    keys: ["green100", "green200", "green300", "green400", "green500", "green600"],
   },
   {
-    label: "Warning",
-    keys: ["warning50", "warning100", "warning200", "warning300", "warning400", "warning500", "warning600", "warning700", "warning800", "warning900"],
+    label: "Blue",
+    keys: ["blue100", "blue200", "blue300", "blue400", "blue500", "blue600"],
   },
   {
-    label: "Danger",
-    keys: ["danger50", "danger100", "danger200", "danger300", "danger400", "danger500", "danger600", "danger700", "danger800", "danger900"],
+    label: "Purple",
+    keys: ["purple100", "purple200", "purple300", "purple400", "purple500", "purple600", "purple700", "purple800", "purple900"],
+  },
+  {
+    label: "Yellow",
+    keys: ["yellow100", "yellow200", "yellow300", "yellow400", "yellow500", "yellow600"],
+  },
+  {
+    label: "Pine",
+    keys: ["pine100", "pine200", "pine300", "pine400", "pine500", "pine600", "pine700", "pine800", "pine900"],
+  },
+  {
+    label: "Indigo",
+    keys: ["indigo100", "indigo200", "indigo300", "indigo400", "indigo500", "indigo600", "indigo700", "indigo800", "indigo900"],
+  },
+  {
+    label: "Gold",
+    keys: ["gold100", "gold200", "gold300", "gold400", "gold500", "gold600", "gold700", "gold800", "gold850", "gold900"],
+  },
+  {
+    label: "Violet",
+    keys: ["violet100", "violet200", "violet300", "violet400", "violet500", "violet600", "violet700", "violet800", "violet900"],
+  },
+  {
+    label: "Orange",
+    keys: ["orange100", "orange200", "orange300", "orange400", "orange500", "orange600", "orange700", "orange800", "orange900"],
+  },
+  {
+    label: "Teal",
+    keys: ["teal100", "teal200", "teal300", "teal400", "teal500", "teal600", "teal700", "teal800", "teal900"],
+  },
+  {
+    label: "Red",
+    keys: ["red100", "red200", "red300", "red400", "red500", "red600", "red700", "red800", "red900"],
+  },
+  {
+    label: "Transparent",
+    keys: ["transBlack", "transWhite"],
+  },
+  {
+    label: "Misc",
+    keys: ["miscBurgundy", "miscErrorLight", "miscErrorDark", "miscWarningLight", "miscWarningDark", "miscSuccessLight", "miscSuccessDark", "miscInfoLight", "miscInfoDark"],
   },
 ];
 

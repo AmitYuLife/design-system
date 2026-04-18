@@ -3,64 +3,57 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Icon } from "./Icon";
 import type { IconSize } from "./Icon";
 
-// ─── Navigation ───────────────────────────────────────────────────────────────
-import HamburgerIcon        from "./svg/Hamburger.svg?react";
-import CheckIcon            from "./svg/Check.svg?react";
-import LeftIcon             from "./svg/Left.svg?react";
-import RightIcon            from "./svg/Right.svg?react";
-import UpIcon               from "./svg/Up.svg?react";
-import DownIcon             from "./svg/Down.svg?react";
-import CloseIcon            from "./svg/Close.svg?react";
+import AccountIcon          from "./svg/Account.svg?react";
+import ActivityHistoryIcon  from "./svg/ActivityHistory.svg?react";
 import AddIcon              from "./svg/Add.svg?react";
-import CaretIcon            from "./svg/Caret.svg?react";
+import AvailableRewardsIcon from "./svg/AvailableRewards.svg?react";
 import BulletIcon           from "./svg/Bullet.svg?react";
-
-// ─── Action ───────────────────────────────────────────────────────────────────
+import CalendarIcon         from "./svg/Calendar.svg?react";
+import CaretIcon            from "./svg/Caret.svg?react";
 import ChatHelpIcon         from "./svg/ChatHelp.svg?react";
-import LogOutIcon           from "./svg/LogOut.svg?react";
+import CheckIcon            from "./svg/Check.svg?react";
+import ChestIcon            from "./svg/Chest.svg?react";
 import ClockIcon            from "./svg/Clock.svg?react";
-import StarLineIcon         from "./svg/StarLine.svg?react";
-import SettingsGearIcon     from "./svg/SettingsGear.svg?react";
+import CloseIcon            from "./svg/Close.svg?react";
+import CoinStackIcon        from "./svg/CoinStack.svg?react";
+import CyclingIcon          from "./svg/Cycling.svg?react";
+import DownIcon             from "./svg/Down.svg?react";
+import DropIcon             from "./svg/Drop.svg?react";
+import EmotionIcon          from "./svg/Emotion.svg?react";
+import FiitIcon             from "./svg/Fiit.svg?react";
+import HamburgerIcon        from "./svg/Hamburger.svg?react";
+import HeartIcon            from "./svg/Heart.svg?react";
 import InfoIcon             from "./svg/Info.svg?react";
+import InviteIcon           from "./svg/Invite.svg?react";
+import LeftIcon             from "./svg/Left.svg?react";
+import LevelIcon            from "./svg/Level.svg?react";
+import LogOutIcon           from "./svg/LogOut.svg?react";
+import MapIcon              from "./svg/Map.svg?react";
+import MealIcon             from "./svg/Meal.svg?react";
+import MindfulnessIcon      from "./svg/Mindfulness.svg?react";
+import PigIcon              from "./svg/Pig.svg?react";
+import PlantIcon            from "./svg/Plant.svg?react";
+import PlasticIcon          from "./svg/Plastic.svg?react";
+import QuestionOutlineIcon  from "./svg/QuestionOutline.svg?react";
+import RightIcon            from "./svg/Right.svg?react";
+import SettingsGearIcon     from "./svg/SettingsGear.svg?react";
+import SleepIcon            from "./svg/Sleep.svg?react";
+import SmartPensionIcon     from "./svg/SmartPension.svg?react";
+import StarFillIcon         from "./svg/StarFill.svg?react";
+import StarLineIcon         from "./svg/StarLine.svg?react";
 import StatusInfoIcon       from "./svg/StatusInfo.svg?react";
 import StatusSuccessIcon    from "./svg/StatusSuccess.svg?react";
-import StarFillIcon         from "./svg/StarFill.svg?react";
-import AvailableRewardsIcon from "./svg/AvailableRewards.svg?react";
-import QuestionOutlineIcon  from "./svg/QuestionOutline.svg?react";
-import InviteIcon           from "./svg/Invite.svg?react";
-import WorldIcon            from "./svg/World.svg?react";
-
-// ─── Activities ───────────────────────────────────────────────────────────────
 import StreakIcon           from "./svg/Streak.svg?react";
-import WellbeingHubIcon     from "./svg/WellbeingHub.svg?react";
-import HeartIcon            from "./svg/Heart.svg?react";
-import ActivityHistoryIcon  from "./svg/ActivityHistory.svg?react";
-import CyclingIcon          from "./svg/Cycling.svg?react";
-import MindfulnessIcon      from "./svg/Mindfulness.svg?react";
-import FiitIcon             from "./svg/Fiit.svg?react";
-import YuniversityIcon      from "./svg/Yuniversity.svg?react";
-import YudokuIcon           from "./svg/Yudoku.svg?react";
-import PigIcon              from "./svg/Pig.svg?react";
-import SmartPensionIcon     from "./svg/SmartPension.svg?react";
-import EmotionIcon          from "./svg/Emotion.svg?react";
-import AccountIcon          from "./svg/Account.svg?react";
-import SleepIcon            from "./svg/Sleep.svg?react";
-import PlantIcon            from "./svg/Plant.svg?react";
-import CalendarIcon         from "./svg/Calendar.svg?react";
-import DropIcon             from "./svg/Drop.svg?react";
-import MealIcon             from "./svg/Meal.svg?react";
-import PlasticIcon          from "./svg/Plastic.svg?react";
-
-// ─── YuLife ───────────────────────────────────────────────────────────────────
 import TodaysYuCoinIcon     from "./svg/TodaysYuCoin.svg?react";
-import MapIcon              from "./svg/Map.svg?react";
-import TrophyIcon           from "./svg/Trophy.svg?react";
-import CoinStackIcon        from "./svg/CoinStack.svg?react";
-import YugiHeadIcon         from "./svg/YugiHead.svg?react";
-import ChestIcon            from "./svg/Chest.svg?react";
 import TreasureChestIcon    from "./svg/TreasureChest.svg?react";
+import TrophyIcon           from "./svg/Trophy.svg?react";
 import UnityIcon            from "./svg/Unity.svg?react";
-import LevelIcon            from "./svg/Level.svg?react";
+import UpIcon               from "./svg/Up.svg?react";
+import WellbeingHubIcon     from "./svg/WellbeingHub.svg?react";
+import WorldIcon            from "./svg/World.svg?react";
+import YugiHeadIcon         from "./svg/YugiHead.svg?react";
+import YudokuIcon           from "./svg/Yudoku.svg?react";
+import YuniversityIcon      from "./svg/Yuniversity.svg?react";
 
 // ─── Icon catalogue ───────────────────────────────────────────────────────────
 
@@ -73,61 +66,57 @@ type IconEntry = {
 };
 
 const ALL_ICONS: IconEntry[] = [
-  // Navigation
-  { name: "Hamburger",        export: "HamburgerIcon",        component: HamburgerIcon,        category: "Navigation", tags: "menu list navigation sidebar drawer" },
-  { name: "Check",            export: "CheckIcon",            component: CheckIcon,            category: "Navigation", tags: "done ready complete finish tick mark" },
-  { name: "Left",             export: "LeftIcon",             component: LeftIcon,             category: "Navigation", tags: "arrow direction back previous navigate" },
-  { name: "Right",            export: "RightIcon",            component: RightIcon,            category: "Navigation", tags: "arrow direction forward next navigate continue" },
-  { name: "Up",               export: "UpIcon",               component: UpIcon,               category: "Navigation", tags: "arrow direction top navigate scroll" },
-  { name: "Down",             export: "DownIcon",             component: DownIcon,             category: "Navigation", tags: "arrow direction bottom navigate scroll" },
-  { name: "Close",            export: "CloseIcon",            component: CloseIcon,            category: "Navigation", tags: "exit x cancel dismiss remove" },
-  { name: "Add",              export: "AddIcon",              component: AddIcon,              category: "Navigation", tags: "plus create new more increase" },
-  { name: "Caret",            export: "CaretIcon",            component: CaretIcon,            category: "Navigation", tags: "arrow dropdown expand chevron select" },
-  { name: "Bullet",           export: "BulletIcon",           component: BulletIcon,           category: "Navigation", tags: "dot point list item marker" },
-  // Action
-  { name: "Chat Help",        export: "ChatHelpIcon",         component: ChatHelpIcon,         category: "Action", tags: "chat help support question ask message assistance" },
-  { name: "Log Out",          export: "LogOutIcon",           component: LogOutIcon,           category: "Action", tags: "leave exit sign out logout arrow" },
-  { name: "Clock",            export: "ClockIcon",            component: ClockIcon,            category: "Action", tags: "time hour minute schedule timer watch" },
-  { name: "Star Line",        export: "StarLineIcon",         component: StarLineIcon,         category: "Action", tags: "star favourite save bookmark important rating" },
-  { name: "Settings Gear",    export: "SettingsGearIcon",     component: SettingsGearIcon,     category: "Action", tags: "settings configure gear tools preferences cog" },
-  { name: "Info",             export: "InfoIcon",             component: InfoIcon,             category: "Action", tags: "information more read explain describe guide detail" },
-  { name: "Status Info",      export: "StatusInfoIcon",       component: StatusInfoIcon,       category: "Action", tags: "status information notice alert blue" },
-  { name: "Status Success",   export: "StatusSuccessIcon",    component: StatusSuccessIcon,    category: "Action", tags: "status success complete done check green ok" },
-  { name: "Star Fill",        export: "StarFillIcon",         component: StarFillIcon,         category: "Action", tags: "star favourite saved bookmarked important rating filled" },
-  { name: "Available Rewards",export: "AvailableRewardsIcon", component: AvailableRewardsIcon, category: "Action", tags: "rewards available gift claim earn voucher unlock" },
-  { name: "Question Outline", export: "QuestionOutlineIcon",  component: QuestionOutlineIcon,  category: "Action", tags: "question help ask faq support unknown query" },
-  { name: "Invite",           export: "InviteIcon",           component: InviteIcon,           category: "Action", tags: "add invite share join send friend refer" },
-  { name: "World",            export: "WorldIcon",            component: WorldIcon,            category: "Action", tags: "globe world planet web site link international" },
-  // Activities
-  { name: "Streak",           export: "StreakIcon",           component: StreakIcon,           category: "Activities", tags: "days consecutive calendar challenge fire progress habit" },
-  { name: "Wellbeing Hub",    export: "WellbeingHubIcon",     component: WellbeingHubIcon,     category: "Activities", tags: "health wellness centre dashboard portal hub resources benefits" },
-  { name: "Heart",            export: "HeartIcon",            component: HeartIcon,            category: "Activities", tags: "love health favourite like care life" },
-  { name: "Activity History", export: "ActivityHistoryIcon",  component: ActivityHistoryIcon,  category: "Activities", tags: "history log past activity record timeline progress" },
-  { name: "Cycling",          export: "CyclingIcon",          component: CyclingIcon,          category: "Activities", tags: "bike bicycle wheels ride exercise sport fitness" },
-  { name: "Mindfulness",      export: "MindfulnessIcon",      component: MindfulnessIcon,      category: "Activities", tags: "meditation mind calm breathe relax zen focus" },
-  { name: "Fiit",             export: "FiitIcon",             component: FiitIcon,             category: "Activities", tags: "workout fitness exercise training gym hiit" },
-  { name: "Yuniversity",      export: "YuniversityIcon",      component: YuniversityIcon,      category: "Activities", tags: "learn education course school study university yulife" },
-  { name: "Yudoku",           export: "YudokuIcon",           component: YudokuIcon,           category: "Activities", tags: "puzzle game brain sudoku challenge" },
-  { name: "Pig",              export: "PigIcon",              component: PigIcon,              category: "Activities", tags: "pig savings piggy bank money finance" },
-  { name: "Smart Pension",    export: "SmartPensionIcon",     component: SmartPensionIcon,     category: "Activities", tags: "smart pension savings retirement finance" },
-  { name: "Emotion",          export: "EmotionIcon",          component: EmotionIcon,          category: "Activities", tags: "mood feel happy sad feeling wellbeing mental health" },
-  { name: "Account",          export: "AccountIcon",          component: AccountIcon,          category: "Activities", tags: "profile user person settings login identity" },
-  { name: "Sleep",            export: "SleepIcon",            component: SleepIcon,            category: "Activities", tags: "rest night moon bed nap recovery wellness" },
-  { name: "Plant",            export: "PlantIcon",            component: PlantIcon,            category: "Activities", tags: "tree nature plant esg green environment forest" },
-  { name: "Calendar",         export: "CalendarIcon",         component: CalendarIcon,         category: "Activities", tags: "date schedule month planner events agenda time" },
-  { name: "Drop",             export: "DropIcon",             component: DropIcon,             category: "Activities", tags: "water drop h2o drink hydrate humidity health" },
-  { name: "Meal",             export: "MealIcon",             component: MealIcon,             category: "Activities", tags: "food nutrition eat diet health energy meal" },
-  { name: "Plastic",          export: "PlasticIcon",          component: PlasticIcon,          category: "Activities", tags: "ocean plastic trash planet save esg waste rubbish" },
-  // YuLife
-  { name: "Todays YuCoin",   export: "TodaysYuCoinIcon",     component: TodaysYuCoinIcon,     category: "YuLife", tags: "yucoin coin daily today earn points reward" },
-  { name: "Map",              export: "MapIcon",              component: MapIcon,              category: "YuLife", tags: "quest guide world journey navigate location explore" },
-  { name: "Trophy",           export: "TrophyIcon",           component: TrophyIcon,           category: "YuLife", tags: "win winner achievement gold leaderboard prize" },
-  { name: "Coin Stack",       export: "CoinStackIcon",        component: CoinStackIcon,        category: "YuLife", tags: "coins yucoins money points earn rewards balance" },
-  { name: "Yugi Head",        export: "YugiHeadIcon",         component: YugiHeadIcon,         category: "YuLife", tags: "yugi character avatar head yulife mascot" },
-  { name: "Chest",            export: "ChestIcon",            component: ChestIcon,            category: "YuLife", tags: "treasure reward loot yucoins prize achievement" },
-  { name: "Treasure Chest",   export: "TreasureChestIcon",    component: TreasureChestIcon,    category: "YuLife", tags: "treasure chest reward loot yucoins prize achievement open" },
-  { name: "Unity",            export: "UnityIcon",            component: UnityIcon,            category: "YuLife", tags: "team together community people collaboration social" },
-  { name: "Level",            export: "LevelIcon",            component: LevelIcon,            category: "YuLife", tags: "level up progress achievement rank tier xp" },
+  { name: "Account",          export: "AccountIcon",          component: AccountIcon,          category: "Line Icons", tags: "profile user person settings login identity" },
+  { name: "Activity History", export: "ActivityHistoryIcon",  component: ActivityHistoryIcon,  category: "Line Icons", tags: "history log past activity record timeline progress" },
+  { name: "Add",              export: "AddIcon",              component: AddIcon,              category: "Line Icons", tags: "plus create new more increase" },
+  { name: "Available Rewards",export: "AvailableRewardsIcon", component: AvailableRewardsIcon, category: "Line Icons", tags: "rewards available gift claim earn voucher unlock" },
+  { name: "Bullet",           export: "BulletIcon",           component: BulletIcon,           category: "Line Icons", tags: "dot point list item marker" },
+  { name: "Calendar",         export: "CalendarIcon",         component: CalendarIcon,         category: "Line Icons", tags: "date schedule month planner events agenda time" },
+  { name: "Caret",            export: "CaretIcon",            component: CaretIcon,            category: "Line Icons", tags: "arrow dropdown expand chevron select" },
+  { name: "Chat Help",        export: "ChatHelpIcon",         component: ChatHelpIcon,         category: "Line Icons", tags: "chat help support question ask message assistance" },
+  { name: "Check",            export: "CheckIcon",            component: CheckIcon,            category: "Line Icons", tags: "done ready complete finish tick mark" },
+  { name: "Chest",            export: "ChestIcon",            component: ChestIcon,            category: "Line Icons", tags: "treasure reward loot yucoins prize achievement" },
+  { name: "Clock",            export: "ClockIcon",            component: ClockIcon,            category: "Line Icons", tags: "time hour minute schedule timer watch" },
+  { name: "Close",            export: "CloseIcon",            component: CloseIcon,            category: "Line Icons", tags: "exit x cancel dismiss remove" },
+  { name: "Coin Stack",       export: "CoinStackIcon",        component: CoinStackIcon,        category: "Line Icons", tags: "coins yucoins money points earn rewards balance" },
+  { name: "Cycling",          export: "CyclingIcon",          component: CyclingIcon,          category: "Line Icons", tags: "bike bicycle wheels ride exercise sport fitness" },
+  { name: "Down",             export: "DownIcon",             component: DownIcon,             category: "Line Icons", tags: "arrow direction bottom navigate scroll" },
+  { name: "Drop",             export: "DropIcon",             component: DropIcon,             category: "Line Icons", tags: "water drop h2o drink hydrate humidity health" },
+  { name: "Emotion",          export: "EmotionIcon",          component: EmotionIcon,          category: "Line Icons", tags: "mood feel happy sad feeling wellbeing mental health" },
+  { name: "Fiit",             export: "FiitIcon",             component: FiitIcon,             category: "Line Icons", tags: "workout fitness exercise training gym hiit" },
+  { name: "Hamburger",        export: "HamburgerIcon",        component: HamburgerIcon,        category: "Line Icons", tags: "menu list navigation sidebar drawer" },
+  { name: "Heart",            export: "HeartIcon",            component: HeartIcon,            category: "Line Icons", tags: "love health favourite like care life" },
+  { name: "Info",             export: "InfoIcon",             component: InfoIcon,             category: "Line Icons", tags: "information more read explain describe guide detail" },
+  { name: "Invite",           export: "InviteIcon",           component: InviteIcon,           category: "Line Icons", tags: "add invite share join send friend refer" },
+  { name: "Left",             export: "LeftIcon",             component: LeftIcon,             category: "Line Icons", tags: "arrow direction back previous navigate" },
+  { name: "Level",            export: "LevelIcon",            component: LevelIcon,            category: "Line Icons", tags: "level up progress achievement rank tier xp" },
+  { name: "Log Out",          export: "LogOutIcon",           component: LogOutIcon,           category: "Line Icons", tags: "leave exit sign out logout arrow" },
+  { name: "Map",              export: "MapIcon",              component: MapIcon,              category: "Line Icons", tags: "quest guide world journey navigate location explore" },
+  { name: "Meal",             export: "MealIcon",             component: MealIcon,             category: "Line Icons", tags: "food nutrition eat diet health energy meal" },
+  { name: "Mindfulness",      export: "MindfulnessIcon",      component: MindfulnessIcon,      category: "Line Icons", tags: "meditation mind calm breathe relax zen focus" },
+  { name: "Pig",              export: "PigIcon",              component: PigIcon,              category: "Line Icons", tags: "pig savings piggy bank money finance" },
+  { name: "Plant",            export: "PlantIcon",            component: PlantIcon,            category: "Line Icons", tags: "tree nature plant esg green environment forest" },
+  { name: "Plastic",          export: "PlasticIcon",          component: PlasticIcon,          category: "Line Icons", tags: "ocean plastic trash planet save esg waste rubbish" },
+  { name: "Question Outline", export: "QuestionOutlineIcon",  component: QuestionOutlineIcon,  category: "Line Icons", tags: "question help ask faq support unknown query" },
+  { name: "Right",            export: "RightIcon",            component: RightIcon,            category: "Line Icons", tags: "arrow direction forward next navigate continue" },
+  { name: "Settings Gear",    export: "SettingsGearIcon",     component: SettingsGearIcon,     category: "Line Icons", tags: "settings configure gear tools preferences cog" },
+  { name: "Sleep",            export: "SleepIcon",            component: SleepIcon,            category: "Line Icons", tags: "rest night moon bed nap recovery wellness" },
+  { name: "Smart Pension",    export: "SmartPensionIcon",     component: SmartPensionIcon,     category: "Line Icons", tags: "smart pension savings retirement finance" },
+  { name: "Star Fill",        export: "StarFillIcon",         component: StarFillIcon,         category: "Line Icons", tags: "star favourite saved bookmarked important rating filled" },
+  { name: "Star Line",        export: "StarLineIcon",         component: StarLineIcon,         category: "Line Icons", tags: "star favourite save bookmark important rating" },
+  { name: "Status Info",      export: "StatusInfoIcon",       component: StatusInfoIcon,       category: "Line Icons", tags: "status information notice alert blue" },
+  { name: "Status Success",   export: "StatusSuccessIcon",    component: StatusSuccessIcon,    category: "Line Icons", tags: "status success complete done check green ok" },
+  { name: "Streak",           export: "StreakIcon",           component: StreakIcon,           category: "Line Icons", tags: "days consecutive calendar challenge fire progress habit" },
+  { name: "Todays YuCoin",    export: "TodaysYuCoinIcon",     component: TodaysYuCoinIcon,     category: "Line Icons", tags: "yucoin coin daily today earn points reward" },
+  { name: "Treasure Chest",   export: "TreasureChestIcon",    component: TreasureChestIcon,    category: "Line Icons", tags: "treasure chest reward loot yucoins prize achievement open" },
+  { name: "Trophy",           export: "TrophyIcon",           component: TrophyIcon,           category: "Line Icons", tags: "win winner achievement gold leaderboard prize" },
+  { name: "Unity",            export: "UnityIcon",            component: UnityIcon,            category: "Line Icons", tags: "team together community people collaboration social" },
+  { name: "Up",               export: "UpIcon",               component: UpIcon,               category: "Line Icons", tags: "arrow direction top navigate scroll" },
+  { name: "Wellbeing Hub",    export: "WellbeingHubIcon",     component: WellbeingHubIcon,     category: "Line Icons", tags: "health wellness centre dashboard portal hub resources benefits" },
+  { name: "World",            export: "WorldIcon",            component: WorldIcon,            category: "Line Icons", tags: "globe world planet web site link international" },
+  { name: "Yugi Head",        export: "YugiHeadIcon",         component: YugiHeadIcon,         category: "Line Icons", tags: "yugi character avatar head yulife mascot" },
+  { name: "Yudoku",           export: "YudokuIcon",           component: YudokuIcon,           category: "Line Icons", tags: "puzzle game brain sudoku challenge" },
+  { name: "Yuniversity",      export: "YuniversityIcon",      component: YuniversityIcon,      category: "Line Icons", tags: "learn education course school study university yulife" },
 ];
 
 // ─── Meta ─────────────────────────────────────────────────────────────────────
@@ -142,7 +131,6 @@ const meta: Meta = {
 ## Iconography
 
 51 line icons exported from the [App — Iconography](https://www.figma.com/design/sDuXCE69U5qvWYkOhEFHBd/App---Iconography) Figma file.
-Organised into four categories: **Navigation**, **Action**, **Activities**, and **YuLife**.
 
 All icons use \`currentColor\` and respond to any CSS colour value.
 

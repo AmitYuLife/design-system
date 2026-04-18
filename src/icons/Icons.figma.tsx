@@ -75,8 +75,6 @@ import {
 
 type SvgStub = FC<SVGProps<SVGSVGElement>>;
 
-// ─── Navigation ───────────────────────────────────────────────────────────────
-
 figma.connect(Icon, "https://www.figma.com/design/sDuXCE69U5qvWYkOhEFHBd/App---Iconography?node-id=5099:3082", {
   imports: ["import { Icon, HamburgerIcon } from \"@/icons\""],
   example: () => <Icon svg={HamburgerIcon as SvgStub} size={24} color="currentColor" accessibilityLabel="Hamburger" />,
@@ -126,8 +124,6 @@ figma.connect(Icon, "https://www.figma.com/design/sDuXCE69U5qvWYkOhEFHBd/App---I
   imports: ["import { Icon, BulletIcon } from \"@/icons\""],
   example: () => <Icon svg={BulletIcon as SvgStub} size={24} color="currentColor" accessibilityLabel="Bullet" />,
 });
-
-// ─── Action ───────────────────────────────────────────────────────────────────
 
 figma.connect(Icon, "https://www.figma.com/design/sDuXCE69U5qvWYkOhEFHBd/App---Iconography?node-id=5099:3135", {
   imports: ["import { Icon, ChatHelpIcon } from \"@/icons\""],
@@ -193,8 +189,6 @@ figma.connect(Icon, "https://www.figma.com/design/sDuXCE69U5qvWYkOhEFHBd/App---I
   imports: ["import { Icon, WorldIcon } from \"@/icons\""],
   example: () => <Icon svg={WorldIcon as SvgStub} size={24} color="currentColor" accessibilityLabel="World" />,
 });
-
-// ─── Activities ───────────────────────────────────────────────────────────────
 
 figma.connect(Icon, "https://www.figma.com/design/sDuXCE69U5qvWYkOhEFHBd/App---Iconography?node-id=5099:3094", {
   imports: ["import { Icon, StreakIcon } from \"@/icons\""],
@@ -290,8 +284,6 @@ figma.connect(Icon, "https://www.figma.com/design/sDuXCE69U5qvWYkOhEFHBd/App---I
   imports: ["import { Icon, PlasticIcon } from \"@/icons\""],
   example: () => <Icon svg={PlasticIcon as SvgStub} size={24} color="currentColor" accessibilityLabel="Plastic" />,
 });
-
-// ─── YuLife ───────────────────────────────────────────────────────────────────
 
 figma.connect(Icon, "https://www.figma.com/design/sDuXCE69U5qvWYkOhEFHBd/App---Iconography?node-id=5099:3039", {
   imports: ["import { Icon, TodaysYuCoinIcon } from \"@/icons\""],
