@@ -1,20 +1,16 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 import path from "path";
-import svgr from "@svgr/rollup";
+import svgr from "vite-plugin-svgr";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.stories.@(ts|tsx|mdx)"],
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-viewport",
-    "@storybook/addon-docs",
   ],
   framework: {
     name: "@storybook/react-vite",
     options: {},
-  },
-  viteFinalConfig(config) {
-    return config;
   },
   async viteFinal(config) {
     const { mergeConfig } = await import("vite");
@@ -22,8 +18,11 @@ const config: StorybookConfig = {
     return mergeConfig(config, {
       plugins: [
         svgr({
-          svgProps: { role: "img" },
-          titleProp: true,
+          svgrOptions: {
+            svgProps: { role: "img" },
+            titleProp: true,
+            jsxRuntime: "automatic",
+          },
         }),
       ],
       resolve: {

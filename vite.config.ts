@@ -1,13 +1,16 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import svgr from "@svgr/rollup";
+import svgr from "vite-plugin-svgr";
 import path from "path";
 
 export default defineConfig({
   plugins: [
     svgr({
-      svgProps: { role: "img" },
-      titleProp: true,
+      svgrOptions: {
+        svgProps: { role: "img" },
+        titleProp: true,
+        jsxRuntime: "automatic",
+      },
     }),
     react(),
   ],
