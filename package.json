@@ -1,0 +1,30 @@
+{
+  "name": "design-system",
+  "version": "0.1.0",
+  "description": "React Native design system component library for Storybook",
+  "private": true,
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-native-web": "^0.21.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "^10.3.5",
+    "@storybook/addon-essentials": "^10.3.5",
+    "@storybook/addon-viewport": "^10.3.5",
+    "@storybook/react": "^10.3.5",
+    "@storybook/react-vite": "^10.3.5",
+    "@svgr/rollup": "^8.1.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "storybook": "^10.3.5",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.8"
+  }
+}
