@@ -18,6 +18,7 @@ import {
 import { colors, palette } from "../../tokens/colors";
 import { fontFamily, fontSize, fontWeight } from "../../tokens/typography";
 import { spacing } from "../../tokens/spacing";
+import { radii } from "../../tokens/radii";
 import type { ActionBarItem } from "../../components/ActionBar";
 
 // ─── Asset imports ────────────────────────────────────────────────────────────
@@ -136,7 +137,7 @@ const SurgeBadge: React.FC<SurgeBadgeProps> = ({
 }) => (
   <div
     style={{
-      position: "fixed",
+      position: "absolute",
       right: 16,
       top: 104,
       width: 64,
@@ -199,7 +200,7 @@ const SurgeBadge: React.FC<SurgeBadgeProps> = ({
         right: "14%",
         height: "26%",
         backgroundColor: COLOR_SURGE,
-        borderRadius: 4,
+        borderRadius: radii.sm,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -328,7 +329,7 @@ export const YuCoinScreen: React.FC<YuCoinScreenProps> = ({
     <div
       style={{
         width: "100%",
-        height: "100vh",
+        height: "100%",
         overflow: "hidden",
         backgroundColor: BG_CREAM,
         position: "relative",
@@ -342,7 +343,7 @@ export const YuCoinScreen: React.FC<YuCoinScreenProps> = ({
         alt=""
         src={background}
         style={{
-          position: "fixed",
+          position: "absolute",
           inset: 0,
           width: "100%",
           height: "100%",
@@ -357,6 +358,7 @@ export const YuCoinScreen: React.FC<YuCoinScreenProps> = ({
       {/* Uses its natural position: fixed — no style override. */}
       <NavigationHeader
         darkMode={false}
+        style={{ position: "absolute" }}
         leftSlot={
           <Icon
             svg={HamburgerIcon}
@@ -376,7 +378,7 @@ export const YuCoinScreen: React.FC<YuCoinScreenProps> = ({
        */}
       <div
         style={{
-          position: "fixed",
+          position: "absolute",
           left: 56,
           top: 52,
           width: 24,
@@ -404,7 +406,7 @@ export const YuCoinScreen: React.FC<YuCoinScreenProps> = ({
               right: 1,
               width: 8,
               height: 8,
-              borderRadius: "50%",
+              borderRadius: radii.pill,
               backgroundColor: COLOR_CTA,
               border: `1.5px solid ${BG_CREAM}`,
               boxSizing: "border-box",
@@ -425,7 +427,7 @@ export const YuCoinScreen: React.FC<YuCoinScreenProps> = ({
        */}
       <div
         style={{
-          position: "fixed",
+          position: "absolute",
           top: HEADER_HEIGHT,
           bottom: ACTION_BAR_HEIGHT,
           left: 0,
@@ -549,7 +551,7 @@ export const YuCoinScreen: React.FC<YuCoinScreenProps> = ({
        */}
       <div
         style={{
-          position: "fixed",
+          position: "absolute",
           bottom: 0,
           left: 0,
           right: 0,

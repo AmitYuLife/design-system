@@ -1,13 +1,32 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { YuCoinScreen } from "./YuCoinScreen";
 import { gameBackgrounds, defaultBackground } from "../../assets/game-backgrounds";
 
 // ─── Meta ─────────────────────────────────────────────────────────────────────
 
+/** Wraps every story in an iPhone 15–sized frame so position:absolute children
+ *  stay contained in both the canvas and the docs preview. */
+const PhoneFrame = ({ children }: { children: React.ReactNode }) => (
+  <div
+    style={{
+      width: 393,
+      height: 852,
+      position: "relative",
+      overflow: "hidden",
+      borderRadius: 12,
+      boxShadow: "0 8px 40px rgba(0,0,0,0.18)",
+      margin: "auto",
+    }}
+  >
+    {children}
+  </div>
+);
+
 const meta: Meta<typeof YuCoinScreen> = {
   title: "Templates/YuCoinScreen",
   component: YuCoinScreen,
+  decorators: [(Story) => <PhoneFrame><Story /></PhoneFrame>],
   parameters: {
     layout: "centered",
     viewport: { defaultViewport: "iphone15" },
