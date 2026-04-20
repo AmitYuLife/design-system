@@ -9,6 +9,7 @@ const config: StorybookConfig = {
     "../src/components/**/*.stories.@(ts|tsx|mdx)",
     "../src/templates/**/*.stories.@(ts|tsx|mdx)",
     "../src/game-assets/**/*.stories.@(ts|tsx|mdx)",
+    "../src/pages/**/*.stories.@(ts|tsx|mdx)",
   ],
   addons: [
     "@storybook/addon-essentials",
@@ -25,7 +26,7 @@ const config: StorybookConfig = {
     ${head}
     <script>
       window.__STORYBOOK_CONFIG__ = {
-        sidebarSort: ['Foundations', 'Components', 'Templates', 'Game Assets']
+        sidebarSort: ['Foundations', 'Components', 'Templates', 'Pages', 'Game Assets']
       };
     </script>
   `,

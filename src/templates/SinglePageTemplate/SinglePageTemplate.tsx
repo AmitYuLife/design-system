@@ -1,5 +1,5 @@
 import React from "react";
-import { colors } from "../../tokens/colors";
+import { colors, palette } from "../../tokens/colors";
 import { spacing, space } from "../../tokens/spacing";
 import { radii } from "../../tokens/radii";
 
@@ -79,9 +79,9 @@ export const SinglePageTemplate: React.FC<SinglePageTemplateProps> = ({
             position: "relative",
             zIndex: 1,
             marginTop: -spacing[6],
-            borderTopLeftRadius: radii["2xl"],
-            borderTopRightRadius: radii["2xl"],
-            backgroundColor: colors.bgElevated,
+            borderTopLeftRadius: radii.md,
+            borderTopRightRadius: radii.md,
+            backgroundColor: palette.neutral50,
             paddingTop: space.pagePaddingVertical,
             paddingBottom: space.pagePaddingVertical,
             paddingLeft: space.pagePaddingHorizontal,
@@ -89,7 +89,6 @@ export const SinglePageTemplate: React.FC<SinglePageTemplateProps> = ({
             display: "flex",
             flexDirection: "column",
             gap: space.stackMD,
-            minHeight: "100vh",
           }}
         >
           {children}

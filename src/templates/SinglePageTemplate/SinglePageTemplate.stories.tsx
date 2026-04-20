@@ -2,8 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { SinglePageTemplate } from "./SinglePageTemplate";
 import { HeroProductDetails } from "../../components/Hero";
-import { Card } from "../../components/Card";
-import { CardInfoContent } from "../../components/Card";
+import { Card, CardInfoContent } from "../../components/Card";
 import { Button } from "../../components/Button";
 import {
   defaultHeroBackground,
@@ -14,15 +13,15 @@ import YuLifeSquareMonoSvg from "../../icons/svg/YuLifeSquareMono.svg?react";
 import {
   Icon,
   RightIcon,
-  CoverDetailsColourIcon,
   HeartIcon,
+  CoverDetailsColourIcon,
 } from "../../icons";
 import { palette, colors } from "../../tokens/colors";
 import { textStyles } from "../../tokens/typography";
 import { spacing } from "../../tokens/spacing";
 import { radii } from "../../tokens/radii";
 
-// ─── Reusable story helpers ──────────────────────────────────────────────────
+// ─── Shared helpers ──────────────────────────────────────────────────────────
 
 const BupaYuLifeLogo = () => (
   <div style={{ display: "flex", alignItems: "center", gap: 0, height: 24 }}>
@@ -45,18 +44,9 @@ const BupaYuLifeLogo = () => (
 );
 
 const trailing = (
-  <Icon
-    svg={RightIcon}
-    size={24}
-    color={palette.pink700}
-    accessibilityLabel=""
-  />
+  <Icon svg={RightIcon} size={24} color={palette.pink700} accessibilityLabel="" />
 );
 
-/**
- * Example tile matching the Figma "Tile" pattern — icon centred above a
- * two-line label in a bordered card.
- */
 const Tile: React.FC<{ label: string }> = ({ label }) => (
   <div
     style={{
@@ -91,29 +81,33 @@ const Tile: React.FC<{ label: string }> = ({ label }) => (
   </div>
 );
 
-// ─── Example content block used in the default story ─────────────────────────
+// ─── Default example content ──────────────────────────────────────────────────
 
 const ExampleMainContent = () => (
   <>
     {/* Tile row */}
-    <div style={{ display: "flex", gap: spacing[2] }}>
+    <div style={{ display: "flex", gap: spacing[2], width: "100%" }}>
       <Tile label="Label text goes here maximum..." />
       <Tile label="Label text goes here maximum..." />
     </div>
 
     {/* Placeholder card */}
-    <Card />
+    <div style={{ width: "100%" }}>
+      <Card />
+    </div>
 
     {/* Info card */}
-    <Card>
-      <CardInfoContent
-        leftAsset="ColourIcon"
-        leftSlot={<CoverDetailsColourIcon size={24} />}
-        title="Your title here"
-        description="Your description copy goes here. Should be no more than three lines of copy."
-        rightSlot={trailing}
-      />
-    </Card>
+    <div style={{ width: "100%" }}>
+      <Card>
+        <CardInfoContent
+          leftAsset="ColourIcon"
+          leftSlot={<CoverDetailsColourIcon size={24} />}
+          title="Your title here"
+          description="Your description copy goes here. Should be no more than three lines of copy."
+          rightSlot={trailing}
+        />
+      </Card>
+    </div>
 
     {/* Button group */}
     <div
@@ -121,12 +115,13 @@ const ExampleMainContent = () => (
         display: "flex",
         flexDirection: "column",
         gap: spacing[2],
+        width: "100%",
       }}
     >
-      <Button colour="Primary" variant="Solid" size="Large">
+      <Button colour="Primary" variant="Solid" size="Large" style={{ width: "100%" }}>
         Button text
       </Button>
-      <Button colour="Primary" variant="Outline" size="Large">
+      <Button colour="Primary" variant="Outline" size="Large" style={{ width: "100%" }}>
         Button text
       </Button>
     </div>
@@ -166,6 +161,10 @@ creating a natural card-over-image parallax effect.
 ### Figma reference
 
 [YuLife App Storybook — SinglePageTemplate](https://www.figma.com/design/ERkTigxQV1eQ7jooI8pgQp/YuLife-App-Storybook?node-id=10971-1317)
+
+### Real-world usage
+
+See **Pages / Health Cash Plan** for a fully worked product page example.
         `.trim(),
       },
     },
@@ -183,8 +182,8 @@ type Story = StoryObj<typeof SinglePageTemplate>;
 
 /**
  * Default — demonstrates the template with `HeroProductDetails` and a set of
- * example content blocks (tiles, cards, buttons) matching the Figma spec.
- * Scroll down to see the parallax overlap effect.
+ * generic content blocks (tiles, card, info card, buttons). Scroll to observe
+ * the parallax overlap effect.
  */
 export const Default: Story = {
   args: {
@@ -202,7 +201,7 @@ export const Default: Story = {
     docs: {
       description: {
         story:
-          "Full composition with `HeroProductDetails` and example content " +
+          "Generic composition with `HeroProductDetails` and placeholder content " +
           "(tile row, card, info card, button group). Scroll to observe the " +
           "parallax overlap behaviour.",
       },
@@ -211,8 +210,8 @@ export const Default: Story = {
 };
 
 /**
- * Minimal — hero only, no content. Shows the raw template chassis with the
- * MainLayout overlapping the hero's bottom edge.
+ * Minimal — hero only with a single line of body copy. Shows the raw template
+ * chassis and the MainLayout overlapping the hero's bottom edge.
  */
 export const Minimal: Story = {
   args: {
