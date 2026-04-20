@@ -15,6 +15,7 @@ export { default as CaretIcon }            from "./svg/Caret.svg?react";
 export { default as BulletIcon }           from "./svg/Bullet.svg?react";
 
 // ─── Action ───────────────────────────────────────────────────────────────────
+export { default as BellIcon }             from "./svg/Bell.svg?react";
 export { default as ChatHelpIcon }         from "./svg/ChatHelp.svg?react";
 export { default as LogOutIcon }           from "./svg/LogOut.svg?react";
 export { default as ClockIcon }            from "./svg/Clock.svg?react";

@@ -27,6 +27,7 @@ export const CaretIcon            = mkStub();
 export const BulletIcon           = mkStub();
 
 // ─── Action ───────────────────────────────────────────────────────────────────
+export const BellIcon             = mkStub();
 export const ChatHelpIcon         = mkStub();
 export const LogOutIcon           = mkStub();
 export const ClockIcon            = mkStub();

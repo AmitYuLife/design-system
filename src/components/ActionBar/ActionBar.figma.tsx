@@ -34,8 +34,8 @@ import {
 type SvgStub = FC<SVGProps<SVGSVGElement>>;
 
 const NAV_ITEMS: ActionBarItem[] = [
-  { id: "yucoin",      icon: TodaysYuCoinIcon as SvgStub, label: "YuCoin",      accessibilityLabel: "YuCoin"      },
-  { id: "quests",      icon: MapIcon          as SvgStub, label: "Quests",      accessibilityLabel: "Quests"      },
+  { id: "yucoin",      icon: MapIcon          as SvgStub, label: "YuCoin",      accessibilityLabel: "YuCoin"      },
+  { id: "quests",      icon: TodaysYuCoinIcon as SvgStub, label: "Quests",      accessibilityLabel: "Quests"      },
   { id: "yu",          icon: HeartIcon        as SvgStub, label: "Yu",          accessibilityLabel: "Yu"          },
   { id: "leaderboard", icon: TrophyIcon       as SvgStub, label: "Leaderboard", accessibilityLabel: "Leaderboard" },
   { id: "rewards",     icon: ChestIcon        as SvgStub, label: "Rewards",     accessibilityLabel: "Rewards"     },

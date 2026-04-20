@@ -13,6 +13,7 @@ import {
   ChestIcon,
   CyclingIcon,
   MindfulnessIcon,
+  YuCoinColourIcon,
 } from "../../icons";
 import { colors, palette } from "../../tokens/colors";
 import { fontFamily, fontSize, fontWeight } from "../../tokens/typography";
@@ -23,8 +24,8 @@ import type { ActionBarItem } from "../../components/ActionBar";
 // All illustration assets exported from the Figma "Today Screen" (node 28:15936).
 // Source: YuLife App — Login Spec, https://www.figma.com/design/4tvQWEu6I2nmPKK8eSVtOM
 
-import yucoinComposite from "./assets/yucoin-composite.png";
-import challengeBackground from "./assets/challenge-background.png";
+import yucoinComposite from "../../assets/yucoin-screen/yucoin-composite.png";
+import { defaultBackground } from "../../assets/game-backgrounds";
 
 // ─── Colour constants ─────────────────────────────────────────────────────────
 
@@ -41,7 +42,7 @@ const HOME_SCREEN_NAV_ITEMS: ActionBarItem[] = [
     id: "yucoin",
     icon: TodaysYuCoinIcon,
     label: "YuCoin",
-    accessibilityLabel: "YuCoin home screen",
+    accessibilityLabel: "YuCoin screen",
   },
   {
     id: "quests",
@@ -90,12 +91,7 @@ const YuCoinBalance: React.FC<YuCoinBalanceProps> = ({ amount }) => (
     >
       {amount}
     </span>
-    <Icon
-      svg={TodaysYuCoinIcon}
-      size={24}
-      color={COLOR_HEADING}
-      accessibilityLabel="YuCoin balance"
-    />
+    <YuCoinColourIcon size={24} accessibilityLabel="YuCoin balance" />
   </div>
 );
 
@@ -224,9 +220,9 @@ const SurgeBadge: React.FC<SurgeBadgeProps> = ({
   </div>
 );
 
-// ─── HomeScreen ───────────────────────────────────────────────────────────────
+// ─── YuCoinScreen ───────────────────────────────────────────────────────────────
 
-export interface HomeScreenActivity {
+export interface YuCoinScreenActivity {
   /** Step count. */
   steps: number;
   /** Distance in km. */
@@ -235,7 +231,7 @@ export interface HomeScreenActivity {
   minutes: number;
 }
 
-export interface HomeScreenProps {
+export interface YuCoinScreenProps {
   /**
    * User's current YuCoin balance displayed in the navigation header.
    * @default 400
@@ -249,7 +245,7 @@ export interface HomeScreenProps {
   /**
    * Today's activity statistics.
    */
-  activity?: HomeScreenActivity;
+  activity?: YuCoinScreenActivity;
   /**
    * Text for the main call-to-action button.
    * @default "Take a challenge (1 left)"
@@ -283,6 +279,11 @@ export interface HomeScreenProps {
    * Callback fired when a nav tab is pressed.
    */
   onTabPress?: (id: string) => void;
+  /**
+   * Background image source URL. Accepts any imported PNG asset or URL string.
+   * Defaults to the Bright / Forest / Select background.
+   */
+  background?: string;
 }
 
 // ─── Layout constants ─────────────────────────────────────────────────────────
@@ -294,7 +295,7 @@ const HEADER_HEIGHT = 92;
 const ACTION_BAR_HEIGHT = 82;
 
 /**
- * HomeScreen
+ * YuCoinScreen
  *
  * Full-screen template for the YuLife app home (Today) screen. Combines the
  * `NavigationHeader` and `ActionBar` design-system components with the
@@ -310,7 +311,7 @@ const ACTION_BAR_HEIGHT = 82;
  * Figma reference: YuLife App — Login Spec, node 28:15936
  * https://www.figma.com/design/4tvQWEu6I2nmPKK8eSVtOM/YuLife-App---Login--Spec-?node-id=28-15936
  */
-export const HomeScreen: React.FC<HomeScreenProps> = ({
+export const YuCoinScreen: React.FC<YuCoinScreenProps> = ({
   yuCoinBalance = 400,
   yuCoinToday = 200,
   activity = { steps: 0, distanceKm: 0, minutes: 0 },
@@ -321,6 +322,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
   hasNotification = false,
   activeTabId = "yucoin",
   onTabPress,
+  background = defaultBackground,
 }) => {
   return (
     <div
@@ -331,14 +333,14 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         backgroundColor: BG_CREAM,
         position: "relative",
       }}
-      aria-label="YuCoin home screen"
+      aria-label="YuCoin screen"
     >
       {/* ── Background illustration ───────────────────────────────────────── */}
       {/* Figma node 28:15937 (Challenge / Background). Covers the full viewport. */}
       <img
         aria-hidden
         alt=""
-        src={challengeBackground}
+        src={background}
         style={{
           position: "fixed",
           inset: 0,
@@ -517,8 +519,6 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         </div>
 
         {/* CTA button — Figma bottom=106 from screen → bottom: 106-82=24 from content */}
-        {/* Wrapper handles absolute positioning so no transform is passed to Button,
-            keeping its press-down translateY animation intact. */}
         <div
           style={{
             position: "absolute",
@@ -567,4 +567,4 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
   );
 };
 
-export default HomeScreen;
+export default YuCoinScreen;

@@ -15,13 +15,13 @@ import type { ActionBarItem } from "./ActionBar";
 const DEFAULT_ITEMS: ActionBarItem[] = [
   {
     id: "yucoin",
-    icon: TodaysYuCoinIcon,
+    icon: MapIcon,
     label: "YuCoin",
     accessibilityLabel: "YuCoin",
   },
   {
     id: "quests",
-    icon: MapIcon,
+    icon: TodaysYuCoinIcon,
     label: "Quests",
     accessibilityLabel: "Quests",
   },

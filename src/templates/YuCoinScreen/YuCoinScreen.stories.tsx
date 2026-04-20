@@ -1,21 +1,22 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { HomeScreen } from "./HomeScreen";
+import { YuCoinScreen } from "./YuCoinScreen";
+import { gameBackgrounds, defaultBackground } from "../../assets/game-backgrounds";
 
 // ─── Meta ─────────────────────────────────────────────────────────────────────
 
-const meta: Meta<typeof HomeScreen> = {
-  title: "Templates/HomeScreen",
-  component: HomeScreen,
+const meta: Meta<typeof YuCoinScreen> = {
+  title: "Templates/YuCoinScreen",
+  component: YuCoinScreen,
   parameters: {
     layout: "centered",
     viewport: { defaultViewport: "iphone15" },
     docs: {
       description: {
         component: `
-## Home Screen Template
+## YuCoin Screen Template
 
-The **Home Screen** (Today Screen) is the primary landing screen for the YuLife app.
+The **YuCoin Screen** (Today Screen) is the primary landing screen for the YuLife app.
 It brings together the \`NavigationHeader\` and \`ActionBar\` design-system components with
 the illustrated YuCoin world — allowing users to see today's earnings, activity stats,
 and jump into challenges.
@@ -71,11 +72,17 @@ and jump into challenges.
       description: "Active navigation tab.",
     },
     activity: { control: "object" },
+    background: {
+      control: "select",
+      options: Object.keys(gameBackgrounds),
+      mapping: gameBackgrounds,
+      description: "Background illustration. Choose any planet / world combination.",
+    },
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof HomeScreen>;
+type Story = StoryObj<typeof YuCoinScreen>;
 
 // ─── Stories ──────────────────────────────────────────────────────────────────
 
@@ -93,6 +100,7 @@ export const Default: Story = {
     surgeTotal: 5,
     hasNotification: false,
     activeTabId: "yucoin",
+    background: defaultBackground,
   },
   parameters: {
     docs: {
@@ -118,6 +126,7 @@ export const ActiveDay: Story = {
     surgeTotal: 5,
     hasNotification: true,
     activeTabId: "yucoin",
+    background: defaultBackground,
   },
   parameters: {
     docs: {
@@ -143,6 +152,7 @@ export const FullDay: Story = {
     surgeTotal: 5,
     hasNotification: false,
     activeTabId: "yucoin",
+    background: defaultBackground,
   },
   parameters: {
     docs: {
@@ -161,7 +171,7 @@ export const Interactive: Story = {
     const [activeTabId, setActiveTabId] = useState("yucoin");
 
     return (
-      <HomeScreen
+      <YuCoinScreen
         yuCoinBalance={400}
         yuCoinToday={200}
         activity={{ steps: 0, distanceKm: 0, minutes: 0 }}
