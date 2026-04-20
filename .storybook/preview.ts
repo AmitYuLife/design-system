@@ -34,7 +34,15 @@ const mobileViewports = {
   },
 };
 
+const orderMap = {
+  Foundations: 0,
+  Components: 1,
+  Templates: 2,
+  "Game Assets": 3,
+};
+
 const preview: Preview = {
+  tags: ["autodocs"],
   parameters: {
     viewport: {
       viewports: {
@@ -59,5 +67,14 @@ const preview: Preview = {
     },
   },
 };
+
+// Custom sort function for sidebar
+if (typeof globalThis !== "undefined") {
+  (globalThis as any).__STORYBOOK_CONFIG__ = {
+    storySort: {
+      order: ["Foundations", "Components", "Templates", "Game Assets"],
+    },
+  };
+}
 
 export default preview;
