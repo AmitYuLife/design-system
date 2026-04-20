@@ -61,15 +61,6 @@ for (const bg of backgrounds) {
 
 const WORLD_ORDER = ["Forest", "Ocean", "Desert", "Mountain"];
 
-const SECTION_COLOURS: Record<string, string> = {
-  Active:      "#d1fae5",
-  Select:      "#dbeafe",
-  Result:      "#fef9c3",
-  YuCoin:      "#fce7f3",
-  Mindfulness: "#ede9fe",
-  Yuniversal:  "#f3f4f6",
-};
-
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
 interface CardProps {
@@ -85,43 +76,32 @@ const BackgroundCard: React.FC<CardProps> = ({ asset }) => (
       gap: 6,
     }}
   >
-    <img
-      src={asset.src}
-      alt={asset.filename}
+    <a href={asset.src} target="_blank" rel="noreferrer">
+      <img
+        src={asset.src}
+        alt={asset.filename}
+        style={{
+          width: 200,
+          height: 432,
+          objectFit: "cover",
+          borderRadius: 10,
+          display: "block",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+          cursor: "pointer",
+        }}
+      />
+    </a>
+    <div
       style={{
-        width: 100,
-        height: 216,
-        objectFit: "cover",
-        borderRadius: 10,
-        display: "block",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+        fontSize: 10,
+        fontWeight: 600,
+        color: "#374151",
+        lineHeight: "14px",
+        textAlign: "center",
+        maxWidth: 200,
       }}
-    />
-    <div style={{ textAlign: "center", maxWidth: 100 }}>
-      <div
-        style={{
-          fontSize: 10,
-          fontWeight: 600,
-          color: "#374151",
-          lineHeight: "14px",
-        }}
-      >
-        {asset.challenge === "None" ? "—" : asset.challenge}
-      </div>
-      <div
-        style={{
-          display: "inline-block",
-          marginTop: 3,
-          padding: "1px 6px",
-          borderRadius: 9999,
-          fontSize: 9,
-          fontWeight: 500,
-          backgroundColor: SECTION_COLOURS[asset.section] ?? "#f3f4f6",
-          color: "#6b7280",
-        }}
-      >
-        {asset.section}
-      </div>
+    >
+      {asset.challenge === "None" ? asset.section : asset.challenge}
     </div>
   </div>
 );

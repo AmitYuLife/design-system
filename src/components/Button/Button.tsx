@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { palette, colors } from "../../tokens/colors";
 import { textStyles } from "../../tokens/typography";
+import { spacing } from "../../tokens/spacing";
+import { radii } from "../../tokens/radii";
 
 // ─── Figma colour tokens ───────────────────────────────────────────────────────
 // Source: YuLife App Storybook, node 12783:985
@@ -120,7 +122,7 @@ export const Button: React.FC<ButtonProps> = ({
     // Size
     height:         isLarge ? 48 : undefined,
     padding:        isLarge ? "16px 32px" : "8px 16px",
-    borderRadius:   48,
+    borderRadius:   radii.pill,
     // Default width for Large; Small sizes to content
     width:          isLarge ? 224 : undefined,
     // Press-down animation — only for shadow variants
@@ -212,7 +214,7 @@ export const Button: React.FC<ButtonProps> = ({
         style={{
           display:    "flex",
           alignItems: "center",
-          gap:        8,
+          gap:        spacing[2],
           overflow:   "hidden",
           opacity:    contentOpacity,
         }}

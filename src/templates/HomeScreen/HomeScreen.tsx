@@ -17,6 +17,7 @@ import {
 import { colors, palette } from "../../tokens/colors";
 import { fontFamily, fontSize, fontWeight } from "../../tokens/typography";
 import { spacing } from "../../tokens/spacing";
+import { radii } from "../../tokens/radii";
 import type { ActionBarItem } from "../../components/ActionBar";
 
 // ─── Asset imports ────────────────────────────────────────────────────────────
@@ -203,7 +204,7 @@ const SurgeBadge: React.FC<SurgeBadgeProps> = ({
         right: "14%",
         height: "26%",
         backgroundColor: COLOR_SURGE,
-        borderRadius: 4,
+        borderRadius: radii.sm,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -402,7 +403,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               right: 1,
               width: 8,
               height: 8,
-              borderRadius: "50%",
+              borderRadius: radii.pill,
               backgroundColor: COLOR_CTA,
               border: `1.5px solid ${BG_CREAM}`,
               boxSizing: "border-box",

@@ -155,6 +155,13 @@ export interface NavigationHeaderProps {
    */
   rightSlot?: React.ReactNode;
   /**
+   * Whether to render the centred YuLife logo in the navigation bar.
+   * Set to `false` when the logo is not needed — e.g. hero headers that
+   * show a partner logo in the content area below.
+   * @default true
+   */
+  showLogo?: boolean;
+  /**
    * Optional content for the 8px strip below the navigation bar.
    * When omitted the strip is empty space. Use for tab indicators,
    * progress bars, or thin dividers.
@@ -182,6 +189,7 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
   background = false,
   shadow = false,
   darkMode = false,
+  showLogo = true,
   leftSlot,
   rightSlot,
   subNavSlot,
@@ -236,19 +244,21 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
         </div>
 
         {/* Centred logo */}
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <YuLifeLogo darkMode={darkMode} size={24} />
-        </div>
+        {showLogo && (
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <YuLifeLogo darkMode={darkMode} size={24} />
+          </div>
+        )}
 
         {/* Right slot */}
         <div

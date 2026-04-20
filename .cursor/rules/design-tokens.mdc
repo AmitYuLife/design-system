@@ -1,0 +1,92 @@
+---
+description: Enforce design token usage for spacing, radii, colours, and typography when implementing Figma designs or writing component code.
+globs: src/**/*.tsx,src/**/*.ts
+alwaysApply: false
+---
+
+# Design Token Usage
+
+All component and template code must reference design tokens — never hardcode raw values.
+Tokens live in `src/tokens/` and are re-exported from `src/tokens/index.ts`.
+
+## Spacing — `spacing` / `space`
+
+```ts
+import { spacing, space } from "@/tokens/spacing";
+
+// ❌ BAD
+gap: 8, padding: 16
+
+// ✅ GOOD
+gap: spacing[2], padding: space.componentPaddingMD
+```
+
+| Token | Value | Use for |
+|---|---|---|
+| `spacing[1]` | 4px | micro gaps |
+| `spacing[2]` | 8px | icon gaps, tight padding |
+| `spacing[3]` | 12px | compact padding |
+| `spacing[4]` | 16px | standard padding (base unit) |
+| `spacing[6]` | 24px | section padding |
+| `space.componentPaddingMD` | 16px | card / component inner padding |
+| `space.stackSM` | 8px | vertical stack gap |
+| `space.pagePaddingHorizontal` | 16px | screen edge padding |
+
+## Border Radius — `radii`
+
+```ts
+import { radii } from "@/tokens/radii";
+
+// ❌ BAD
+borderRadius: 8, borderRadius: 48, borderRadius: "50%"
+
+// ✅ GOOD
+borderRadius: radii.md, borderRadius: radii.pill
+```
+
+| Token | Value | Use for |
+|---|---|---|
+| `radii.none` | 0 | sharp corners |
+| `radii.xs` | 2px | decorative SVG elements |
+| `radii.sm` | 4px | badges, tags, code chips |
+| `radii.md` | 8px | cards, inputs, action bars |
+| `radii.lg` | 12px | icon containers, dialogs |
+| `radii.xl` | 16px | bottom sheets, modals |
+| `radii["2xl"]` | 24px | large cards, panels |
+| `radii.pill` | 9999px | buttons, toggles, notification dots |
+
+## Colours — `colors` / `palette`
+
+```ts
+import { colors, palette } from "@/tokens/colors";
+
+// ❌ BAD
+color: "#E30D76", backgroundColor: "#FFFFFF"
+
+// ✅ GOOD
+color: colors.actionPrimaryHover, backgroundColor: colors.bgElevated
+```
+
+Always prefer semantic `colors.*` tokens. Use `palette.*` only when no semantic token exists and document why.
+
+## Typography — `textStyles` / `fontSize` / `fontWeight`
+
+```ts
+import { textStyles, fontSize, fontWeight, fontFamily } from "@/tokens/typography";
+
+// ❌ BAD
+fontSize: 16, fontWeight: "700"
+
+// ✅ GOOD
+...textStyles.body1Bold   // preferred: spread the full preset
+fontSize: fontSize.md     // acceptable: individual scale token
+```
+
+## Figma → token mapping workflow
+
+When implementing a Figma design:
+1. Map every Figma spacing/padding value to the closest `spacing[n]` or `space.*` token.
+2. Map every `borderRadius` to a `radii.*` token (see table above).
+3. Map every colour to a `colors.*` semantic token; fall back to `palette.*` with a comment.
+4. Map every text style to a `textStyles.*` preset.
+5. Never leave a comment like `// 8px` — let the token name document the intent.

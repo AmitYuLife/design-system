@@ -3,6 +3,7 @@ import { Icon } from "../../icons";
 import { colors, palette } from "../../tokens/colors";
 import { fontFamily, fontSize, fontWeight } from "../../tokens/typography";
 import { spacing } from "../../tokens/spacing";
+import { radii } from "../../tokens/radii";
 
 // ─── Colour constants ─────────────────────────────────────────────────────────
 
@@ -96,7 +97,7 @@ const NavItem: React.FC<NavItemProps> = ({ item, isActive, onPress }) => {
               right: 0,
               width: 8,
               height: 8,
-              borderRadius: "50%",
+              borderRadius: radii.pill,
               backgroundColor: COLOR_ACTIVE,
               border: `1.5px solid ${colors.bgBase}`,
               boxSizing: "border-box",
@@ -160,7 +161,7 @@ export const ActionBar: React.FC<ActionBarProps> = ({
         height: 58,
         padding: spacing[2],
         backgroundColor: colors.bgBase,
-        borderRadius: 8,
+        borderRadius: radii.md,
         boxShadow: "0px 4px 16px 0px rgba(53, 60, 64, 0.08)",
         boxSizing: "border-box",
       }}

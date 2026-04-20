@@ -3,7 +3,13 @@ import path from "path";
 import svgr from "vite-plugin-svgr";
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(ts|tsx|mdx)"],
+  stories: [
+    "../src/tokens/**/*.stories.@(ts|tsx|mdx)",
+    "../src/icons/**/*.stories.@(ts|tsx|mdx)",
+    "../src/components/**/*.stories.@(ts|tsx|mdx)",
+    "../src/templates/**/*.stories.@(ts|tsx|mdx)",
+    "../src/game-assets/**/*.stories.@(ts|tsx|mdx)",
+  ],
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-viewport",
@@ -12,6 +18,17 @@ const config: StorybookConfig = {
     name: "@storybook/react-vite",
     options: {},
   },
+  core: {
+    disableProjectJson: false,
+  },
+  managerHead: (head) => `
+    ${head}
+    <script>
+      window.__STORYBOOK_CONFIG__ = {
+        sidebarSort: ['Foundations', 'Components', 'Templates', 'Game Assets']
+      };
+    </script>
+  `,
   async viteFinal(config) {
     const { mergeConfig } = await import("vite");
 

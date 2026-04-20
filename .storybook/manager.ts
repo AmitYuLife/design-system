@@ -39,9 +39,20 @@ const theme = create({
   inputBorderRadius: 6,
 });
 
+const sidebarOrder = ["Foundations", "Components", "Templates", "Game Assets"];
+
 addons.setConfig({
   theme,
   sidebar: {
     showRoots: true,
+    filters: {
+      patterns: (item: any) => {
+        // Extract root name from the item
+        const root = item.root || item.name?.split("/")[0] || "";
+        const index = sidebarOrder.indexOf(root);
+        // Return negative index to sort in custom order
+        return index !== -1 ? index - 100 : 999;
+      },
+    },
   },
 });
