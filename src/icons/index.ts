@@ -50,6 +50,10 @@ export { default as DropIcon }             from "./svg/Drop.svg?react";
 export { default as MealIcon }             from "./svg/Meal.svg?react";
 export { default as PlasticIcon }          from "./svg/Plastic.svg?react";
 
+// ─── Logos ────────────────────────────────────────────────────────────────────
+export { default as YuLifeSquareColourIcon } from "./svg/YuLifeSquareColour.svg?react";
+export { default as YuLifeSquareMonoIcon }   from "./svg/YuLifeSquareMono.svg?react";
+
 // ─── YuLife ───────────────────────────────────────────────────────────────────
 export { default as TodaysYuCoinIcon }     from "./svg/TodaysYuCoin.svg?react";
 export { default as MapIcon }              from "./svg/Map.svg?react";
@@ -60,3 +64,81 @@ export { default as ChestIcon }            from "./svg/Chest.svg?react";
 export { default as TreasureChestIcon }    from "./svg/TreasureChest.svg?react";
 export { default as UnityIcon }            from "./svg/Unity.svg?react";
 export { default as LevelIcon }            from "./svg/Level.svg?react";
+
+// ─── Colour Icons ─────────────────────────────────────────────────────────────
+export type { ColourIconProps } from "./colour";
+export {
+  YuCoinColourIcon,
+  TrophyColourIcon,
+  ChestColourIcon,
+  GiftBoxColourIcon,
+  YudokuColourIcon,
+  MapColourIcon,
+  SurgeColourIcon,
+  FlameColourIcon,
+  LotusColourIcon,
+  PlantTreeColourIcon,
+  TreeColourIcon,
+  FoodDonationColourIcon,
+  MealColourIcon,
+  GlassColourIcon,
+  WaterColourIcon,
+  OceanColourIcon,
+  EarthColourIcon,
+  AppleHealthColourIcon,
+  TimeColourIcon,
+  StepsColourIcon,
+  ChangeArmourColourIcon,
+  GlovesColourIcon,
+  WalletColourIcon,
+  LockColourIcon,
+  WorkoutColourIcon,
+  TagColourIcon,
+  VoucherColourIcon,
+  CalculatorColourIcon,
+  BirthdayColourIcon,
+  WeightColourIcon,
+  HeightColourIcon,
+  CompareCoverColourIcon,
+  ContactDetailsColourIcon,
+  GPDetailsColourIcon,
+  PaymentDetailsColourIcon,
+  PrimaryColourIcon,
+  CancelPolicyColourIcon,
+  CertificateColourIcon,
+  TandCsColourIcon,
+  CoverDetailsColourIcon,
+  PolicySummaryColourIcon,
+  PaymentHistoryColourIcon,
+  PDFColourIcon,
+  ContributionColourIcon,
+  StreakSaverColourIcon,
+  CalendarColourIcon,
+  StreakColourIcon,
+  WeeklyColourIcon,
+  PolicyScheduleColourIcon,
+  FAQColourIcon,
+  HintsColourIcon,
+  TalkColourIcon,
+  UnlinkColourIcon,
+  TurnsColourIcon,
+  MistakesColourIcon,
+  PiggyBankColourIcon,
+  DonateColourIcon,
+  CustomCoverColourIcon,
+  MembersColourIcon,
+  BeneficiaryColourIcon,
+  LevelBubbleColourIcon,
+  ExtraChallengeColourIcon,
+  BoostedChallengeColourIcon,
+  DrinkColourIcon,
+  DesertParodiaColourIcon,
+  DesertSaguaroColourIcon,
+  ForestLeavesColourIcon,
+  MountainFeatherColourIcon,
+  OceanJellyfishColourIcon,
+  OceanShellColourIcon,
+  BellColourIcon,
+  DuelsColourIcon,
+  PhoneColourIcon,
+} from "./colour";

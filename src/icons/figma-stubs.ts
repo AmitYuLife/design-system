@@ -5,8 +5,11 @@
  * The @figma/code-connect CLI cannot process Vite-specific import syntax,
  * so this file provides named stub components with the same interface that
  * Code Connect can parse and upload to Figma without Vite in the pipeline.
+ *
+ * Colour icon stubs use FC<ColourIconProps> to match the real component interface.
  */
 import type { FC, SVGProps } from "react";
+import type { ColourIconProps } from "./colour";
 
 const mkStub = (): FC<SVGProps<SVGSVGElement>> =>
   (): null => null;
@@ -59,6 +62,10 @@ export const DropIcon             = mkStub();
 export const MealIcon             = mkStub();
 export const PlasticIcon          = mkStub();
 
+// ─── Logos ────────────────────────────────────────────────────────────────────
+export const YuLifeSquareColourIcon = mkStub();
+export const YuLifeSquareMonoIcon   = mkStub();
+
 // ─── YuLife ───────────────────────────────────────────────────────────────────
 export const TodaysYuCoinIcon     = mkStub();
 export const MapIcon              = mkStub();
@@ -69,3 +76,80 @@ export const ChestIcon            = mkStub();
 export const TreasureChestIcon    = mkStub();
 export const UnityIcon            = mkStub();
 export const LevelIcon            = mkStub();
+
+// ─── Colour Icons ─────────────────────────────────────────────────────────────
+const mkColourStub = (): FC<ColourIconProps> => (): null => null;
+
+export const YuCoinColourIcon           = mkColourStub();
+export const TrophyColourIcon           = mkColourStub();
+export const ChestColourIcon            = mkColourStub();
+export const GiftBoxColourIcon          = mkColourStub();
+export const YudokuColourIcon           = mkColourStub();
+export const MapColourIcon              = mkColourStub();
+export const SurgeColourIcon            = mkColourStub();
+export const FlameColourIcon            = mkColourStub();
+export const LotusColourIcon            = mkColourStub();
+export const PlantTreeColourIcon        = mkColourStub();
+export const TreeColourIcon             = mkColourStub();
+export const FoodDonationColourIcon     = mkColourStub();
+export const MealColourIcon             = mkColourStub();
+export const GlassColourIcon            = mkColourStub();
+export const WaterColourIcon            = mkColourStub();
+export const OceanColourIcon            = mkColourStub();
+export const EarthColourIcon            = mkColourStub();
+export const AppleHealthColourIcon      = mkColourStub();
+export const TimeColourIcon             = mkColourStub();
+export const StepsColourIcon            = mkColourStub();
+export const ChangeArmourColourIcon     = mkColourStub();
+export const GlovesColourIcon           = mkColourStub();
+export const WalletColourIcon           = mkColourStub();
+export const LockColourIcon             = mkColourStub();
+export const WorkoutColourIcon          = mkColourStub();
+export const TagColourIcon              = mkColourStub();
+export const VoucherColourIcon          = mkColourStub();
+export const CalculatorColourIcon       = mkColourStub();
+export const BirthdayColourIcon         = mkColourStub();
+export const WeightColourIcon           = mkColourStub();
+export const HeightColourIcon           = mkColourStub();
+export const CompareCoverColourIcon     = mkColourStub();
+export const ContactDetailsColourIcon   = mkColourStub();
+export const GPDetailsColourIcon        = mkColourStub();
+export const PaymentDetailsColourIcon   = mkColourStub();
+export const PrimaryColourIcon          = mkColourStub();
+export const CancelPolicyColourIcon     = mkColourStub();
+export const CertificateColourIcon      = mkColourStub();
+export const TandCsColourIcon           = mkColourStub();
+export const CoverDetailsColourIcon     = mkColourStub();
+export const PolicySummaryColourIcon    = mkColourStub();
+export const PaymentHistoryColourIcon   = mkColourStub();
+export const PDFColourIcon              = mkColourStub();
+export const ContributionColourIcon     = mkColourStub();
+export const StreakSaverColourIcon      = mkColourStub();
+export const CalendarColourIcon         = mkColourStub();
+export const StreakColourIcon           = mkColourStub();
+export const WeeklyColourIcon           = mkColourStub();
+export const PolicyScheduleColourIcon   = mkColourStub();
+export const FAQColourIcon              = mkColourStub();
+export const HintsColourIcon            = mkColourStub();
+export const TalkColourIcon             = mkColourStub();
+export const UnlinkColourIcon           = mkColourStub();
+export const TurnsColourIcon            = mkColourStub();
+export const MistakesColourIcon         = mkColourStub();
+export const PiggyBankColourIcon        = mkColourStub();
+export const DonateColourIcon           = mkColourStub();
+export const CustomCoverColourIcon      = mkColourStub();
+export const MembersColourIcon          = mkColourStub();
+export const BeneficiaryColourIcon      = mkColourStub();
+export const LevelBubbleColourIcon      = mkColourStub();
+export const ExtraChallengeColourIcon   = mkColourStub();
+export const BoostedChallengeColourIcon = mkColourStub();
+export const DrinkColourIcon            = mkColourStub();
+export const DesertParodiaColourIcon    = mkColourStub();
+export const DesertSaguaroColourIcon    = mkColourStub();
+export const ForestLeavesColourIcon     = mkColourStub();
+export const MountainFeatherColourIcon  = mkColourStub();
+export const OceanJellyfishColourIcon   = mkColourStub();
+export const OceanShellColourIcon       = mkColourStub();
+export const BellColourIcon             = mkColourStub();
+export const DuelsColourIcon            = mkColourStub();
+export const PhoneColourIcon            = mkColourStub();
