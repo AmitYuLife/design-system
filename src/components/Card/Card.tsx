@@ -28,6 +28,12 @@ export interface CardProps {
    */
   elevation?: CardElevation;
   /**
+   * Show or hide the 1 px border. When false, the card renders with no border
+   * and relies solely on elevation or background colour for definition.
+   * @default true
+   */
+  border?: boolean;
+  /**
    * Inner padding applied around `children`.
    * Defaults to 16 px, matching the Figma specification.
    * Set to `0` when embedding edge-to-edge media.
@@ -56,6 +62,7 @@ export const Card: React.FC<CardProps> = ({
   children,
   overline,
   elevation = "Off",
+  border = true,
   padding = space.componentPaddingMD,
   style,
   wrapperStyle,
@@ -68,7 +75,7 @@ export const Card: React.FC<CardProps> = ({
     width: "100%",
     boxSizing: "border-box",
     backgroundColor: colors.bgElevated,
-    border: `1px solid ${palette.neutral300}`,
+    border: border ? `1px solid ${palette.neutral300}` : undefined,
     borderRadius: radii.md,
     padding,
     boxShadow: isElevated ? `0px 4px 0px 0px ${palette.neutral300}` : undefined,

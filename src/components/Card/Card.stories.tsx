@@ -52,6 +52,10 @@ icon + title + description + trailing-icon row in three sizing variants.
       options: ["Off", "On"],
       description: "Drop-shadow depth.",
     },
+    border: {
+      control: "boolean",
+      description: "Show or hide the 1 px border.",
+    },
     overline: {
       control: "text",
       description: "Optional overline label rendered above the card.",
@@ -150,6 +154,25 @@ export const WithOverline: Story = {
   },
 };
 
+/**
+ * Both states side-by-side: with border (default) and without.
+ */
+export const Borders: Story = {
+  render: () => (
+    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+      <Card>{sampleRow}</Card>
+      <Card border={false}>{sampleRow}</Card>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "Bordered (left, default) and borderless (right) variants.",
+      },
+    },
+  },
+};
+
 // ─── Custom content ───────────────────────────────────────────────────────────
 
 /**
@@ -200,6 +223,7 @@ export const CustomContent: Story = {
 export const Playground: Story = {
   args: {
     elevation: "Off",
+    border: true,
     overline: "",
     padding: 16,
     children: sampleRow,
