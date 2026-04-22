@@ -1,0 +1,78 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Welcome" />
+
+<div style={{ fontFamily: '"Inter", -apple-system, sans-serif', maxWidth: 720, margin: "0 auto", padding: "40px 24px" }}>
+
+# Journey for App
+### YuLife App Design System
+
+A living component library for the YuLife mobile app. All components are built with **React Native Web** so they render faithfully in the browser — no device or simulator required.
+
+Each component is linked back to Figma via **Figma Code Connect**, so the code snippets you see in Figma Dev Mode always match what's here.
+
+---
+
+## Quick links
+
+| Section | What's inside |
+|---------|--------------|
+| [Foundations](/docs/foundations-colours--docs) | Colour palette, typography, spacing, radii |
+| [Iconography](/docs/foundations-iconography--docs) | 51 line icons + colour icon library |
+| [Components](/docs/components-actionbar--docs) | ActionBar, Button, Card, Hero, Tile, and more |
+| [Templates](/docs/templates-yucoinscreen--docs) | Full-screen app screen compositions |
+| [Game Assets](/docs/game-assets-challengebackgrounds--docs) | Planet backgrounds, challenge heroes |
+
+---
+
+## Changelog
+
+### v0.6 — April 2026
+- **Journey for App** — project renamed from "Design System" to Journey for App
+- **ProgressBar** component added
+- **Badge** component added
+- **ModalTemplate** template added
+- **ButtonGroup** and **Tile Image / Tile Group** now nest correctly under their parent in the sidebar
+- `Card` gains an optional `border` prop
+
+### v0.5 — April 2026
+- **Tile** component with icon + label, plus `TileImage` and `TileGroup` layout variants
+- **YuCoinValue** component for displaying coin amounts with the YuCoin icon
+- **HealthCashPlan** page composing Hero, Card, Tile, and ActionBar
+- **SinglePageTemplate** scrollable single-page layout
+- 20 challenge-hero assets (4 worlds × 5 challenge types)
+- Partner service logos (Betterhelp, Phio, SkinVision)
+
+### v0.4 — April 2026
+- **Card** and **CardInfoContent** components with elevation variants
+- **Hero** and **HeroProductDetails** full-bleed hero image chassis
+- **Radii** and **Spacing** token stories
+- **Logo** story (colour + mono variants)
+- Insurance product assets (hero background, Bupa/Covea logos)
+- Sidebar now uses ordered section groups (Foundations → Components → Templates → Game Assets)
+
+### v0.3 — April 2026
+- **Button** component with primary / secondary / ghost variants, pressed and disabled states
+- **YuCoinScreen** template — full Today screen with NavigationHeader, coin graphic, activity stats, and ActionBar
+- **NavigationHeader** component with iOS-style status bar and light/dark variants
+- **ActionBar** five-tab bottom navigation with active-state and notification dot
+- 80+ game-background assets organised by planet and world variant
+- 110+ colour SVG icons with composite `ColourIcon` components
+- Docs preview fixed: all story iframes now render correctly in the Docs tab
+
+### v0.2 — April 2026
+- 51 real line icons from the YuLife Figma iconography file
+- Figma Code Connect published for all 51 icons
+- Colour palette, typography, and spacing design token stories
+- Storybook autodocs enabled globally
+
+### v0.1 — April 2026
+- Initial Storybook setup with Vite, React Native Web, and SVGR
+- GitHub repository created at [AmitYuLife/design-system](https://github.com/AmitYuLife/design-system)
+- Figma Code Connect scaffolded
+
+---
+
+<small style={{ color: "#6B7280" }}>Built with Storybook 8 · React Native Web · Vite · Figma Code Connect</small>
+
+</div>

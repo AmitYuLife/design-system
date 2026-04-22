@@ -61,7 +61,7 @@ const preview: Preview = {
     options: {
       storySort: {
         method: "alphabetical",
-        order: ["Foundations", "Components", "Templates", "Game Assets"],
+        order: ["Welcome", "Foundations", "Components", "Templates", "Game Assets", "Pages"],
       },
     },
   },
