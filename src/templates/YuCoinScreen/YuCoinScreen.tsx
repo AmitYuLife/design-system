@@ -1,6 +1,7 @@
 import React from "react";
 import { NavigationHeader } from "../../components/NavigationHeader";
 import { ActionBar } from "../../components/ActionBar";
+import { Badge } from "../../components/Badge";
 import { Button } from "../../components/Button";
 import { YuCoinValue } from "../../components/YuCoinValue";
 import { Icon } from "../../icons";
@@ -14,6 +15,7 @@ import {
   CyclingIcon,
   MindfulnessIcon,
   TodaysYuCoinIcon,
+  StreakColourIcon,
 } from "../../icons";
 import { colors, palette } from "../../tokens/colors";
 import { fontFamily, fontSize, fontWeight } from "../../tokens/typography";
@@ -34,7 +36,6 @@ const BG_CREAM = "#fffcd7";
 const COLOR_HEADING = palette.neutral700;   // #464647
 const COLOR_BODY = "#5A5A5C";              // Neutral/N800
 const COLOR_CTA = colors.actionPrimaryHover; // #E30D76
-const COLOR_SURGE = "#F43E8E";             // Primary/P400
 
 // ─── Default nav items ────────────────────────────────────────────────────────
 
@@ -104,100 +105,6 @@ const ActivityStat: React.FC<ActivityStatProps> = ({ icon, value }) => (
   </div>
 );
 
-interface SurgeBadgeProps {
-  challengesDone: number;
-  challengesTotal: number;
-}
-
-const SurgeBadge: React.FC<SurgeBadgeProps> = ({
-  challengesDone,
-  challengesTotal,
-}) => (
-  <div
-    style={{
-      position: "absolute",
-      right: 16,
-      top: 104,
-      width: 64,
-      height: 72,
-      zIndex: 101,
-      userSelect: "none",
-    }}
-    aria-label={`Surge: ${challengesDone} of ${challengesTotal} challenges completed`}
-    role="img"
-  >
-    {/*
-     * Pink half-circle bubble — inline SVG from Figma node I28:15946;304:16972.
-     * viewBox="0 0 64 53.874": a circle clipped to a flat bottom edge.
-     */}
-    <svg
-      viewBox="0 0 64 53.874"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "75%" }}
-      aria-hidden
-    >
-      <path
-        d="M32 0C49.6731 0 64 14.3269 64 32C64 40.4602 60.7152 48.152 55.3535 53.874C54.2601 52.7207 52.7147 52 51 52H13C11.285 52 9.73898 52.7204 8.64551 53.874C3.2841 48.1521 0 40.46 0 32C0 14.3269 14.3269 0 32 0Z"
-        fill={COLOR_SURGE}
-      />
-    </svg>
-
-    {/*
-     * Checkmark icon — inline SVG from Figma node I28:15946;304:16975 "Vector (Stroke)".
-     * viewBox="0 0 12.8333 10.0333". Scaled to fill ~44% of the badge width.
-     */}
-    <svg
-      viewBox="0 0 12.8333 10.0333"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{
-        position: "absolute",
-        top: "14%",
-        left: "50%",
-        transform: "translateX(-50%)",
-        width: 28,
-        height: 22,
-      }}
-      aria-hidden
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M12.4691 0.319755C12.9368 0.762908 12.9567 1.50133 12.5136 1.96907L5.2183 9.66907C4.9963 9.90338 4.68715 10.0353 4.36437 10.0333C4.0416 10.0314 3.73405 9.8958 3.51489 9.65883L0.310172 6.19383C-0.127326 5.7208 -0.0985206 4.98267 0.374511 4.54517C0.847543 4.10767 1.58567 4.13648 2.02317 4.60951L4.38165 7.15954L10.8198 0.364269C11.2629 -0.103469 12.0013 -0.123399 12.4691 0.319755Z"
-        fill="#FFFFFF"
-      />
-    </svg>
-
-    {/* Counter pill label */}
-    <div
-      style={{
-        position: "absolute",
-        bottom: 0,
-        left: "14%",
-        right: "14%",
-        height: "26%",
-        backgroundColor: COLOR_SURGE,
-        borderRadius: radii.sm,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <span
-        style={{
-          fontFamily: fontFamily.sans,
-          fontSize: fontSize.xs,
-          fontWeight: fontWeight.bold,
-          color: "#FFFFFF",
-          letterSpacing: "0.4px",
-        }}
-      >
-        {challengesDone}/{challengesTotal}
-      </span>
-    </div>
-  </div>
-);
 
 // ─── YuCoinScreen ───────────────────────────────────────────────────────────────
 
@@ -390,7 +297,21 @@ export const YuCoinScreen: React.FC<YuCoinScreenProps> = ({
 
       {/* ── Surge badge (top-right floating) ──────────────────────────────── */}
       {/* Fixed to viewport top-right. 16px from right edge (375 - 295 - 64). */}
-      <SurgeBadge challengesDone={surgeCompleted} challengesTotal={surgeTotal} />
+      <div
+        style={{
+          position: "absolute",
+          right: 16,
+          top: 104,
+          zIndex: 101,
+        }}
+      >
+        <Badge
+          icon={<StreakColourIcon size={24} />}
+          label={`${surgeCompleted}/${surgeTotal}`}
+          color={palette.pink600}
+          accessibilityLabel={`Active streak: ${surgeCompleted} of ${surgeTotal} challenges completed`}
+        />
+      </div>
 
       {/* ── Content area ─────────────────────────────────────────────────── */}
       {/*

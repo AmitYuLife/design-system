@@ -1,5 +1,6 @@
 import React from "react";
 import { colors, space } from "../../tokens";
+import { spacing } from "../../tokens/spacing";
 import YuLifeSquareColourSvg from "../../icons/svg/YuLifeSquareColour.svg?react";
 import YuLifeSquareMonoSvg from "../../icons/svg/YuLifeSquareMono.svg?react";
 
@@ -162,6 +163,14 @@ export interface NavigationHeaderProps {
    */
   showLogo?: boolean;
   /**
+   * Whether to render the mock iOS status bar above the navigation bar.
+   * Set to `false` for contexts where a status bar is not appropriate —
+   * e.g. modal headers that overlay content mid-screen rather than at the
+   * top of the viewport.
+   * @default true
+   */
+  showStatusBar?: boolean;
+  /**
    * Optional content for the 8px strip below the navigation bar.
    * When omitted the strip is empty space. Use for tab indicators,
    * progress bars, or thin dividers.
@@ -190,6 +199,7 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
   shadow = false,
   darkMode = false,
   showLogo = true,
+  showStatusBar = true,
   leftSlot,
   rightSlot,
   subNavSlot,
@@ -211,10 +221,13 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
         overflow: "hidden",
         backgroundColor: background ? colors.bgBase : "transparent",
         boxShadow: showShadow ? "0px 2px 0px 0px rgba(0,0,0,0.08)" : undefined,
+        // When the status bar is hidden the nav bar needs its own top breathing
+        // room — equal to the horizontal slot inset so icons don't crowd the edge.
+        paddingTop: showStatusBar ? undefined : spacing[4],
         ...style,
       }}
     >
-      <StatusBar darkMode={darkMode} />
+      {showStatusBar && <StatusBar darkMode={darkMode} />}
 
       {/* Navigation bar */}
       <div

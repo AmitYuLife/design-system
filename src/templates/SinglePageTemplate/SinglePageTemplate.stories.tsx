@@ -3,7 +3,7 @@ import { SinglePageTemplate } from "./SinglePageTemplate";
 import { HeroProductDetails } from "../../components/Hero";
 import { Card, CardInfoContent } from "../../components/Card";
 import { Tile, TileGroup } from "../../components/Tile";
-import { Button } from "../../components/Button";
+import { Button, ButtonGroup } from "../../components/Button";
 import {
   defaultHeroBackground,
   BupaLogo,
@@ -17,7 +17,6 @@ import {
 } from "../../icons";
 import { palette, colors } from "../../tokens/colors";
 import { textStyles } from "../../tokens/typography";
-import { spacing } from "../../tokens/spacing";
 
 // ─── Shared helpers ──────────────────────────────────────────────────────────
 
@@ -73,22 +72,15 @@ const ExampleMainContent = () => (
       </Card>
     </div>
 
-    {/* Button group */}
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: spacing[2],
-        width: "100%",
-      }}
-    >
-      <Button colour="Primary" variant="Solid" size="Large" style={{ width: "100%" }}>
+    {/* Button group — inline within scroll content (no pinned footer) */}
+    <ButtonGroup>
+      <Button colour="Primary" variant="Solid" size="Large">
         Button text
       </Button>
-      <Button colour="Primary" variant="Outline" size="Large" style={{ width: "100%" }}>
+      <Button colour="Primary" variant="Outline" size="Large">
         Button text
       </Button>
-    </div>
+    </ButtonGroup>
   </>
 );
 
@@ -115,12 +107,22 @@ scrolls — creating a subtle parallax effect using pure CSS.
 |------|---------|---------|
 | \`hero\` | Any \`Hero\` variant (\`HeroProductDetails\`, custom, etc.) | Full-bleed page header |
 | \`children\` | Any \`ReactNode\` | Scrollable content area (cards, tiles, buttons, lists…) |
+| \`footer\` | Any \`ReactNode\` (optional) | Pinned bottom overlay for \`ButtonGroup pinned\` |
 
 ### Parallax behaviour
 
 The hero stays pinned at the top of the viewport (\`position: sticky\`) while
 the white MainLayout container scrolls over it with rounded top corners,
 creating a natural card-over-image parallax effect.
+
+### Pinned footer
+
+When a \`footer\` is provided, it is rendered as an absolute overlay at the
+bottom of the template — always visible regardless of scroll position. Use a
+\`<ButtonGroup pinned>\` inside the footer slot: the gradient fades over
+scrollable content beneath, giving the buttons a soft floating appearance.
+Extra bottom padding is automatically added to the scrollable content so the
+last item can be scrolled fully above the footer.
 
 ### Figma reference
 
@@ -136,6 +138,7 @@ See **Pages / Health Cash Plan** for a fully worked product page example.
   argTypes: {
     hero: { control: false },
     children: { control: false },
+    footer: { control: false },
   },
 };
 
@@ -168,6 +171,76 @@ export const Default: Story = {
           "Generic composition with `HeroProductDetails` and placeholder content " +
           "(tile row, card, info card, button group). Scroll to observe the " +
           "parallax overlap behaviour.",
+      },
+    },
+  },
+};
+
+/**
+ * WithPinnedFooter — demonstrates the `footer` slot with a pinned `ButtonGroup`.
+ * The footer is an absolute overlay at the bottom of the screen, always visible
+ * regardless of scroll position. The `ButtonGroup` gradient fades over the
+ * scrollable content below, giving the buttons a soft floating appearance.
+ */
+export const WithPinnedFooter: Story = {
+  args: {
+    hero: (
+      <HeroProductDetails
+        backgroundImage={defaultHeroBackground}
+        logo={<BupaYuLifeLogo />}
+        heading="Life Insurance"
+        flagLabel="Core Cover"
+      />
+    ),
+    children: (
+      <>
+        <TileGroup>
+          <Tile colourIcon={<CoverDetailsColourIcon size={24} />} label="Label text goes here maximum..." />
+          <Tile colourIcon={<CoverDetailsColourIcon size={24} />} label="Label text goes here maximum..." />
+        </TileGroup>
+        <div style={{ width: "100%" }}>
+          <Card>
+            <CardInfoContent
+              leftAsset="ColourIcon"
+              leftSlot={<CoverDetailsColourIcon size={24} />}
+              title="Your title here"
+              description="Your description copy goes here. Should be no more than three lines of copy."
+              rightSlot={trailing}
+            />
+          </Card>
+        </div>
+        <div style={{ width: "100%" }}>
+          <Card>
+            <CardInfoContent
+              leftAsset="ColourIcon"
+              leftSlot={<CoverDetailsColourIcon size={24} />}
+              title="Your title here"
+              description="Your description copy goes here. Should be no more than three lines of copy."
+              rightSlot={trailing}
+            />
+          </Card>
+        </div>
+      </>
+    ),
+    footer: (
+      <ButtonGroup pinned>
+        <Button colour="Primary" variant="Solid" size="Large">
+          Continue
+        </Button>
+        <Button colour="Primary" variant="Outline" size="Large">
+          Cancel
+        </Button>
+      </ButtonGroup>
+    ),
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Template with a pinned `footer` slot containing a `ButtonGroup` with " +
+          "`pinned` enabled. The footer floats above the scrollable content at all " +
+          "times. Scroll down to see the gradient fade the last content item beneath " +
+          "the buttons.",
       },
     },
   },

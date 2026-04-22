@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { SinglePageTemplate } from "../../templates/SinglePageTemplate";
 import { HeroProductDetails } from "../../components/Hero";
@@ -53,6 +53,78 @@ const trailing = (
   <Icon svg={RightIcon} size={24} color={palette.pink700} accessibilityLabel="" />
 );
 
+
+// ─── Drag-scrollable carousel ─────────────────────────────────────────────────
+
+/**
+ * Horizontal scroll container with hidden scrollbar and pointer drag-to-scroll.
+ * A 5 px movement threshold distinguishes taps (passed through to children) from
+ * intentional drags (scrolls the carousel).
+ */
+const DragCarousel: React.FC<{
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+}> = ({ children, style }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const startX = useRef(0);
+  const startScrollLeft = useRef(0);
+  const activePointer = useRef<number | null>(null);
+  // isDraggingRef drives scroll logic (avoids stale closures); isDragging state drives cursor style
+  const isDraggingRef = useRef(false);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.button !== undefined && e.button !== 0) return;
+    startX.current = e.clientX;
+    startScrollLeft.current = ref.current?.scrollLeft ?? 0;
+    activePointer.current = e.pointerId;
+    isDraggingRef.current = false;
+  };
+
+  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (activePointer.current === null || e.pointerId !== activePointer.current) return;
+    const dx = e.clientX - startX.current;
+    if (!isDraggingRef.current && Math.abs(dx) > 5) {
+      // Threshold crossed — take ownership of the pointer so children don't receive it
+      ref.current?.setPointerCapture(e.pointerId);
+      isDraggingRef.current = true;
+      setIsDragging(true);
+    }
+    if (isDraggingRef.current && ref.current) {
+      ref.current.scrollLeft = startScrollLeft.current - dx;
+    }
+  };
+
+  const stopDrag = () => {
+    activePointer.current = null;
+    isDraggingRef.current = false;
+    setIsDragging(false);
+  };
+
+  return (
+    <>
+      {/* WebKit browsers need this pseudo-element rule; all others use scrollbarWidth */}
+      <style>{`.ds-carousel::-webkit-scrollbar { display: none; }`}</style>
+      <div
+        ref={ref}
+        className="ds-carousel"
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={stopDrag}
+        onPointerCancel={stopDrag}
+        style={{
+          overflowX: "auto",
+          scrollbarWidth: "none",
+          cursor: isDragging ? "grabbing" : "grab",
+          userSelect: "none",
+          ...style,
+        }}
+      >
+        {children}
+      </div>
+    </>
+  );
+};
 
 // ─── Service tile body text ───────────────────────────────────────────────────
 
@@ -157,11 +229,10 @@ const HealthCashPlanContent = () => (
       >
         Your health tools and services
       </p>
-      <div
+      <DragCarousel
         style={{
           display: "flex",
           gap: spacing[4],
-          overflowX: "auto",
           paddingBottom: spacing[2],
           // Extend flush to the MainLayout edges so cards bleed to padding
           marginLeft: -space.pagePaddingHorizontal,
@@ -188,7 +259,7 @@ const HealthCashPlanContent = () => (
           title="SkinVision"
           bodySlot={<ServiceBody text="Skin health monitoring" />}
         />
-      </div>
+      </DragCarousel>
     </div>
 
     {/* ── 6. Disclaimer ─────────────────────────────────────────────────────── */}

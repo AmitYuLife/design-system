@@ -55,7 +55,13 @@ export const Hero: React.FC<HeroProps> = ({
       style={{
         position: "relative",
         width: "100%",
-        height: 290,
+        // Participates in the SinglePageTemplate pull-down zoom interaction.
+        // --spt-hero-height is set imperatively on the scroll container ancestor
+        // and inherits through the DOM, allowing the hero to grow and fill the
+        // revealed space when the user pulls the MainLayout downward.
+        // Defaults to 290px when Hero is used outside SinglePageTemplate.
+        height: "var(--spt-hero-height, 290px)",
+        transition: "var(--spt-hero-transition, none)",
         overflow: "hidden",
         backgroundColor: colors.bgOverlay,
         display: "flex",
