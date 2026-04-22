@@ -2,7 +2,6 @@ import React, { useRef, useCallback } from "react";
 import { colors, palette } from "../../tokens/colors";
 import { spacing, space } from "../../tokens/spacing";
 import { radii } from "../../tokens/radii";
-
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const HERO_HEIGHT = 290;
@@ -10,11 +9,14 @@ const HERO_HEIGHT = 290;
 const PULL_RESISTANCE = 0.4;
 /**
  * Scroll clearance added to the MainLayout's paddingBottom when a pinned
- * footer is present. Ensures the last content item can be scrolled fully
- * above the footer overlay. Sized for two Large buttons (48px each) + a
- * 16px gap + 32px ButtonGroup gradient padding + 24px footer bottom padding.
+ * footer is present. Sized for the SOLID button area only (two Large buttons
+ * at 48px each + 16px gap + 24px footer bottom padding = 136px), minus the
+ * gradient height (48px) so the gradient veil overlaps real content rather
+ * than empty padding. The gradient extends above this space into the content.
+ * Net: spacing[12] + spacing[4] + componentPaddingLG = 48 + 16 + 24 = 88px.
  */
-const PINNED_FOOTER_HEIGHT = spacing[12] * 2 + spacing[4] + spacing[8] + space.componentPaddingLG;
+const PINNED_FOOTER_SCROLL_CLEARANCE =
+  spacing[12] + spacing[4] + space.componentPaddingLG;
 /**
  * Cap on the effective pull distance in px. At PULL_RESISTANCE=0.4, a
  * 375px finger drag reaches the ceiling — roughly a full phone screen height.
@@ -244,7 +246,7 @@ export const SinglePageTemplate: React.FC<SinglePageTemplateProps> = ({
             borderTopRightRadius: radii.md,
             backgroundColor: palette.neutral50,
             paddingTop: space.pagePaddingVertical,
-            paddingBottom: footer ? PINNED_FOOTER_HEIGHT : space.pagePaddingVertical,
+            paddingBottom: footer ? PINNED_FOOTER_SCROLL_CLEARANCE : space.pagePaddingVertical,
             paddingLeft: space.pagePaddingHorizontal,
             paddingRight: space.pagePaddingHorizontal,
             display: "flex",

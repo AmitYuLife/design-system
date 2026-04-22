@@ -2,6 +2,7 @@ import React, { useRef, useCallback, useState, useEffect } from "react";
 import { colors, palette } from "../../tokens/colors";
 import { spacing, space } from "../../tokens/spacing";
 import { radii } from "../../tokens/radii";
+import { BUTTON_GROUP_GRADIENT_HEIGHT } from "../../components/Button/ButtonGroup";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -339,16 +340,20 @@ export const ModalTemplate: React.FC<ModalTemplateProps> = ({
         </div>
 
         {/* ── Pinned footer ─────────────────────────────────────────────── */}
+        {/* Pulled up by BUTTON_GROUP_GRADIENT_HEIGHT via negative marginTop so
+            the ButtonGroup's gradient veil physically overlaps the scroll body's
+            bottom content. z-index: 2 renders it on top of the z-index: 1 scroll
+            body. No background here — the ButtonGroup gradient provides it. */}
         {footer && (
           <div
             style={{
               flexShrink: 0,
-              paddingTop: space.componentPaddingLG,
+              position: "relative",
+              zIndex: 2,
+              marginTop: -BUTTON_GROUP_GRADIENT_HEIGHT,
               paddingBottom: space.componentPaddingLG,
               paddingLeft: space.pagePaddingHorizontal,
               paddingRight: space.pagePaddingHorizontal,
-              backgroundColor: colors.bgBase,
-              boxShadow: "0px -2px 8px 0px rgba(0, 0, 0, 0.08)",
             }}
           >
             {footer}

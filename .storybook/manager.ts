@@ -3,7 +3,7 @@ import { create } from "@storybook/theming/create";
 
 const theme = create({
   base: "light",
-  brandTitle: "Design System",
+  brandTitle: "Journey",
   brandTarget: "_self",
 
   // Colors
@@ -54,5 +54,8 @@ addons.setConfig({
         return index !== -1 ? index - 100 : 999;
       },
     },
+  },
+  docs: {
+    subtitle: "YuLife App Design System",
   },
 });

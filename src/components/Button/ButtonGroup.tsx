@@ -32,6 +32,9 @@ export interface ButtonGroupProps {
 
 // ─── ButtonGroup ──────────────────────────────────────────────────────────────
 
+/** Height of the gradient veil that extends above the button group (48 px). */
+export const BUTTON_GROUP_GRADIENT_HEIGHT = spacing[12];
+
 /**
  * ButtonGroup
  *
@@ -39,12 +42,16 @@ export interface ButtonGroupProps {
  * (full-width, default) or a horizontal row (equal-width sharing). Uses the
  * same `spacing[4]` (16px) gap token as `TileGroup` for visual consistency.
  *
- * The optional `pinned` variant adds a white gradient background (opaque at
- * the bottom, transparent at the top) so the group can float above scrollable
- * content without a hard divider line.
+ * The optional `pinned` variant renders an absolutely-positioned gradient veil
+ * 48 px tall that sits above the button group, fading from transparent at the
+ * top to opaque white at the bottom. Place the ButtonGroup inside a footer
+ * container that overlaps the scroll area (see `ModalTemplate` and
+ * `SinglePageTemplate`) so the veil fades over real scroll content rather than
+ * a plain background.
  *
  * Figma reference: YuLife App Storybook → ButtonGroup
  */
+
 export const ButtonGroup: React.FC<ButtonGroupProps> = ({
   children,
   direction = "vertical",
@@ -57,19 +64,34 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = ({
   return (
     <div
       style={{
+        position: "relative",
         display: "flex",
         flexDirection: isVertical ? "column" : "row",
         width: "100%",
         gap: spacing[4],
         alignItems: isVertical ? "stretch" : "center",
-        ...(showGradient && {
-          background:
-            "linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%)",
-          paddingTop: spacing[8],
-        }),
         ...style,
       }}
     >
+      {/* Gradient veil — absolutely positioned ABOVE the button group so it
+          physically overlaps scroll content behind it. Transparent at the top,
+          fading to opaque white at the bottom where the buttons sit.
+          pointer-events: none so it never intercepts taps. */}
+      {showGradient && (
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            bottom: "100%",
+            left: 0,
+            right: 0,
+            height: BUTTON_GROUP_GRADIENT_HEIGHT,
+            background:
+              "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)",
+            pointerEvents: "none",
+          }}
+        />
+      )}
       {React.Children.map(children, (child) => {
         if (!React.isValidElement(child)) return null;
         return (

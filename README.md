@@ -1,4 +1,6 @@
-# Design System
+# Journey
+
+**YuLife App Design System**
 
 A lightweight Storybook for the React Native design system. Built with **react-native-web** so all components render in the browser — no device or simulator required.
 

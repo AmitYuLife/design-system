@@ -4,5 +4,6 @@ export * from "./Badge";
 export * from "./Button";
 export * from "./Card";
 export * from "./Hero";
+export * from "./ProgressBar";
 export * from "./Tile";
 export * from "./YuCoinValue";
