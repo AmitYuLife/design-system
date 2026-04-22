@@ -26,7 +26,7 @@ import type { ActionBarItem } from "../../components/ActionBar";
 // Source: YuLife App — Login Spec, https://www.figma.com/design/4tvQWEu6I2nmPKK8eSVtOM
 
 import yucoinComposite from "../../assets/yucoin-screen/yucoin-composite.png";
-import { defaultBackground } from "../../assets/game-backgrounds";
+import { gameBackgrounds } from "../../assets/game-backgrounds";
 
 // ─── Colour constants ─────────────────────────────────────────────────────────
 
@@ -231,10 +231,6 @@ export interface YuCoinScreenProps {
    */
   ctaLabel?: string;
   /**
-   * Called when the CTA button is pressed.
-   */
-  onCtaPress?: () => void;
-  /**
    * Surge widget — number of challenges completed today.
    * @default 0
    */
@@ -295,19 +291,18 @@ export const YuCoinScreen: React.FC<YuCoinScreenProps> = ({
   yuCoinToday = 200,
   activity = { steps: 0, distanceKm: 0, minutes: 0 },
   ctaLabel = "Take a challenge (1 left)",
-  onCtaPress,
   surgeCompleted = 0,
   surgeTotal = 5,
   hasNotification = false,
   activeTabId = "yucoin",
   onTabPress,
-  background = defaultBackground,
+  background = gameBackgrounds["Bright / Forest / —"],
 }) => {
   return (
     <div
       style={{
         width: "100%",
-        height: "100%",
+        height: "100vh",
         overflow: "hidden",
         backgroundColor: BG_CREAM,
         position: "relative",
@@ -513,7 +508,6 @@ export const YuCoinScreen: React.FC<YuCoinScreenProps> = ({
             colour="Primary"
             variant="Solid"
             size="Large"
-            onClick={onCtaPress}
             style={{ width: 327 }}
           >
             {ctaLabel}

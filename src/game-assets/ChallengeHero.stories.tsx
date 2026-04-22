@@ -197,7 +197,7 @@ const WorldGrid: React.FC<WorldGridProps> = ({ world }) => {
 const meta: Meta = {
   title: "Game Assets/ChallengeHero",
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
     docs: {
       description: {
         component: `

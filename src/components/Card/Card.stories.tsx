@@ -10,22 +10,6 @@ import { textStyles } from "../../tokens/typography";
 const meta: Meta<typeof Card> = {
   title: "Components/Card",
   component: Card,
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          padding: 32,
-          width: 375,
-        }}
-      >
-        <div style={{ width: 327 }}>
-          <Story />
-        </div>
-      </div>
-    ),
-  ],
   parameters: {
     layout: "centered",
     docs: {
@@ -113,6 +97,7 @@ export const Default: Story = {
     children: sampleRow,
   },
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "Flat card with a single info row — the default usage pattern." },
     },
@@ -143,6 +128,7 @@ export const Elevations: Story = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story: "Elevation `Off` (flat) above, `On` (4 px drop-shadow) below.",
@@ -219,6 +205,7 @@ export const Playground: Story = {
     children: sampleRow,
   },
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story: "Interactive playground — toggle every prop via the Controls panel.",

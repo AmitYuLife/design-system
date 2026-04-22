@@ -202,7 +202,7 @@ const PlanetGrid: React.FC<PlanetGridProps> = ({ planet }) => {
 const meta: Meta = {
   title: "Game Assets/ChallengeBackgrounds",
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
     docs: {
       description: {
         component: `

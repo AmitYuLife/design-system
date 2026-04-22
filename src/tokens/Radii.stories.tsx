@@ -6,7 +6,7 @@ import type { RadiusKey } from "./radii";
 const meta: Meta = {
   title: "Foundations/Radii",
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
     docs: {
       description: {
         component: `
@@ -123,6 +123,7 @@ export const Scale: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "All eight radius tokens. The swatch corner rounding matches the token value (capped at 50% of the swatch size for the `pill` token)." },
     },
@@ -235,6 +236,7 @@ export const UsageExamples: StoryObj = {
     );
   },
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "Common UI patterns demonstrating the appropriate radius token for each context." },
     },
@@ -286,6 +288,7 @@ export const TokenTable: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "Quick-reference table mapping every radius token to its pixel value and intended usage context." },
     },

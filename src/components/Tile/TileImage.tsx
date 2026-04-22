@@ -7,7 +7,7 @@ import { radii } from "../../tokens/radii";
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const SHADOW_DEPTH = 4;
-const IMAGE_HEIGHT = 152;
+const DEFAULT_IMAGE_HEIGHT = 152;
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -47,6 +47,14 @@ export interface TileImageProps {
    */
   "aria-label"?: string;
   /**
+   * Height of the image area in px. Defaults to `152`.
+   *
+   * Set this to match the natural aspect ratio of the source asset at the
+   * tile's rendered width (164 px default). For the standard 327×196 service
+   * logo format: `imageHeight={98}`.
+   */
+  imageHeight?: number;
+  /**
    * Inline style overrides for the root element. `transform` values are
    * composed with the press animation rather than overwriting it.
    */
@@ -76,6 +84,7 @@ export const TileImage: React.FC<TileImageProps> = ({
   imageSrc,
   imageAlt,
   imageOverlay = false,
+  imageHeight = DEFAULT_IMAGE_HEIGHT,
   title,
   bodySlot,
   actionSlot,
@@ -118,6 +127,7 @@ export const TileImage: React.FC<TileImageProps> = ({
           : `0px ${SHADOW_DEPTH}px 0px 0px ${palette.neutral300}`,
         padding: 0,
         overflow: "hidden",
+        flexShrink: 0,
         display: "flex",
         flexDirection: "column",
         alignItems: "stretch",
@@ -132,7 +142,7 @@ export const TileImage: React.FC<TileImageProps> = ({
         style={{
           position: "relative",
           width: "100%",
-          height: IMAGE_HEIGHT,
+          height: imageHeight,
           overflow: "hidden",
           flexShrink: 0,
         }}

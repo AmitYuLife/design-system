@@ -1,34 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { YuCoinScreen } from "./YuCoinScreen";
-import { gameBackgrounds, defaultBackground } from "../../assets/game-backgrounds";
+import { gameBackgrounds } from "../../assets/game-backgrounds";
+
+const DEFAULT_BACKGROUND_KEY = "Bright / Forest / —" as const;
 
 // ─── Meta ─────────────────────────────────────────────────────────────────────
-
-/** Wraps every story in an iPhone 15–sized frame so position:absolute children
- *  stay contained in both the canvas and the docs preview. */
-const PhoneFrame = ({ children }: { children: React.ReactNode }) => (
-  <div
-    style={{
-      width: 393,
-      height: 852,
-      position: "relative",
-      overflow: "hidden",
-      borderRadius: 12,
-      boxShadow: "0 8px 40px rgba(0,0,0,0.18)",
-      margin: "auto",
-    }}
-  >
-    {children}
-  </div>
-);
 
 const meta: Meta<typeof YuCoinScreen> = {
   title: "Templates/YuCoinScreen",
   component: YuCoinScreen,
-  decorators: [(Story) => <PhoneFrame><Story /></PhoneFrame>],
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
     viewport: { defaultViewport: "iphone15" },
     docs: {
       description: {
@@ -119,7 +102,7 @@ export const Default: Story = {
     surgeTotal: 5,
     hasNotification: false,
     activeTabId: "yucoin",
-    background: defaultBackground,
+    background: DEFAULT_BACKGROUND_KEY,
   },
   parameters: {
     docs: {
@@ -145,7 +128,7 @@ export const ActiveDay: Story = {
     surgeTotal: 5,
     hasNotification: true,
     activeTabId: "yucoin",
-    background: defaultBackground,
+    background: DEFAULT_BACKGROUND_KEY,
   },
   parameters: {
     docs: {
@@ -171,7 +154,7 @@ export const FullDay: Story = {
     surgeTotal: 5,
     hasNotification: false,
     activeTabId: "yucoin",
-    background: defaultBackground,
+    background: DEFAULT_BACKGROUND_KEY,
   },
   parameters: {
     docs: {
@@ -200,7 +183,6 @@ export const Interactive: Story = {
         hasNotification={false}
         activeTabId={activeTabId}
         onTabPress={setActiveTabId}
-        onCtaPress={() => alert("Challenge accepted!")}
       />
     );
   },

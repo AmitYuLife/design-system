@@ -114,7 +114,7 @@ const ALL_COLOUR_ICONS: ColourIconEntry[] = [
 const meta: Meta = {
   title: "Foundations/Iconography/Colour Icons",
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
     docs: {
       description: {
         component: `

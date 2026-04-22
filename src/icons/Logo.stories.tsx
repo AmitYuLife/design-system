@@ -8,7 +8,7 @@ import YuLifeSquareMonoSvg from "./svg/YuLifeSquareMono.svg?react";
 const meta: Meta = {
   title: "Foundations/Logo",
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
     docs: {
       description: {
         component: `
@@ -115,6 +115,7 @@ export const Colour: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "The colour logo mark on light backgrounds. This is the default variant for use on white or near-white surfaces." },
     },
@@ -149,6 +150,7 @@ export const Mono: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "The mono (white) logo mark on dark, brand-coloured, or image backgrounds." },
     },
@@ -195,6 +197,7 @@ export const Sizes: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "Recommended sizes. Pass `width` and `height` props to scale the SVG component." },
     },

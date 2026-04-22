@@ -91,19 +91,6 @@ const BonusFlag = () => (
 const meta: Meta<typeof Tile> = {
   title: "Components/Tile",
   component: Tile,
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          padding: 32,
-        }}
-      >
-        <Story />
-      </div>
-    ),
-  ],
   parameters: {
     layout: "centered",
     docs: {
@@ -171,6 +158,7 @@ export const LongLabel: Story = {
     label: "Label text goes here maximum 2 lines before ellipsis",
   },
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story:
@@ -196,6 +184,7 @@ export const ImageTileChallenge: StoryObj<typeof TileImage> = {
     />
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story:
@@ -231,6 +220,7 @@ export const ImageTileServices: StoryObj<typeof TileImage> = {
     />
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story:
@@ -273,6 +263,7 @@ export const ImageTileWithFlags: StoryObj<typeof TileImage> = {
     />
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story:
@@ -298,6 +289,7 @@ export const TwoTiles: StoryObj<typeof TileGroup> = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "Two tiles sharing equal width inside a 327 px container." },
     },
@@ -319,6 +311,7 @@ export const ThreeTiles: StoryObj<typeof TileGroup> = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story:
@@ -345,6 +338,7 @@ export const FourTiles: StoryObj<typeof TileGroup> = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story:
@@ -370,6 +364,7 @@ export const ProductPageExample: StoryObj<typeof TileGroup> = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story:
@@ -415,6 +410,7 @@ export const VerticalTileGroup: StoryObj<typeof TileGroup> = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story:
@@ -461,6 +457,7 @@ export const HorizontalImageTiles: StoryObj<typeof TileGroup> = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story:

@@ -1,8 +1,8 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { SinglePageTemplate } from "./SinglePageTemplate";
 import { HeroProductDetails } from "../../components/Hero";
 import { Card, CardInfoContent } from "../../components/Card";
+import { Tile, TileGroup } from "../../components/Tile";
 import { Button } from "../../components/Button";
 import {
   defaultHeroBackground,
@@ -13,13 +13,11 @@ import YuLifeSquareMonoSvg from "../../icons/svg/YuLifeSquareMono.svg?react";
 import {
   Icon,
   RightIcon,
-  HeartIcon,
   CoverDetailsColourIcon,
 } from "../../icons";
 import { palette, colors } from "../../tokens/colors";
 import { textStyles } from "../../tokens/typography";
 import { spacing } from "../../tokens/spacing";
-import { radii } from "../../tokens/radii";
 
 // ─── Shared helpers ──────────────────────────────────────────────────────────
 
@@ -47,49 +45,15 @@ const trailing = (
   <Icon svg={RightIcon} size={24} color={palette.pink700} accessibilityLabel="" />
 );
 
-const Tile: React.FC<{ label: string }> = ({ label }) => (
-  <div
-    style={{
-      flex: 1,
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: spacing[2],
-      padding: spacing[4],
-      borderRadius: radii.md,
-      border: `1px solid ${colors.borderDefault}`,
-      backgroundColor: colors.bgElevated,
-    }}
-  >
-    <Icon svg={HeartIcon} size={24} color={palette.pink600} accessibilityLabel="" />
-    <span
-      style={{
-        ...textStyles.label2Regular,
-        lineHeight: `${textStyles.label2Regular.lineHeight}px`,
-        letterSpacing: `${textStyles.label2Regular.letterSpacing}px`,
-        color: colors.textPrimary,
-        textAlign: "center",
-        overflow: "hidden",
-        display: "-webkit-box",
-        WebkitLineClamp: 2,
-        WebkitBoxOrient: "vertical",
-      }}
-    >
-      {label}
-    </span>
-  </div>
-);
-
 // ─── Default example content ──────────────────────────────────────────────────
 
 const ExampleMainContent = () => (
   <>
-    {/* Tile row */}
-    <div style={{ display: "flex", gap: spacing[2], width: "100%" }}>
-      <Tile label="Label text goes here maximum..." />
-      <Tile label="Label text goes here maximum..." />
-    </div>
+    {/* Tile row — using TileGroup DS component */}
+    <TileGroup>
+      <Tile colourIcon={<CoverDetailsColourIcon size={24} />} label="Label text goes here maximum..." />
+      <Tile colourIcon={<CoverDetailsColourIcon size={24} />} label="Label text goes here maximum..." />
+    </TileGroup>
 
     {/* Placeholder card */}
     <div style={{ width: "100%" }}>

@@ -125,7 +125,7 @@ const ALL_ICONS: IconEntry[] = [
 const meta: Meta = {
   title: "Foundations/Iconography/Line Icons",
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
     docs: {
       description: {
         component: `

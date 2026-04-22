@@ -12,7 +12,7 @@ import {
 const meta: Meta = {
   title: "Foundations/Typography",
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
     docs: {
       description: {
         component: `
@@ -213,6 +213,7 @@ export const TypeSpecimen: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "All 14 text styles from the Figma App Typography section. Each row shows the token name, a live preview, and the four typographic axes." },
     },
@@ -241,6 +242,7 @@ export const Scale: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "The complete font-size scale from 3xs (10px) to 2xl (32px)." },
     },
@@ -266,6 +268,7 @@ export const Weights: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "All four Bariol weights: Thin (100), Light (300), Regular (400), Bold (700)." },
     },
@@ -296,6 +299,7 @@ export const FontFamily: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "Bariol — the brand typeface across all four weights." },
     },

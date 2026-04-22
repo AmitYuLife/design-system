@@ -3,7 +3,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { SinglePageTemplate } from "../../templates/SinglePageTemplate";
 import { HeroProductDetails } from "../../components/Hero";
 import { Card, CardInfoContent } from "../../components/Card";
-import { Tile, TileGroup } from "../../components/Tile";
+import { Tile, TileImage, TileGroup } from "../../components/Tile";
+import { phio, betterhelp, skinVision } from "../../assets/services";
 import { Button } from "../../components/Button";
 import {
   defaultHeroBackground,
@@ -25,7 +26,6 @@ import {
 import { palette, colors } from "../../tokens/colors";
 import { textStyles } from "../../tokens/typography";
 import { spacing, space } from "../../tokens/spacing";
-import { radii } from "../../tokens/radii";
 
 // ─── Story-level helpers ──────────────────────────────────────────────────────
 
@@ -54,101 +54,24 @@ const trailing = (
 );
 
 
-// ─── ServiceCard ──────────────────────────────────────────────────────────────
-// ⚠ Gap: no ServiceCard / health-tools carousel DS component exists.
-// The horizontally-scrollable branded-service card pattern needs its own DS
-// component with an image thumbnail prop.
+// ─── Service tile body text ───────────────────────────────────────────────────
 
-interface HealthService {
-  name: string;
-  description?: string;
-  /** Approximate brand background colour for the thumbnail placeholder. */
-  thumbBg: string;
-}
-
-const ServiceCard: React.FC<{ service: HealthService }> = ({ service }) => (
-  <div
+const ServiceBody: React.FC<{ text: string }> = ({ text }) => (
+  <span
     style={{
-      flexShrink: 0,
-      width: 120,
-      backgroundColor: colors.bgElevated,
-      border: `1px solid ${palette.neutral300}`,
-      borderRadius: radii.xl, // 16px — matches Figma spec
-      boxShadow: `0px 4px 0px 0px ${palette.neutral300}`,
+      ...textStyles.label1Bold,
+      lineHeight: `${textStyles.label1Bold.lineHeight}px`,
+      letterSpacing: `${textStyles.label1Bold.letterSpacing}px`,
+      color: palette.neutral700,
       overflow: "hidden",
-      display: "flex",
-      flexDirection: "column",
+      display: "-webkit-box",
+      WebkitLineClamp: 2,
+      WebkitBoxOrient: "vertical",
     }}
   >
-    {/* Branded thumbnail — placeholder colour; real impl passes an image src */}
-    <div
-      style={{
-        height: 84,
-        backgroundColor: service.thumbBg,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: spacing[2],
-        flexShrink: 0,
-      }}
-    >
-      <span
-        style={{
-          ...textStyles.label1Bold,
-          lineHeight: `${textStyles.label1Bold.lineHeight}px`,
-          letterSpacing: `${textStyles.label1Bold.letterSpacing}px`,
-          color: palette.neutralWhite,
-          textAlign: "center",
-        }}
-      >
-        {service.name}
-      </span>
-    </div>
-
-    {/* Text label */}
-    <div
-      style={{
-        padding: spacing[2],
-        paddingBottom: spacing[4],
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-      }}
-    >
-      <span
-        style={{
-          ...textStyles.label1Bold,
-          lineHeight: `${textStyles.label1Bold.lineHeight}px`,
-          letterSpacing: `${textStyles.label1Bold.letterSpacing}px`,
-          color: palette.neutral600,
-        }}
-      >
-        {service.name}
-      </span>
-      {service.description != null && service.description !== "" && (
-        <span
-          style={{
-            ...textStyles.label1Regular,
-            lineHeight: `${textStyles.label1Regular.lineHeight}px`,
-            letterSpacing: `${textStyles.label1Regular.letterSpacing}px`,
-            color: palette.neutral600,
-          }}
-        >
-          {service.description}
-        </span>
-      )}
-    </div>
-  </div>
+    {text}
+  </span>
 );
-
-const HEALTH_SERVICES: HealthService[] = [
-  { name: "Phio.", description: "Digital muscle and joint support", thumbBg: "#1C2C5B" },
-  { name: "betterhelp", description: "Digital GP service", thumbBg: "#13A167" },
-  { name: "SkinVision", description: "Digital GP service", thumbBg: "#0A5F8C" },
-  { name: "Asos", thumbBg: "#000000" },
-  { name: "Breathwrk", thumbBg: "#0F1A5C" },
-];
 
 // ─── Page content ─────────────────────────────────────────────────────────────
 
@@ -221,7 +144,6 @@ const HealthCashPlanContent = () => (
     </Card>
 
     {/* ── 5. Your health tools and services ────────────────────────────────── */}
-    {/* ⚠ Gap: ServiceCarousel is not a DS component — built inline here. */}
     <div style={{ width: "100%" }}>
       <p
         style={{
@@ -241,15 +163,31 @@ const HealthCashPlanContent = () => (
           gap: spacing[4],
           overflowX: "auto",
           paddingBottom: spacing[2],
+          // Extend flush to the MainLayout edges so cards bleed to padding
           marginLeft: -space.pagePaddingHorizontal,
           marginRight: -space.pagePaddingHorizontal,
           paddingLeft: space.pagePaddingHorizontal,
           paddingRight: space.pagePaddingHorizontal,
         }}
       >
-        {HEALTH_SERVICES.map((service) => (
-          <ServiceCard key={service.name} service={service} />
-        ))}
+        <TileImage
+          imageSrc={phio}
+          imageHeight={98}
+          title="Phio."
+          bodySlot={<ServiceBody text="Digital muscle & joint support" />}
+        />
+        <TileImage
+          imageSrc={betterhelp}
+          imageHeight={98}
+          title="Betterhelp"
+          bodySlot={<ServiceBody text="Online therapy & counselling" />}
+        />
+        <TileImage
+          imageSrc={skinVision}
+          imageHeight={98}
+          title="SkinVision"
+          bodySlot={<ServiceBody text="Skin health monitoring" />}
+        />
       </div>
     </div>
 
@@ -298,11 +236,10 @@ using \`SinglePageTemplate\` as the layout chassis.
 | Resources and support | \`Card\` + 3× \`CardInfoContent\` + \`RightIcon\` trailing |
 | Included on your policy | \`Card\` + 2× \`CardInfoContent\` + \`Button\` (Outline / Small) |
 
-### Component gaps
+### Assets
 
-| Gap | Description |
-|-----|-------------|
-| \`ServiceCarousel\` | Horizontally-scrollable branded service cards. No DS component — built inline with colour placeholders. Thumbnail images would be passed as props in the real implementation. |
+Service thumbnail images live in \`src/assets/services/\` and are imported
+via the \`src/assets/services/index.ts\` barrel.
         `.trim(),
       },
     },

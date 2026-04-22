@@ -6,7 +6,7 @@ import type { PaletteKey, SemanticKey } from "./colors";
 const meta: Meta = {
   title: "Foundations/Colours",
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
     docs: {
       description: {
         component: `
@@ -173,6 +173,7 @@ export const Palette: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "The raw colour palette. Do not use these directly in component code — use semantic tokens instead." },
     },
@@ -258,6 +259,7 @@ export const SemanticTokens: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "Semantic colour tokens. Always reference these in component code, never raw palette values." },
     },

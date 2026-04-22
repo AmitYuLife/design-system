@@ -42,6 +42,7 @@ export const MediumDark: Story = {
     dark: true,
   },
   parameters: {
+    layout: "centered",
     backgrounds: { default: "dark" },
   },
 };
@@ -54,6 +55,7 @@ export const SmallDark: Story = {
     dark: true,
   },
   parameters: {
+    layout: "centered",
     backgrounds: { default: "dark" },
   },
 };

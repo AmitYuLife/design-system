@@ -20,13 +20,9 @@ const meta: Meta<typeof CardInfoContent> = {
   component: CardInfoContent,
   decorators: [
     (Story) => (
-      <div style={{ display: "flex", justifyContent: "center", padding: 32, width: 375 }}>
-        <div style={{ width: 327 }}>
-          <Card>
-            <Story />
-          </Card>
-        </div>
-      </div>
+      <Card>
+        <Story />
+      </Card>
     ),
   ],
   parameters: {
@@ -206,10 +202,8 @@ export const WithoutTrailing: Story = {
 export const AllVariants: StoryObj = {
   decorators: [
     (Story) => (
-      <div style={{ display: "flex", justifyContent: "center", padding: 32 }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 16, width: 327 }}>
-          <Story />
-        </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        <Story />
       </div>
     ),
   ],
@@ -245,6 +239,7 @@ export const AllVariants: StoryObj = {
     </>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story: "Side-by-side comparison of the three layout presets.",

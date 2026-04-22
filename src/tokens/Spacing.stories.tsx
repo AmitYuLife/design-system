@@ -5,7 +5,7 @@ import { spacing, space } from "./spacing";
 const meta: Meta = {
   title: "Foundations/Spacing",
   parameters: {
-    layout: "fullscreen",
+    layout: "centered",
     docs: {
       description: {
         component: `
@@ -96,6 +96,7 @@ export const Scale: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "The complete spacing scale from 0 to 128 px. Each step is a multiple of the 4 px sub-grid or the 8 px base unit." },
     },
@@ -191,6 +192,7 @@ export const SemanticAliases: StoryObj = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "Named semantic aliases. Prefer these over raw `spacing[n]` values in component code — they communicate intent." },
     },
@@ -233,6 +235,7 @@ export const GridVisualiser: StoryObj = {
     );
   },
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "Each token shown as a square whose side length equals the spacing value, making relative sizes immediately tangible." },
     },

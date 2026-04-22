@@ -8,21 +8,6 @@ import { Icon, CheckIcon } from "../../icons";
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: 32,
-          minHeight: 120,
-        }}
-      >
-        <Story />
-      </div>
-    ),
-  ],
   parameters: {
     layout: "centered",
     docs: {
@@ -96,6 +81,7 @@ export const Default: Story = {
     children: "Button text",
   },
   parameters: {
+    layout: "centered",
     docs: {
       description: { story: "Large Primary Solid — the default CTA style." },
     },
@@ -128,6 +114,7 @@ export const AllVariants: Story = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story: "Every colour × variant combination, each shown enabled (left) and disabled (right).",
@@ -149,6 +136,7 @@ export const Sizes: Story = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story: "Large (48 px, 224 px wide) and Small (content-sized) variants.",
@@ -190,6 +178,7 @@ export const WithIcons: Story = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story: "Leading and trailing icon slots accept any `ReactNode` — typically an `<Icon>` from the design system.",
@@ -212,6 +201,7 @@ export const DisabledPrimary: Story = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story: "Primary disabled states. Solid uses a lighter fill; Outline and Text reduce content opacity.",
@@ -232,6 +222,7 @@ export const DisabledSecondary: Story = {
     </div>
   ),
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story: "Secondary disabled states.",
@@ -254,6 +245,7 @@ export const Playground: Story = {
     disabled:  false,
   },
   parameters: {
+    layout: "centered",
     docs: {
       description: {
         story: "Fully interactive playground — use the Controls panel to explore every prop.",
