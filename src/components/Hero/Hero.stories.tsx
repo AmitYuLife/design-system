@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Hero } from "./Hero";
 import { defaultHeroBackground, heroBackgrounds } from "../../assets/insurance-products";
 import { textStyles } from "../../tokens/typography";

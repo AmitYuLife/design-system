@@ -1,5 +1,5 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ModalTemplate } from "./ModalTemplate";
 import { NavigationHeader } from "../../components/NavigationHeader";
 import { Card, CardInfoContent } from "../../components/Card";

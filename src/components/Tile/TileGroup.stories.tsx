@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { TileGroup } from "./TileGroup";
 import { Tile } from "./Tile";
 import { TileImage } from "./TileImage";

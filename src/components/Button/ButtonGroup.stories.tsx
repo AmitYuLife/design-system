@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ButtonGroup } from "./ButtonGroup";
 import { Button } from "./Button";
 
@@ -198,41 +198,6 @@ export const ThreeButtons: Story = {
         story:
           "Three buttons stacked vertically — Solid, Outline, and Text variants " +
           "showing a typical three-action hierarchy.",
-      },
-    },
-  },
-};
-
-/**
- * Playground — use the controls panel to explore all prop combinations.
- */
-export const Playground: Story = {
-  args: {
-    direction: "vertical",
-    pinned: false,
-  },
-  render: (args) => (
-    <div
-      style={{
-        background: args.pinned ? "linear-gradient(180deg, #e0e0ea 0%, #e0e0ea 100%)" : "transparent",
-        padding: args.pinned ? 16 : 0,
-        borderRadius: 16,
-      }}
-    >
-      <ButtonGroup {...args}>
-        <Button colour="Primary" variant="Solid" size="Large">
-          Primary action
-        </Button>
-        <Button colour="Primary" variant="Outline" size="Large">
-          Secondary action
-        </Button>
-      </ButtonGroup>
-    </div>
-  ),
-  parameters: {
-    docs: {
-      description: {
-        story: "Interactive playground — use the Controls panel to change `direction` and `pinned`.",
       },
     },
   },

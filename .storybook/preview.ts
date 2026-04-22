@@ -1,5 +1,5 @@
-import type { Preview } from "@storybook/react";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import type { Preview } from "@storybook/react-vite";
+import { INITIAL_VIEWPORTS } from "storybook/viewport";
 
 const mobileViewports = {
   iphoneSE: {
@@ -35,36 +35,56 @@ const mobileViewports = {
 };
 
 const preview: Preview = {
-  tags: ["autodocs"],
+  tags: ["autodocs", "test"],
+
   parameters: {
     viewport: {
-      viewports: {
+      options: {
         ...mobileViewports,
         ...INITIAL_VIEWPORTS,
-      },
-      defaultViewport: "iphone15",
+      }
     },
+
     backgrounds: {
-      default: "light",
-      values: [
-        { name: "light", value: "#FFFFFF" },
-        { name: "dark", value: "#121212" },
-        { name: "grey", value: "#F5F5F5" },
-      ],
+      options: {
+        light: { name: "light", value: "#FFFFFF" },
+        dark: { name: "dark", value: "#121212" },
+        grey: { name: "grey", value: "#F5F5F5" }
+      }
     },
+
     controls: {
       matchers: {
         color: /Color$/i,
         date: /Date$/i,
       },
     },
+
     options: {
       storySort: {
         method: "alphabetical",
         order: ["Welcome", "Foundations", "Components", "Templates", "Game Assets", "Pages"],
       },
     },
+
+    a11y: {
+      // 'todo' - show a11y violations in the test UI only
+      // 'error' - fail CI on a11y violations
+      // 'off' - skip a11y checks entirely
+      test: "todo"
+    }
   },
+
+  initialGlobals: {
+    viewport: {
+      value: "iphone15",
+      isRotated: false
+    },
+
+    backgrounds: {
+      value: "light"
+    }
+  }
 };
 
 export default preview;

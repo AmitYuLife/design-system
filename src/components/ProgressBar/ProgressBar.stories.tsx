@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ProgressBar } from "./ProgressBar";
 import type { MilestoneState } from "./ProgressBar";
 import { palette } from "../../tokens/colors";
@@ -139,13 +139,26 @@ export const Large: Story = {
 
 // ─── With Milestones ─────────────────────────────────────────────────────────
 
-/** Large bar with 3 milestones at progressive states. */
+/** Large bar with 3 milestones showing the full claim lifecycle. */
 export const WithMilestones: Story = {
   name: "With milestones",
+  parameters: {
+    docs: {
+      description: {
+        story: [
+          "Milestone states map to a reward claim lifecycle:",
+          "- **default** — not yet reached",
+          "- **complete** — reached but reward not yet available",
+          "- **claimable** — reached and reward is ready to collect (yellow star, pulsing)",
+          "- **claimed** — reward collected (pink checkmark)",
+        ].join("\n"),
+      },
+    },
+  },
   render: () => (
     <div style={{ ...row, gap: spacing[6] }}>
       <div>
-        <div style={label}>Empty — 3 milestones (all default)</div>
+        <div style={label}>Empty — all default</div>
         <ProgressBar
           progress={0}
           size="large"
@@ -154,7 +167,16 @@ export const WithMilestones: Story = {
         />
       </div>
       <div>
-        <div style={label}>1 reached — first complete</div>
+        <div style={label}>1 reached — claimable (yellow star)</div>
+        <ProgressBar
+          progress={0.33}
+          size="large"
+          milestones={["claimable", "default", "default"]}
+          animated={false}
+        />
+      </div>
+      <div>
+        <div style={label}>1 reached — complete (white star)</div>
         <ProgressBar
           progress={0.33}
           size="large"
@@ -228,14 +250,14 @@ export const Animated: Story = {
     },
   },
   render: function AnimatedStory() {
-    const steps: { progress: number; milestones: MilestoneState[] }[] = [
-      { progress: 0, milestones: ["default", "default", "default"] },
-      { progress: 0.33, milestones: ["claimable", "default", "default"] },
-      { progress: 0.33, milestones: ["claimed", "default", "default"] },
-      { progress: 0.66, milestones: ["claimed", "claimable", "default"] },
-      { progress: 0.66, milestones: ["claimed", "claimed", "default"] },
-      { progress: 1.0, milestones: ["claimed", "claimed", "claimable"] },
-      { progress: 1.0, milestones: ["claimed", "claimed", "claimed"] },
+    const steps: { label: string; progress: number; milestones: MilestoneState[] }[] = [
+      { label: "Empty",                      progress: 0,    milestones: ["default",  "default",  "default"]  },
+      { label: "Reach M1 → claimable",       progress: 0.34, milestones: ["claimable","default",  "default"]  },
+      { label: "Claim M1",                   progress: 0.34, milestones: ["claimed",  "default",  "default"]  },
+      { label: "Reach M2 → claimable",       progress: 0.67, milestones: ["claimed",  "claimable","default"]  },
+      { label: "Claim M2",                   progress: 0.67, milestones: ["claimed",  "claimed",  "default"]  },
+      { label: "Reach M3 → claimable",       progress: 1.0,  milestones: ["claimed",  "claimed",  "claimable"]},
+      { label: "All claimed",                progress: 1.0,  milestones: ["claimed",  "claimed",  "claimed"]  },
     ];
 
     const [step, setStep] = useState(0);
@@ -266,7 +288,7 @@ export const Animated: Story = {
             Next step
           </button>
           <span style={{ ...label, marginBottom: 0 }}>
-            Step {step + 1} / {steps.length}
+            {step + 1}/{steps.length}: {steps[step].label}
           </span>
         </div>
       </div>

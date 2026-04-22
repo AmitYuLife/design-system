@@ -1,7 +1,13 @@
+/// <reference types="vitest/config" />
+import { fileURLToPath } from "node:url";
+import { dirname, resolve } from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
-import path from "path";
+import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
+import { playwright } from "@vitest/browser-playwright";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [
@@ -16,21 +22,27 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      // Redirect all react-native imports to react-native-web
-      "react-native": path.resolve(
-        __dirname,
-        "node_modules/react-native-web/dist/index"
-      ),
+      "react-native": resolve(__dirname, "node_modules/react-native-web/dist/index"),
     },
-    extensions: [
-      ".web.tsx",
-      ".web.ts",
-      ".web.jsx",
-      ".web.js",
-      ".tsx",
-      ".ts",
-      ".jsx",
-      ".js",
+    extensions: [".web.tsx", ".web.ts", ".web.jsx", ".web.js", ".tsx", ".ts", ".jsx", ".js"],
+  },
+  test: {
+    projects: [
+      {
+        extends: true,
+        plugins: [
+          storybookTest({ configDir: resolve(__dirname, ".storybook") }),
+        ],
+        test: {
+          name: "storybook",
+          browser: {
+            enabled: true,
+            headless: true,
+            provider: playwright({}),
+            instances: [{ browser: "chromium" }],
+          },
+        },
+      },
     ],
   },
 });

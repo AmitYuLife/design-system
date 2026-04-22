@@ -1,6 +1,10 @@
+import { fileURLToPath } from "node:url";
+import { dirname, resolve } from "node:path";
 import type { StorybookConfig } from "@storybook/react-vite";
-import path from "path";
 import svgr from "vite-plugin-svgr";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const config: StorybookConfig = {
   stories: [
@@ -13,24 +17,15 @@ const config: StorybookConfig = {
     "../src/pages/**/*.stories.@(ts|tsx|mdx)",
   ],
   addons: [
-    "@storybook/addon-essentials",
-    "@storybook/addon-viewport",
+    "@storybook/addon-docs",
+    "@storybook/addon-vitest",
+    "@storybook/addon-a11y",
+    "@chromatic-com/storybook",
   ],
   framework: {
     name: "@storybook/react-vite",
     options: {},
   },
-  core: {
-    disableProjectJson: false,
-  },
-  managerHead: (head) => `
-    ${head}
-    <script>
-      window.__STORYBOOK_CONFIG__ = {
-        sidebarSort: ['Foundations', 'Components', 'Templates', 'Pages', 'Game Assets']
-      };
-    </script>
-  `,
   async viteFinal(config) {
     const { mergeConfig } = await import("vite");
 
@@ -46,7 +41,7 @@ const config: StorybookConfig = {
       ],
       resolve: {
         alias: {
-          "react-native": path.resolve(
+          "react-native": resolve(
             __dirname,
             "../node_modules/react-native-web/dist/index"
           ),

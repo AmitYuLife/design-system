@@ -1,5 +1,5 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "./Button";
 import { Icon, CheckIcon } from "../../icons";
 
@@ -226,29 +226,6 @@ export const DisabledSecondary: Story = {
     docs: {
       description: {
         story: "Secondary disabled states.",
-      },
-    },
-  },
-};
-
-// ─── Controls playground ──────────────────────────────────────────────────────
-
-/**
- * Use the Controls panel below to try every prop combination interactively.
- */
-export const Playground: Story = {
-  args: {
-    children:  "Button text",
-    colour:    "Primary",
-    variant:   "Solid",
-    size:      "Large",
-    disabled:  false,
-  },
-  parameters: {
-    layout: "centered",
-    docs: {
-      description: {
-        story: "Fully interactive playground — use the Controls panel to explore every prop.",
       },
     },
   },

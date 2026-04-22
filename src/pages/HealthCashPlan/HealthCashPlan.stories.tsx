@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { SinglePageTemplate } from "../../templates/SinglePageTemplate";
 import { HeroProductDetails } from "../../components/Hero";
 import { Card, CardInfoContent } from "../../components/Card";

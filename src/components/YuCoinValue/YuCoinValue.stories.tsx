@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { YuCoinValue } from "./YuCoinValue";
 
 const meta: Meta<typeof YuCoinValue> = {
@@ -36,28 +36,42 @@ export const Small: Story = {
 
 export const MediumDark: Story = {
   name: "Medium — Dark",
+
   args: {
     value: "123,131",
     size: "medium",
     dark: true,
   },
+
   parameters: {
-    layout: "centered",
-    backgrounds: { default: "dark" },
+    layout: "centered"
   },
+
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
+  }
 };
 
 export const SmallDark: Story = {
   name: "Small — Dark",
+
   args: {
     value: "123,131",
     size: "small",
     dark: true,
   },
+
   parameters: {
-    layout: "centered",
-    backgrounds: { default: "dark" },
+    layout: "centered"
   },
+
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
+  }
 };
 
 export const LargeNumber: Story = {

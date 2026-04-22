@@ -1,0 +1,534 @@
+
+> journey-for-app@0.1.0 build-storybook
+> storybook build --output-dir=/var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt
+
+
+┌  Building storybook v10.3.5
+│
+◇  Cleaning outputDir:
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt
+│
+◇  Loading presets
+│
+◇  Building manager..
+│
+●  Building preview..
+│  Vite vite v8.0.8 building client environment for production...
+[2Ktransforming...✓ 562 modules transformed.
+rendering chunks...
+computing gzip size...
+│  Vite
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/YuCoin-D93g-PCV.svg
+│  4.62 kB │ gzip:   2.30 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/OceanJellyfish-DcmzBYQp.svg
+│  5.23 kB │ gzip:   2.23 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Desert_ Challenge_None_ Online_On_ Section_Select-B0CkVpNp.png
+│  7.79 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Betterhelp-DsIz8Tjh.png
+│  8.17 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/OceanShell-CP8Yqj_2.svg
+│  10.03 kB │ gzip:   3.99 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_None_
+│  World_Yunity 2_ Challenge_None_ Online_On_
+│  Section_Yuniversal-C6OCRHhm.svg            10.53 kB │ gzip:   2.24 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Forest_ Challenge_None_ Online_On_ Section_Select-BwZuNdgK.png
+│  10.58 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_None_
+│  World_Yunity 3_ Challenge_None_ Online_On_
+│  Section_Yuniversal-C0Zae9Pq.svg            10.66 kB │ gzip:   2.28 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Mountain_ Challenge_None_ Online_On_ Section_Result-DONdDlFI.png
+│  10.97 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Mountain_ Challenge_None_ Online_On_ Section_Select-ByWNiztP.png
+│  10.97 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Yuniversal_
+│  Challenge_Steps@3x-9ZQOs7c9.png
+│  12.04 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Forest_ Challenge_None_ Online_On_ Section_Result-BTUZcpNC.png
+│  13.39 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Mountain_
+│  Challenge_Steps@3x-E6E18-z8.png
+│  14.16 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/DesertSaguaro-ChPWCe9m.svg
+│  14.20 kB │ gzip:   4.83 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Desert_
+│  Challenge_Steps@3x-ChkJR7xg.png
+│  15.10 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Earth_
+│  World_Forest_ Challenge_Brisk Walk_ Online_On_
+│  Section_Active-BGm-OMWH.svg           16.14 kB │ gzip:   5.95 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Red_
+│  World_Forest_ Challenge_None_ Online_On_ Section_Select-D3amfZ4u.png
+│  16.32 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Forest_ Challenge_None_ Online_On_ Section_Select-Cnr4momh.png
+│  16.86 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Mountain_
+│  Challenge_Workouts@3x-C0dQfk5r.png
+│  17.09 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Yuniversal_
+│  Challenge_Workouts@3x-CukT7B2C.png
+│  17.23 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Yuniversal_
+│  Challenge_Meditation@3x-7X1xsoX8.png
+│  17.26 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Ocean_
+│  Challenge_Meditation@3x-6Z2-hXse.png
+│  17.70 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Desert_
+│  Challenge_Meditation@3x-CfYcb_Fv.png
+│  17.98 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Forest_
+│  Challenge_Steps@3x-COMB6xxh.png
+│  18.60 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Mountain_
+│  Challenge_Meditation@3x-DvidQ4AD.png
+│  18.72 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Earth_
+│  World_Forest_ Challenge_None_ Online_On_ Section_YuCoin-B8atn6QG.png
+│  20.09 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Ocean_
+│  Challenge_Steps@3x-Cxyj8BYv.png
+│  20.10 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Mountain_ Challenge_Short Stroll_ Online_On_
+│  Section_Active-DlPRuM0r.png      20.93 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Ocean_ Challenge_Meditation_ Online_On_
+│  Section_Active-BswsKZUU.png             21.09 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Desert_
+│  Challenge_Workouts@3x-BhxG8lbC.png
+│  21.19 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Mountain_ Challenge_Brisk Walk_ Online_On_
+│  Section_Active-u4OwqrSe.png        21.27 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/iframe.html
+│  21.51 kB │ gzip:   5.59 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Desert_ Challenge_Short Stroll_ Online_On_
+│  Section_Active-BuBbiYHR.png          22.04 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Desert_ Challenge_None_ Online_On_ Section_YuCoin-Dk8GVUC-.png
+│  22.19 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Desert_
+│  Challenge_Yudoku@3x-D7gIH0gP.png
+│  22.31 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Desert_ Challenge_Long Walk_ Online_On_
+│  Section_Active-BEp-QfMU.png             22.55 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_None_
+│  World_Yunity 4_ Challenge_None_ Online_On_
+│  Section_Yuniversal-oP7w-2tt.svg            22.60 kB │ gzip:   3.71 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Forest_
+│  Challenge_Meditation@3x-BrNZv1T4.png
+│  22.99 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Forest_
+│  Challenge_Workouts@3x-ke-PMDVR.png
+│  23.21 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Mountain_
+│  Challenge_Yudoku@3x-Dq87x2vY.png
+│  23.41 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Lunar_
+│  World_Desert_ Challenge_Fiit_ Online_On_ Section_Active-BU_pm__n.png
+│  24.10 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Ocean_ Challenge_None_ Online_On_ Section_YuCoin-QssYY6nV.png
+│  24.49 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Yuniversal_
+│  Challenge_Yudoku@3x-Cuv8GXS0.png
+│  24.51 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Ocean_ Challenge_None_ Online_On_ Section_Select-oe0c1xgx.png
+│  25.84 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Mountain_ Challenge_None_ Online_On_ Section_YuCoin-RluvKyPz.png
+│  26.01 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Mountain_ Challenge_Fiit_ Online_On_ Section_Active-DTta7Jrc.png
+│  26.33 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Mountain_ Challenge_Long Walk_ Online_On_
+│  Section_Active-D2n8RvF7.png         26.41 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Desert_ Challenge_Fiit_ Online_On_ Section_Active-BPaEz62C.png
+│  26.49 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Purple_
+│  World_Desert_ Challenge_Meditation_ Online_On_
+│  Section_Active-Cc3YYR2_.png          26.55 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Ocean_ Challenge_None_ Online_On_ Section_Result-CnCNyR1M.png
+│  27.14 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Forest_ Challenge_None_ Online_On_ Section_YuCoin-pYlOiS4h.png
+│  27.28 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Forest_
+│  Challenge_Yudoku@3x-DcUkAymI.png
+│  28.04 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Ocean_
+│  Challenge_Yudoku@3x-fRIe3Wc1.png
+│  28.78 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Desert_ Challenge_Meditation_ Online_On_
+│  Section_Active-CN_fGFid.png            28.98 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Mountain_ Challenge_Short Stroll_ Online_On_
+│  Section_Active-B08HGpa9.png        29.25 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Purple_
+│  World_Mountain_ Challenge_Meditation_ Online_On_
+│  Section_Active-Bnt8MBR-.png        30.03 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Mountain_ Challenge_Fiit_ Online_On_ Section_Active-BHqvrsp2.png
+│  30.79 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Desert_ Challenge_Brisk Walk_ Online_On_
+│  Section_Active-BRa7Bmhy.png            31.26 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Ocean_ Challenge_Long Walk_ Online_On_
+│  Section_Active-UK0DOaRS.png              32.46 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Mountain_ Challenge_Meditation_ Online_On_
+│  Section_Active-DJuYlUac.png          33.10 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Ocean_
+│  Challenge_Workouts@3x-CVBzOKpH.png
+│  33.50 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Forest_ Challenge_Meditation_ Online_On_
+│  Section_Active-rKjJFVGD.svg          33.51 kB │ gzip:  10.92 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Mountain_ Challenge_Brisk Walk_ Online_On_
+│  Section_Active-DyDFsbMN.png          33.63 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Red_
+│  World_Desert_ Challenge_None_ Online_On_ Section_Result-B5Nbm-nA.png
+│  34.80 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Mountain_ Challenge_Meditation_ Online_On_
+│  Section_Active-Doterc1D.png        35.02 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Purple_
+│  World_Ocean_ Challenge_Brisk Walk_ Online_On_
+│  Section_Active-8cC6rq4u.png           35.73 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Forest_ Challenge_Brisk Walk_ Online_On_
+│  Section_Active-B9O8IXTt.png            35.98 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Orange_
+│  World_Desert_ Challenge_None_ Online_On_ Section_YuCoin-DOXj1n8D.png
+│  36.44 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Forest_ Challenge_Long Walk_ Online_On_
+│  Section_Active-fwjH8yYa.png             36.72 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Ocean_ Challenge_Brisk Walk_ Online_On_
+│  Section_Active-Bbe--a8i.png             37.76 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Forest_ Challenge_Meditation_ Online_On_
+│  Section_Active-BnEacILR.png            38.20 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Mountain_ Challenge_None_ Online_On_ Section_YuCoin-CHMPn3TA.png
+│  38.62 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Forest_ Challenge_Fiit_ Online_On_ Section_Active-DB2eBvSX.png
+│  38.65 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Ocean_ Challenge_Short Stroll_ Online_On_
+│  Section_Active-Bsa6dG_E.png         38.68 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Earth_
+│  World_Forest_ Challenge_Fiit_ Online_On_ Section_Active-CvVQFmm7.png
+│  38.87 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Purple_
+│  World_Mountain_ Challenge_Long Walk_ Online_On_
+│  Section_Active-CPG3hmvX.png         39.91 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Ocean_ Challenge_Short Stroll_ Online_On_
+│  Section_Active-Ggdo-Qp5.png           41.07 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Desert_ Challenge_Short Stroll_ Online_On_
+│  Section_Active-DzljjadX.png        41.63 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Purple_
+│  World_Desert_ Challenge_None_ Online_On_ Section_YuCoin-BYL5gLs6.png
+│  42.98 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Ocean_ Challenge_Fiit_ Online_On_ Section_Active-DFHq4ZN4.png
+│  43.08 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Red_
+│  World_Forest_ Challenge_Short Stroll_ Online_On_
+│  Section_Active-BuYKMVJg.png           45.25 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Desert_ Challenge_None_ Online_On_ Section_YuCoin-BFhRZHZN.png
+│  46.33 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Mountain_ Challenge_Long Walk_ Online_On_
+│  Section_Active-BL62r5En.png           46.34 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Purple_
+│  World_Forest_ Challenge_Short Stroll_ Online_On_
+│  Section_Active-0jB9zE1N.png        47.58 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Forest_ Challenge_None_ Online_On_ Section_YuCoin-CEySetM_.png
+│  48.12 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Orange_
+│  World_Forest_ Challenge_None_ Online_On_ Section_YuCoin-CsFG5mZR.png
+│  49.06 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Purple_
+│  World_Forest_ Challenge_None_ Online_On_ Section_YuCoin-Bgt2LWww.png
+│  50.16 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Forest_ Challenge_Short Stroll_ Online_On_
+│  Section_Active-muNljMrQ.png          50.39 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Desert_ Challenge_Meditation_ Online_On_
+│  Section_Mindfulness-B2e5Le3-.png     52.47 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Desert_ Challenge_Brisk Walk_ Online_On_
+│  Section_Active-D8tz4Fl0.png          55.26 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Orange_
+│  World_Mountain_ Challenge_None_ Online_On_ Section_YuCoin-2nMHh3_K.png
+│  64.21 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Forest_ Challenge_Brisk Walk_ Online_On_
+│  Section_Active-oghDno5D.png          65.19 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Orange_
+│  World_Forest_ Challenge_Brisk Walk_ Online_On_
+│  Section_Active-B2BIgddx.png          68.54 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/yucoin-composite-BoSZ89wH.png
+│  68.90 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Ocean_ Challenge_Brisk Walk_ Online_On_
+│  Section_Active-Da5x3McX.png           69.91 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Ocean_ Challenge_Meditation_ Online_On_
+│  Section_Active-CKHAsBMf.png           70.09 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Phio-CKFZSuz8.png
+│  71.81 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Ring_
+│  World_Ocean_ Challenge_Fiit_ Online_On_ Section_Active-BKwtO5IJ.png
+│  72.28 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Forest_ Challenge_Long Walk_ Online_On_
+│  Section_Active-CXoEfJjm.png           80.10 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Orange_
+│  World_Desert_ Challenge_Fiit_ Online_On_ Section_Active-DJ7zuLQm.png
+│  83.24 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Desert_ Challenge_Long Walk_ Online_On_
+│  Section_Active-zBSper8e.png           83.62 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Red_
+│  World_Mountain_ Challenge_None_ Online_On_ Section_YuCoin-xmiT7XYT.png
+│  84.91 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Desert_ Challenge_Fiit_ Online_On_ Section_Active-Ct5yWU0S.png
+│  85.72 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Purple_
+│  World_Mountain_ Challenge_None_ Online_On_ Section_YuCoin-B-BJJAYj.png
+│  86.45 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Earth_
+│  World_Forest_ Challenge_Long Walk_ Online_On_
+│  Section_Active-Bm2cDHjG.png            97.39 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/SkinVision-EoHint7x.png
+│  103.85 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Bright_
+│  World_Ocean_ Challenge_Long Walk_ Online_On_
+│  Section_Active-CEue2yZJ.png           150.75 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_None_
+│  World_Yuniversal_ Challenge_None_ Online_On_
+│  Section_Yuniversal-DTFNImYu.png         245.76 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Red_
+│  World_Forest_ Challenge_Brisk Walk_ Online_On_
+│  Section_Active-B4Ra0zna.png            254.38 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/hero-background-3qXPC60e.png
+│  3,696.07 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/react-DV3rprDa.js
+│  0.07 kB │ gzip:   0.08 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/theming-BPJWExxG.js
+│  0.07 kB │ gzip:   0.08 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/react-18-C3k44wQL.js
+│  0.10 kB │ gzip:   0.10 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/YuCoinValue-BoFXRsDs.js
+│  0.12 kB │ gzip:   0.11 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/docs-tools-DmEYWqO1.js
+│  0.12 kB │ gzip:   0.11 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/NavigationHeader-CGClh7fk.js
+│  0.12 kB │ gzip:   0.11 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/radii-BZNYDeGA.js
+│  0.13 kB │ gzip:   0.14 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/components-CRfYjDTN.js
+│  0.14 kB │ gzip:   0.13 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/chunk-CYSK6WYR-CWwWBsLw.js
+│  0.15 kB │ gzip:   0.13 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/chunk-4BE7D4DS-BcMxU9-0.js
+│  0.16 kB │ gzip:   0.15 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Button-BhxvP7Ke.js
+│  0.16 kB │ gzip:   0.13 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Planet_Earth_
+│  World_Forest_ Challenge_None_ Online_On_ Section_YuCoin-D09X7RPp.js
+│  0.19 kB │ gzip:   0.18 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/chunk-242VQQM5-BxrfRarl.js
+│  0.21 kB │ gzip:   0.18 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/formatter-EIJCOSYU--Tr65AJM.js
+│  0.27 kB │ gzip:   0.21 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Tile-Cpt_iTya.js
+│  0.29 kB │ gzip:   0.20 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/jsx-runtime-fcfuQg7E.js
+│  0.42 kB │ gzip:   0.29 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/spacing-BkitaIKx.js
+│  0.46 kB │ gzip:   0.30 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/react-DJaLQcJe.js
+│  0.48 kB │ gzip:   0.30 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/chunk-SL3VIQZ3-CuhCFKJd.js
+│  0.68 kB │ gzip:   0.42 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/chunk-A242L54C-BY7o5QOM.js
+│  0.91 kB │ gzip:   0.53 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/chunk-BneVvdWh.js
+│  1.11 kB │ gzip:   0.63 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/preload-helper-CV6hqhE5.js
+│  1.27 kB │ gzip:   0.73 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/DocsRenderer-LL677BLK-Bz-lzKRC.js
+│  1.30 kB │ gzip:   0.70 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/typography-DnB09VAt.js
+│  1.87 kB │ gzip:   0.53 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/TileGroup-iUAPhD7T.js
+│  1.98 kB │ gzip:   1.06 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/YuCoinValue-Dp0U53aY.js
+│  1.98 kB │ gzip:   0.99 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/YuCoinValue.stories-DHRyyU4W.js
+│  2.06 kB │ gzip:   0.63 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/YuLifeSquareMono-DQFI8_9H.js
+│  2.08 kB │ gzip:   0.67 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/World_Yuniversal_
+│  Challenge_Yudoku@3x-DHqpO9fW.js
+│  2.35 kB │ gzip:   0.65 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Tile.stories-ggvLtCy-.js
+│  2.54 kB │ gzip:   1.16 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/HeroProductDetails-UXiknXXr.js
+│  2.77 kB │ gzip:   1.36 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/ButtonGroup-DxBQXWXP.js
+│  2.90 kB │ gzip:   1.45 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/ActionBar-B2J7-7Eu.js
+│  3.02 kB │ gzip:   1.47 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/colors--K1N4eYp.js
+│  3.36 kB │ gzip:   1.31 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Tile-B-9rhv8k.js
+│  3.38 kB │ gzip:   1.74 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/react-dom-Damuilbr.js
+│  3.56 kB │ gzip:   1.35 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Hero.stories-DkeidzE6.js
+│  3.75 kB │ gzip:   1.52 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Badge-tzd-kksC.js
+│  4.02 kB │ gzip:   1.85 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/chunk-3LY4VQVK-DcXFgkyS.js
+│  4.03 kB │ gzip:   1.71 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/icons-D0QKsvzs.js
+│  4.60 kB │ gzip:   2.44 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Button-CfVc3FRM.js
+│  5.08 kB │ gzip:   2.14 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Hero-DqxMfSg2.js
+│  5.19 kB │ gzip:   2.39 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/TileImage-BZ_iD9S9.js
+│  5.48 kB │ gzip:   2.37 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/ChallengeHero.stories-Db4ZFCeW.js
+│  5.98 kB │ gzip:   2.18 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Welcome-Cluc0iKV.js
+│  6.17 kB │ gzip:   1.99 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/ActionBar.stories-Cqvb2fSh.js
+│  6.50 kB │ gzip:   2.15 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/NavigationHeader-DNv93-ix.js
+│  6.79 kB │ gzip:   2.60 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/CardInfoContent-zS3q3yMD.js
+│  7.09 kB │ gzip:   2.52 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/react-D1sJ83FZ.js
+│  7.52 kB │ gzip:   2.87 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/HealthCashPlan.stories-CvKmi-V2.js
+│  7.60 kB │ gzip:   3.03 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/HeroProductDetails.stories-CT_ca6Bl.js
+│  7.66 kB │ gzip:   2.28 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Card.stories-tzza9Xkl.js
+│  8.07 kB │ gzip:   2.66 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/ButtonGroup.stories-Di0EHSH7.js
+│  8.09 kB │ gzip:   2.30 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/NavigationHeader.stories-CNWytEjL.js
+│  8.23 kB │ gzip:   2.38 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/TileImage.stories-DJkK82c7.js
+│  8.37 kB │ gzip:   2.70 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/CardInfoContent.stories-pwRMOJn-.js
+│  8.53 kB │ gzip:   2.56 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Button.stories-C0hh7h9I.js
+│  9.57 kB │ gzip:   2.46 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Logo.stories-BlxubDgJ.js
+│  9.89 kB │ gzip:   2.60 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/SinglePageTemplate.stories-CIGEX7fn.js
+│  10.36 kB │ gzip:   3.10 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Spacing.stories-CnTaGVFS.js
+│  10.39 kB │ gzip:   2.93 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Colors.stories-D8RdIKaB.js
+│  10.49 kB │ gzip:   3.07 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/SettingsGear-BJQC4Wf7.js
+│  10.57 kB │ gzip:   4.16 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Badge.stories-DLHE2UID.js
+│  10.61 kB │ gzip:   1.89 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Typography.stories-BOyCtutC.js
+│  11.28 kB │ gzip:   3.02 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/ColourIcons.stories-B3u2Svnw.js
+│  12.50 kB │ gzip:   4.85 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/insurance-products-CO7DUBGg.js
+│  12.62 kB │ gzip:   5.88 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/TileGroup.stories-DfvVBOIv.js
+│  13.63 kB │ gzip:   3.39 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Radii.stories-DKEE5bHT.js
+│  14.43 kB │ gzip:   3.73 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Icons.stories-2w72TSU9.js
+│  15.44 kB │ gzip:   5.50 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/ModalTemplate.stories-D-mqzX52.js
+│  18.14 kB │ gzip:   6.08 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/chunk-RD3KTAHR-CMlnp6cK.js
+│  20.74 kB │ gzip:   6.92 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/ProgressBar.stories-fMrY33iZ.js
+│  22.80 kB │ gzip:   5.58 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/ChallengeBackgrounds.stories-ojvaj8If.js
+│  26.44 kB │ gzip:   4.57 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/vite-inject-mocker-entry.js
+│  27.85 kB │ gzip:   9.64 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/YuCoinScreen.stories-q7n4_nD7.js
+│  27.93 kB │ gzip:   6.93 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/matchers-5TDFFDYO-CR65y9l8.js
+│  28.81 kB │ gzip:   9.67 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Color-FRDS63T2-CA-Zrut4.js
+│  30.85 kB │ gzip:  11.57 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/WithTooltip-65CFNBJE-SKu_w5D7.js
+│  33.27 kB │ gzip:  11.67 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/theming-DrC29ESS.js
+│  55.04 kB │ gzip:  21.23 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/chunk-KJHJLCBK-D4KQrJF1.js
+│  59.36 kB │ gzip:  17.04 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/syntaxhighlighter-OH4MV7E3-DMvZzkNG.js
+│  76.14 kB │ gzip:  27.38 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/Level-jPoUIkEQ.js
+│  89.60 kB │ gzip:  29.12 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/react-18-AExifLbo.js
+│  179.05 kB │ gzip:  56.63 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/blocks-BO2B24Kj.js
+│  182.64 kB │ gzip:  57.94 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/colour-B24_6ZhV.js
+│  244.03 kB │ gzip:  54.97 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/components-CXKcqu6G.js
+│  543.24 kB │ gzip: 172.66 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/axe-CqzAGJxP.js
+│  571.01 kB │ gzip: 155.74 kB
+│  ../../../../var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt/assets/iframe-Bq-Wo0g5.js
+│  1,028.31 kB │ gzip: 290.39 kB
+
+│
+▲  Vite [plugin builtin:vite-reporter]
+│  (!) Some chunks are larger than 500 kB after minification. Consider:
+│  - Using dynamic import() to code-split the application
+│  - Use build.rolldownOptions.output.codeSplitting to improve chunking:
+│  ]8;;https://rolldown.rs/reference/OutputOptions.codeSplittinghttps://rolldown.rs/reference/OutputOptions.codeSplitting]8;;
+│  - Adjust chunk size limit for this warning via
+│  build.chunkSizeWarningLimit.
+│  Vite ✓ built in 1.80s
+│
+◇  Output directory:
+│  /var/folders/lk/fv8rvrv54_s6vzy0nzd5tx0m0000gn/T/chromatic--55043-3NjG3dHi8pSt
+│
+└  Storybook build completed successfully
+

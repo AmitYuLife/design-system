@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { NavigationHeader } from "./NavigationHeader";
 import { Icon } from "../../icons/Icon";
 import HamburgerIcon from "../../icons/svg/Hamburger.svg?react";
@@ -188,16 +188,22 @@ export const DarkMode: Story = {
     leftSlot: HamburgerLeftDark,
     rightSlot: <YuCoinValue value="123,131" dark />,
   },
+
   parameters: {
-    backgrounds: { default: "dark" },
     docs: {
       description: {
         story:
           "Dark-mode variant: status bar icons, time, and the monochrome YuLife logo all " +
           "render in white. Use `colors.textInverse` (#FFFFFF) for all slot content.",
       },
-    },
+    }
   },
+
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
+  }
 };
 
 /** Settings icon as right action — alternative right-slot pattern. */

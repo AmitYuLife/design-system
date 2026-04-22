@@ -1,5 +1,5 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 // ─── Asset discovery ──────────────────────────────────────────────────────────
 // Eagerly import every PNG/SVG inside challenge-hero, keyed by relative path.

@@ -1,5 +1,5 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import YuLifeSquareColourSvg from "./svg/YuLifeSquareColour.svg?react";
 import YuLifeSquareMonoSvg from "./svg/YuLifeSquareMono.svg?react";
 
