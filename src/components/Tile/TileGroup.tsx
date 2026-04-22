@@ -1,23 +1,24 @@
 import React from "react";
-import { Tile, TileProps } from "./Tile";
 import { spacing } from "../../tokens/spacing";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-export interface TileItem extends Pick<TileProps, "colourIcon" | "label"> {}
-
 export interface TileGroupProps {
   /**
-   * Array of tile items to render. Each item requires a `colourIcon` (24 × 24
-   * ColourIcon component) and a `label` string.
+   * Tile components to render (`Tile`, `TileImage`, or a mix of both).
    *
-   * The Figma spec shows 2–3 tiles. More tiles will still share width equally
-   * but may become visually crowded below 3 tiles wide.
+   * In **horizontal** mode each child shares the available width equally
+   * (`flex: 1`). In **vertical** mode each child stretches to full width.
    */
-  tiles: TileItem[];
+  children: React.ReactNode;
   /**
-   * Inline style overrides for the root element.
+   * Layout direction.
+   *
+   * - `"horizontal"` (default) — tiles sit side-by-side and share width.
+   * - `"vertical"` — tiles stack top-to-bottom at full width.
    */
+  direction?: "horizontal" | "vertical";
+  /** Inline style overrides for the root element. */
   style?: React.CSSProperties;
 }
 
@@ -26,36 +27,53 @@ export interface TileGroupProps {
 /**
  * TileGroup
  *
- * A full-width horizontal row of `Tile` components that share the available
- * width equally. Each tile receives `flex: 1` so the group adapts to any
- * container width — suitable for use inside `SinglePageTemplate`'s MainLayout
- * or any full-width content area.
- *
- * Pass tile data via the `tiles` prop (array of `{ colourIcon, label }`).
- * Designed for 2–3 tiles; the Figma spec shows 3-up as the primary layout.
+ * A layout wrapper that arranges `Tile` and/or `TileImage` components in
+ * either a horizontal row (equal-width sharing) or a vertical stack
+ * (full-width). Each child is wrapped in a flex-item `div` so the layout
+ * works regardless of the child component's own width.
  *
  * Figma reference: YuLife App Storybook → TileGroup → node 10972:4569
  * https://www.figma.com/design/ERkTigxQV1eQ7jooI8pgQp/YuLife-App-Storybook?node-id=10972-4569
  */
-export const TileGroup: React.FC<TileGroupProps> = ({ tiles, style }) => (
-  <div
-    style={{
-      display: "flex",
-      width: "100%",
-      gap: spacing[4],
-      alignItems: "center",
-      ...style,
-    }}
-  >
-    {tiles.map((tile, index) => (
-      <Tile
-        key={index}
-        colourIcon={tile.colourIcon}
-        label={tile.label}
-        style={{ flex: "1 0 0", width: "auto" }}
-      />
-    ))}
-  </div>
-);
+export const TileGroup: React.FC<TileGroupProps> = ({
+  children,
+  direction = "horizontal",
+  style,
+}) => {
+  const isVertical = direction === "vertical";
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: isVertical ? "column" : "row",
+        width: "100%",
+        gap: spacing[4],
+        alignItems: isVertical ? "stretch" : "center",
+        ...style,
+      }}
+    >
+      {React.Children.map(children, (child) => {
+        if (!React.isValidElement(child)) return null;
+        return (
+          <div
+            style={
+              isVertical
+                ? { width: "100%" }
+                : { flex: "1 0 0", minWidth: 0 }
+            }
+          >
+            {React.cloneElement(child as React.ReactElement<any>, {
+              style: {
+                ...(child.props as any).style,
+                width: "100%",
+              },
+            })}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 export default TileGroup;

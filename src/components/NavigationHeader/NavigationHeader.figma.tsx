@@ -16,8 +16,9 @@ import figma from "@figma/code-connect";
 import { NavigationHeader } from "./NavigationHeader";
 import { Icon } from "../../icons/Icon";
 import type { FC, SVGProps } from "react";
-import { HamburgerIcon, TodaysYuCoinIcon } from "../../icons/figma-stubs";
-import { colors, fontFamily } from "../../tokens";
+import { HamburgerIcon } from "../../icons/figma-stubs";
+import { colors } from "../../tokens";
+import { YuCoinValue } from "../YuCoinValue";
 
 type SvgStub = FC<SVGProps<SVGSVGElement>>;
 
@@ -32,20 +33,7 @@ const hamburgerSlot = (
   />
 );
 
-const yuCoinBalanceSlot = (
-  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-    <span style={{ fontFamily: fontFamily.sans, fontSize: 18, color: colors.textPrimary }}>
-      123,131
-    </span>
-    {/* Replace TodaysYuCoinIcon with the YuCoin colour nav icon when available */}
-    <Icon
-      svg={TodaysYuCoinIcon as SvgStub}
-      size={24}
-      color={colors.textPrimary}
-      accessibilityLabel="YuCoin"
-    />
-  </div>
-);
+const yuCoinBalanceSlot = <YuCoinValue value="123,131" />;
 
 // ─── Variant: Background=Off, Shadow=Off (default / transparent) ──────────────
 
@@ -54,9 +42,9 @@ figma.connect(
   "https://www.figma.com/design/ERkTigxQV1eQ7jooI8pgQp/YuLife-App-Storybook?node-id=10298-936",
   {
     imports: [
-      'import { NavigationHeader } from "@/components"',
-      'import { Icon, HamburgerIcon, TodaysYuCoinIcon } from "@/icons"',
-      'import { colors, fontFamily } from "@/tokens"',
+      'import { NavigationHeader, YuCoinValue } from "@/components"',
+      'import { Icon, HamburgerIcon } from "@/icons"',
+      'import { colors } from "@/tokens"',
     ],
     example: () => (
       <NavigationHeader
@@ -74,9 +62,9 @@ figma.connect(
   "https://www.figma.com/design/ERkTigxQV1eQ7jooI8pgQp/YuLife-App-Storybook?node-id=10326-1245",
   {
     imports: [
-      'import { NavigationHeader } from "@/components"',
-      'import { Icon, HamburgerIcon, TodaysYuCoinIcon } from "@/icons"',
-      'import { colors, fontFamily } from "@/tokens"',
+      'import { NavigationHeader, YuCoinValue } from "@/components"',
+      'import { Icon, HamburgerIcon } from "@/icons"',
+      'import { colors } from "@/tokens"',
     ],
     example: () => (
       <NavigationHeader
@@ -95,9 +83,9 @@ figma.connect(
   "https://www.figma.com/design/ERkTigxQV1eQ7jooI8pgQp/YuLife-App-Storybook?node-id=10326-1626",
   {
     imports: [
-      'import { NavigationHeader } from "@/components"',
-      'import { Icon, HamburgerIcon, TodaysYuCoinIcon } from "@/icons"',
-      'import { colors, fontFamily } from "@/tokens"',
+      'import { NavigationHeader, YuCoinValue } from "@/components"',
+      'import { Icon, HamburgerIcon } from "@/icons"',
+      'import { colors } from "@/tokens"',
     ],
     example: () => (
       <NavigationHeader

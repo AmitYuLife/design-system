@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { SinglePageTemplate } from "../../templates/SinglePageTemplate";
 import { HeroProductDetails } from "../../components/Hero";
 import { Card, CardInfoContent } from "../../components/Card";
-import { TileGroup } from "../../components/Tile";
+import { Tile, TileGroup } from "../../components/Tile";
 import { Button } from "../../components/Button";
 import {
   defaultHeroBackground,
@@ -155,13 +155,11 @@ const HEALTH_SERVICES: HealthService[] = [
 const HealthCashPlanContent = () => (
   <>
     {/* ── 1. Tile group ─────────────────────────────────────────────────────── */}
-    <TileGroup
-      tiles={[
-        { colourIcon: <CoverDetailsColourIcon size={24} />, label: "What I can claim for" },
-        { colourIcon: <PolicySummaryColourIcon size={24} />, label: "Make a claim" },
-        { colourIcon: <HintsColourIcon size={24} />, label: "Key policy information" },
-      ]}
-    />
+    <TileGroup>
+      <Tile colourIcon={<CoverDetailsColourIcon size={24} />} label="What I can claim for" />
+      <Tile colourIcon={<PolicySummaryColourIcon size={24} />} label="Make a claim" />
+      <Tile colourIcon={<HintsColourIcon size={24} />} label="Key policy information" />
+    </TileGroup>
 
     {/* ── 2. Key info ───────────────────────────────────────────────────────── */}
     <Card overline="Key info" style={{ gap: spacing[4] }}>

@@ -2,18 +2,18 @@ import React from "react";
 import { NavigationHeader } from "../../components/NavigationHeader";
 import { ActionBar } from "../../components/ActionBar";
 import { Button } from "../../components/Button";
+import { YuCoinValue } from "../../components/YuCoinValue";
 import { Icon } from "../../icons";
 import {
   BellIcon,
   HamburgerIcon,
-  TodaysYuCoinIcon,
   MapIcon,
   HeartIcon,
   TrophyIcon,
   ChestIcon,
   CyclingIcon,
   MindfulnessIcon,
-  YuCoinColourIcon,
+  TodaysYuCoinIcon,
 } from "../../icons";
 import { colors, palette } from "../../tokens/colors";
 import { fontFamily, fontSize, fontWeight } from "../../tokens/typography";
@@ -73,28 +73,6 @@ const HOME_SCREEN_NAV_ITEMS: ActionBarItem[] = [
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-interface YuCoinBalanceProps {
-  amount: string | number;
-}
-
-const YuCoinBalance: React.FC<YuCoinBalanceProps> = ({ amount }) => (
-  <div style={{ display: "flex", alignItems: "center", gap: spacing[2] }}>
-    <span
-      style={{
-        fontFamily: fontFamily.sans,
-        fontSize: 18,
-        fontWeight: fontWeight.regular,
-        lineHeight: "24px",
-        color: COLOR_HEADING,
-        textAlign: "right",
-        whiteSpace: "nowrap",
-      }}
-    >
-      {amount}
-    </span>
-    <YuCoinColourIcon size={24} accessibilityLabel="YuCoin balance" />
-  </div>
-);
 
 interface ActivityStatProps {
   icon: React.ReactNode;
@@ -367,7 +345,7 @@ export const YuCoinScreen: React.FC<YuCoinScreenProps> = ({
             accessibilityLabel="Open menu"
           />
         }
-        rightSlot={<YuCoinBalance amount={yuCoinBalance} />}
+        rightSlot={<YuCoinValue value={yuCoinBalance} />}
       />
 
       {/* ── Notification bell ─────────────────────────────────────────────── */}

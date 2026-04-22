@@ -5,9 +5,8 @@ import HamburgerIcon from "../../icons/svg/Hamburger.svg?react";
 import CloseIcon from "../../icons/svg/Close.svg?react";
 import LeftIcon from "../../icons/svg/Left.svg?react";
 import SettingsGearIcon from "../../icons/svg/SettingsGear.svg?react";
-// TODO: replace TodaysYuCoinIcon with the YuCoin colour nav icon once uploaded
-import TodaysYuCoinIcon from "../../icons/svg/TodaysYuCoin.svg?react";
-import { colors, textStyles, fontFamily } from "../../tokens";
+import { colors, textStyles } from "../../tokens";
+import { YuCoinValue } from "../YuCoinValue";
 
 // ─── Shared slot elements ──────────────────────────────────────────────────────
 
@@ -28,51 +27,6 @@ const HamburgerLeftDark = (
     accessibilityLabel="Open menu"
   />
 );
-
-/**
- * Right slot: YuCoin balance with the nav coin icon.
- * Text sits to the LEFT of the icon, matching the Figma spec.
- * Replace TodaysYuCoinIcon with the dedicated YuCoin colour nav icon
- * once it is added to src/icons/svg/.
- */
-function YuCoinBalance({
-  amount = "123,131",
-  dark = false,
-}: {
-  amount?: string;
-  dark?: boolean;
-}) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: 8,
-      }}
-    >
-      <span
-        style={{
-          fontFamily: fontFamily.sans,
-          fontSize: 18,
-          fontWeight: "400",
-          lineHeight: "24px",
-          color: dark ? colors.textInverse : colors.textPrimary,
-          textAlign: "right",
-          whiteSpace: "nowrap",
-        }}
-      >
-        {amount}
-      </span>
-      {/* TODO: swap for YuCoin colour nav icon when available */}
-      <Icon
-        svg={TodaysYuCoinIcon}
-        size={24}
-        color={dark ? colors.textInverse : colors.textPrimary}
-        accessibilityLabel="YuCoin"
-      />
-    </div>
-  );
-}
 
 // ─── Meta ─────────────────────────────────────────────────────────────────────
 
@@ -136,7 +90,7 @@ type Story = StoryObj<typeof NavigationHeader>;
 export const Default: Story = {
   args: {
     leftSlot: HamburgerLeft,
-    rightSlot: <YuCoinBalance />,
+    rightSlot: <YuCoinValue value="123,131" />,
   },
   parameters: {
     docs: {
@@ -157,7 +111,7 @@ export const WithBackground: Story = {
   args: {
     background: true,
     leftSlot: HamburgerLeft,
-    rightSlot: <YuCoinBalance />,
+    rightSlot: <YuCoinValue value="123,131" />,
   },
   parameters: {
     docs: {
@@ -179,7 +133,7 @@ export const WithShadow: Story = {
     background: true,
     shadow: true,
     leftSlot: HamburgerLeft,
-    rightSlot: <YuCoinBalance />,
+    rightSlot: <YuCoinValue value="123,131" />,
   },
   parameters: {
     docs: {
@@ -232,7 +186,7 @@ export const DarkMode: Story = {
   args: {
     darkMode: true,
     leftSlot: HamburgerLeftDark,
-    rightSlot: <YuCoinBalance dark />,
+    rightSlot: <YuCoinValue value="123,131" dark />,
   },
   parameters: {
     backgrounds: { default: "dark" },
