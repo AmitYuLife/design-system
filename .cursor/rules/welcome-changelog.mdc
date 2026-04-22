@@ -1,0 +1,23 @@
+---
+description: Keep the Welcome page changelog up to date before every commit
+alwaysApply: true
+---
+
+# Welcome Page Changelog
+
+`src/Welcome.mdx` contains a versioned changelog. It **must be updated before every commit**.
+
+## Rules
+
+- Before committing, always add or update a changelog entry in `src/Welcome.mdx` under the appropriate version heading.
+- If a new version milestone is reached, add a new `### vX.Y — Month YYYY` section above the previous one.
+- Each entry should briefly describe what was added, changed, or fixed — one bullet per component/feature.
+- Never commit without checking that the changelog reflects the changes in that commit.
+
+## Format
+
+```mdx
+### v0.8 — April 2026
+- **ComponentName** short description of what was added or changed
+- **AnotherThing** short description
+```
