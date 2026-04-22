@@ -17,7 +17,7 @@ alwaysApply: true
 ## Format
 
 ```mdx
-### v0.8 — April 2026
+### v0.8 — 22 April 2026
 - **ComponentName** short description of what was added or changed
 - **AnotherThing** short description
 ```
