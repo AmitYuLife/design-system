@@ -1,7 +1,7 @@
 {
-  "name": "journey",
+  "name": "journey-for-app",
   "version": "0.1.0",
-  "description": "YuLife App Design System — component library for Storybook",
+  "description": "Journey for App — YuLife App Design System component library for Storybook",
   "private": true,
   "scripts": {
     "storybook": "storybook dev -p 6006",

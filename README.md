@@ -1,4 +1,4 @@
-# Journey
+# Journey for App
 
 **YuLife App Design System**
 
