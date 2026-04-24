@@ -4,6 +4,8 @@ import { create } from "storybook/theming/create";
 const theme = create({
   base: "light",
   brandTitle: "Journey for App",
+  brandImage: "./favicon.png",
+  brandUrl: "https://amityulife.github.io/design-system/",
   brandTarget: "_self",
 
   colorPrimary: "#1A1A1A",
