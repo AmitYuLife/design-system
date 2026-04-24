@@ -11,6 +11,13 @@
     width: auto;
     max-width: none;
   }
+
+  /* Force white background on the canvas panel and its zoom/scroll wrappers */
+  [role="main"],
+  [role="main"] > *,
+  [role="main"] > * > * {
+    background-color: #ffffff !important;
+  }
 </style>
 <script>
   window.STORYBOOK_CONFIG = {
