@@ -251,7 +251,7 @@ export const SinglePageTemplate: React.FC<SinglePageTemplateProps> = ({
             paddingRight: space.pagePaddingHorizontal,
             display: "flex",
             flexDirection: "column",
-            gap: space.stackMD,
+            gap: spacing[6],
           }}
         >
           {children}

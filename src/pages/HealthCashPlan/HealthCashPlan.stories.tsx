@@ -219,9 +219,9 @@ const HealthCashPlanContent = () => (
     <div style={{ width: "100%" }}>
       <p
         style={{
-          ...textStyles.label2Bold,
-          lineHeight: `${textStyles.label2Bold.lineHeight}px`,
-          letterSpacing: `${textStyles.label2Bold.letterSpacing}px`,
+          ...textStyles.label1Bold,
+          lineHeight: `${textStyles.label1Bold.lineHeight}px`,
+          letterSpacing: `${textStyles.label1Bold.letterSpacing}px`,
           color: colors.textPrimary,
           margin: 0,
           marginBottom: spacing[2],

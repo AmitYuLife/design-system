@@ -13,9 +13,65 @@ A living component library for the YuLife mobile app. All components are built w
 
 Each component is linked back to Figma via **Figma Code Connect**, so the code snippets you see in Figma Dev Mode always match what's here.
 
+## Explore the Library
+
+<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 20, margin: "24px 0 48px" }}>
+{[
+  {
+    title: "Foundations",
+    description: "Colour palette, typography, spacing, radii, iconography, and the YuLife logo — the design tokens powering every component.",
+    storyId: "foundations-colours--palette",
+    href: "/?path=/docs/foundations-colours--docs",
+  },
+  {
+    title: "Components",
+    description: "Reusable atoms and molecules: buttons, cards, hero banners, navigation bars, tiles, badges, checkboxes, toggles, and more.",
+    storyId: "components-button--all-variants",
+    href: "/?path=/docs/components-button--docs",
+  },
+  {
+    title: "Templates",
+    description: "Full-screen layout shells — the YuCoin activity screen, single-page scroller, and modal overlay.",
+    storyId: "templates-yucoinscreen--default",
+    href: "/?path=/docs/templates-yucoinscreen--docs",
+  },
+  {
+    title: "Game Assets",
+    description: "Background imagery and hero artwork for the four game worlds: Forest, Ocean, Desert, and Mountain.",
+    storyId: "game-assets-challengehero--yuniversal",
+    href: "/?path=/story/game-assets-challengehero--yuniversal",
+  },
+  {
+    title: "Pages",
+    description: "End-to-end product screens assembled from real app content, showing components working together at full fidelity.",
+    storyId: "pages-health-cash-plan--default",
+    href: "/?path=/docs/pages-health-cash-plan--docs",
+  },
+].map((section) => (
+  <a key={section.title} href={section.href} style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+    <div style={{ border: "1px solid #E5E7EB", borderRadius: 12, overflow: "hidden", background: "#FFFFFF", height: "100%", transition: "box-shadow 0.15s ease" }}>
+      <div style={{ height: 160, overflow: "hidden", position: "relative", background: "#F3F4F6" }}>
+        <iframe
+          src={`./iframe.html?id=${section.storyId}&viewMode=story`}
+          style={{ width: "200%", height: 320, border: "none", transform: "scale(0.5)", transformOrigin: "top left", pointerEvents: "none" }}
+        />
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 40, background: "linear-gradient(to bottom, transparent, rgba(243,244,246,0.85))", pointerEvents: "none" }} />
+      </div>
+      <div style={{ padding: "12px 16px 16px" }}>
+        <div style={{ fontSize: 13, fontWeight: 700, color: "#111827", marginBottom: 5 }}>{section.title}</div>
+        <div style={{ fontSize: 12, color: "#6B7280", lineHeight: 1.6 }}>{section.description}</div>
+      </div>
+    </div>
+  </a>
+))}
+</div>
+
 ---
 
 ## Changelog
+
+### v0.8 — 24 April 2026
+- **Welcome page** section grid added above the Changelog — five cards (Foundations → Pages) each with a live story thumbnail and description
 
 ### v0.7 — 22 April 2026
 - **Checkbox** component with checked, disabled, and inactive states — uses the design system `CheckIcon`

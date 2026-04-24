@@ -53,6 +53,12 @@ const preview: Preview = {
       }
     },
 
+    docs: {
+      story: {
+        height: '852px',
+      },
+    },
+
     controls: {
       matchers: {
         color: /Color$/i,

@@ -16,7 +16,7 @@ export interface CardProps {
    */
   children?: React.ReactNode;
   /**
-   * Optional overline label rendered above the card. Uses Label 2 Bold.
+   * Optional overline label rendered above the card. Uses Label 1 Bold.
    * Pass a `ReactNode` if you need custom formatting.
    */
   overline?: React.ReactNode;
@@ -83,9 +83,9 @@ export const Card: React.FC<CardProps> = ({
   };
 
   const overlineStyle: React.CSSProperties = {
-    ...textStyles.label2Bold,
-    lineHeight: `${textStyles.label2Bold.lineHeight}px`,
-    letterSpacing: `${textStyles.label2Bold.letterSpacing}px`,
+    ...textStyles.label1Bold,
+    lineHeight: `${textStyles.label1Bold.lineHeight}px`,
+    letterSpacing: `${textStyles.label1Bold.letterSpacing}px`,
     color: colors.textPrimary,
     margin: 0,
   };
