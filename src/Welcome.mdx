@@ -73,10 +73,13 @@ Each component is linked back to Figma via **Figma Code Connect**, so the code s
 ### v1.1 — 24 April 2026
 - **InlineBanner** toast/banner component with icon, message, optional CTA, and auto-dismiss support
 - **UnorderedList** component with nested list support using design system text and spacing tokens
-- **Animation** token story added (`duration` and `easing` scales sourced from ModalTemplate transitions)
-- **Button** stories and component improved
+- **Animation** token file and story added (`duration` and `easing` scales)
+- **Button** gains four status colour variants — `Success`, `Warning`, `Error`, `Info` — for use as action buttons inside InlineBanner
+- **ModalTemplate** `hero` prop made optional (modal can now render without a hero); animation durations switched from hardcoded values to `animation` tokens
+- **Color tokens** — `palette.transBlack8` (black at 8% opacity) added
 - **Colour Icons** gallery now displays in a multicolumn grid and icons are sorted alphabetically
 - **Line Icons** gallery now displays in a multicolumn grid
+- **Storybook** docs story default height reduced from 852 px to 300 px
 - **Radii** Usage Examples story removed; Scale and Token Table stories remain
 
 ### v1.0 — 24 April 2026
