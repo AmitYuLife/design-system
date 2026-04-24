@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const config: StorybookConfig = {
+  staticDirs: ["../public"],
   stories: [
     "../src/Welcome.mdx",
     "../src/tokens/**/*.stories.@(ts|tsx|mdx)",
