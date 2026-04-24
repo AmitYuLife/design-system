@@ -20,7 +20,7 @@ const theme = create({
   colorPrimary: purple800,
   colorSecondary: purple800,
 
-  appBg: neutral50,
+  appBg: white,
   appContentBg: white,
   appPreviewBg: white,
   appBorderColor: neutral300,
