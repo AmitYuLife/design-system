@@ -244,7 +244,7 @@ export const SinglePageTemplate: React.FC<SinglePageTemplateProps> = ({
             marginTop: -spacing[6],
             borderTopLeftRadius: radii.md,
             borderTopRightRadius: radii.md,
-            backgroundColor: palette.neutral50,
+            backgroundColor: colors.bgBase,
             paddingTop: space.pagePaddingVertical,
             paddingBottom: footer ? PINNED_FOOTER_SCROLL_CLEARANCE : space.pagePaddingVertical,
             paddingLeft: space.pagePaddingHorizontal,
