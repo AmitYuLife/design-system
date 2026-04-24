@@ -30,6 +30,7 @@ const config: StorybookConfig = {
     const { mergeConfig } = await import("vite");
 
     return mergeConfig(config, {
+      base: process.env.STORYBOOK_BASE_URL || "/",
       plugins: [
         svgr({
           svgrOptions: {
