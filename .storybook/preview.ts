@@ -55,7 +55,7 @@ const preview: Preview = {
 
     docs: {
       story: {
-        height: '852px',
+        height: '300px',
       },
     },
 

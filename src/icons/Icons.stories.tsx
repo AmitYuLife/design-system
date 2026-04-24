@@ -43,6 +43,8 @@ import StarFillIcon         from "./svg/StarFill.svg?react";
 import StarLineIcon         from "./svg/StarLine.svg?react";
 import StatusInfoIcon       from "./svg/StatusInfo.svg?react";
 import StatusSuccessIcon    from "./svg/StatusSuccess.svg?react";
+import StatusErrorIcon      from "./svg/StatusError.svg?react";
+import StatusWarningIcon    from "./svg/StatusWarning.svg?react";
 import StreakIcon           from "./svg/Streak.svg?react";
 import TodaysYuCoinIcon     from "./svg/TodaysYuCoin.svg?react";
 import TreasureChestIcon    from "./svg/TreasureChest.svg?react";
@@ -104,8 +106,10 @@ const ALL_ICONS: IconEntry[] = [
   { name: "Smart Pension",    export: "SmartPensionIcon",     component: SmartPensionIcon,     category: "Line Icons", tags: "smart pension savings retirement finance" },
   { name: "Star Fill",        export: "StarFillIcon",         component: StarFillIcon,         category: "Line Icons", tags: "star favourite saved bookmarked important rating filled" },
   { name: "Star Line",        export: "StarLineIcon",         component: StarLineIcon,         category: "Line Icons", tags: "star favourite save bookmark important rating" },
+  { name: "Status Error",     export: "StatusErrorIcon",      component: StatusErrorIcon,      category: "Line Icons", tags: "status error danger alert exclamation red circle" },
   { name: "Status Info",      export: "StatusInfoIcon",       component: StatusInfoIcon,       category: "Line Icons", tags: "status information notice alert blue" },
   { name: "Status Success",   export: "StatusSuccessIcon",    component: StatusSuccessIcon,    category: "Line Icons", tags: "status success complete done check green ok" },
+  { name: "Status Warning",   export: "StatusWarningIcon",    component: StatusWarningIcon,    category: "Line Icons", tags: "status warning caution triangle exclamation amber" },
   { name: "Streak",           export: "StreakIcon",           component: StreakIcon,           category: "Line Icons", tags: "days consecutive calendar challenge fire progress habit" },
   { name: "Todays YuCoin",    export: "TodaysYuCoinIcon",     component: TodaysYuCoinIcon,     category: "Line Icons", tags: "yucoin coin daily today earn points reward" },
   { name: "Treasure Chest",   export: "TreasureChestIcon",    component: TreasureChestIcon,    category: "Line Icons", tags: "treasure chest reward loot yucoins prize achievement open" },
@@ -125,7 +129,7 @@ const ALL_ICONS: IconEntry[] = [
 const meta: Meta = {
   title: "Foundations/Iconography/Line Icons",
   parameters: {
-    layout: "centered",
+    layout: "padded",
     docs: {
       description: {
         component: `

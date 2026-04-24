@@ -150,8 +150,9 @@ export const palette = {
   red900: "#BF1A54",
 
   // ── Transparent ──────────────────────────────────────────────────────────
-  transBlack: "rgba(0, 0, 0, 0.64)",
-  transWhite: "rgba(255, 255, 255, 0.64)",
+  transBlack8:  "rgba(0, 0, 0, 0.08)",
+  transBlack:   "rgba(0, 0, 0, 0.64)",
+  transWhite:   "rgba(255, 255, 255, 0.64)",
 
   // ── Misc ─────────────────────────────────────────────────────────────────
   miscBurgundy:    "#640038",

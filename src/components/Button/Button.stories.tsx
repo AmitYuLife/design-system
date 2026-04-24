@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "./Button";
-import { Icon, CheckIcon } from "../../icons";
+import { Icon, CheckIcon, StatusErrorIcon, StatusWarningIcon, StatusSuccessIcon, StatusInfoIcon } from "../../icons";
 
 // ─── Meta ─────────────────────────────────────────────────────────────────────
 
@@ -43,8 +43,8 @@ enabled/disabled states.
   argTypes: {
     colour: {
       control: "radio",
-      options: ["Primary", "Secondary"],
-      description: "Colour scheme — Primary (pink) or Secondary (neutral white).",
+      options: ["Primary", "Secondary", "Success", "Warning", "Error", "Info"],
+      description: "Colour scheme. Primary/Secondary are general-purpose; Success/Warning/Error/Info are status colours for use in InlineBanner.",
     },
     variant: {
       control: "radio",
@@ -226,6 +226,46 @@ export const DisabledSecondary: Story = {
     docs: {
       description: {
         story: "Secondary disabled states.",
+      },
+    },
+  },
+};
+
+// ─── Status colours ───────────────────────────────────────────────────────────
+
+/**
+ * Status-coloured buttons used inside InlineBanner action slots.
+ * These are always flat (no shadow, no press travel) and default to Solid.
+ */
+export const StatusColours: Story = {
+  render: () => (
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      {(["Error", "Warning", "Success", "Info"] as const).map((colour) => {
+        const statusIcon = {
+          Error:   <Icon svg={StatusErrorIcon}   size={16} color="#FFFFFF" accessibilityLabel="" />,
+          Warning: <Icon svg={StatusWarningIcon} size={16} color="#FFFFFF" accessibilityLabel="" />,
+          Success: <Icon svg={StatusSuccessIcon} size={16} color="#FFFFFF" accessibilityLabel="" />,
+          Info:    <Icon svg={StatusInfoIcon}    size={16} color="#FFFFFF" accessibilityLabel="" />,
+        }[colour];
+        return (
+          <div key={colour} style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <span style={{ width: 80, fontSize: 12, color: "#5A5A5C", fontFamily: "sans-serif" }}>{colour}</span>
+            <Button colour={colour} size="Small" leadingIcon={statusIcon}>
+              Call to action
+            </Button>
+            <Button colour={colour} size="Small" leadingIcon={statusIcon} disabled>
+              Disabled
+            </Button>
+          </div>
+        );
+      })}
+    </div>
+  ),
+  parameters: {
+    layout: "centered",
+    docs: {
+      description: {
+        story: "Status colour variants — flat buttons (no shadow) used as action buttons in InlineBanner. Each carries its matching status icon as a leading icon.",
       },
     },
   },

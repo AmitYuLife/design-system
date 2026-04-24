@@ -70,7 +70,25 @@ Each component is linked back to Figma via **Figma Code Connect**, so the code s
 
 ## Changelog
 
+### v1.1 — 24 April 2026
+- **InlineBanner** toast/banner component with icon, message, optional CTA, and auto-dismiss support
+- **UnorderedList** component with nested list support using design system text and spacing tokens
+- **Animation** token story added (`duration` and `easing` scales sourced from ModalTemplate transitions)
+- **Button** stories and component improved
+- **Colour Icons** gallery now displays in a multicolumn grid and icons are sorted alphabetically
+- **Line Icons** gallery now displays in a multicolumn grid
+- **Radii** Usage Examples story removed; Scale and Token Table stories remain
+
+### v1.0 — 24 April 2026
+- **Popover** floating tooltip / onboarding bubble with four-direction beak (top, right, bottom, left), enter/exit animation (fade + rise/fall), outside-tap and close-button dismiss, optional CTA action, and `elevation.popover` token
+
+### v0.9 — 24 April 2026
+- **YugiStatus colour icons** (`YugiStatusErrorColourIcon`, `YugiStatusWarningColourIcon`, `YugiStatusSuccessColourIcon`, `YugiStatusInfoColourIcon`) exported from the main `@/icons` barrel; replaced broken CSS-mask SVG compositing with PNG assets (96 × 96 source) from Figma
+- **ColourIconSize** scale tightened to 8 px increments from 16 to 48 (16, 24, 32, 40, 48) — removes non-standard steps 20, 28, 36, and 64
+
 ### v0.8 — 24 April 2026
+- **Elevation** token category added (`src/tokens/elevation.ts`) with `none` and `toast` levels; shadow colour mapped to new `palette.transBlack8` (black at 8% opacity)
+- **InlineBanner** toast shadow updated to use `elevation.toast` token (sourced from Figma node 11048:4475)
 - **Welcome page** section grid added above the Changelog — five cards (Foundations → Pages) each with a live story thumbnail and description
 
 ### v0.7 — 22 April 2026

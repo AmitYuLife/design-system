@@ -2,6 +2,7 @@ import React, { useRef, useCallback, useState, useEffect } from "react";
 import { colors, palette } from "../../tokens/colors";
 import { spacing, space } from "../../tokens/spacing";
 import { radii } from "../../tokens/radii";
+import { duration, easing } from "../../tokens/animation";
 import { BUTTON_GROUP_GRADIENT_HEIGHT } from "../../components/Button/ButtonGroup";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -16,25 +17,26 @@ const PULL_RESISTANCE = 0.4;
  */
 const MAX_EFFECTIVE_DELTA = 150;
 /** Spring-back transition for the hero container height on release */
-const RELEASE_TRANSITION_HEIGHT = "height 0.35s ease-out";
+const RELEASE_TRANSITION_HEIGHT = `height ${duration.slow}ms ${easing.spring}`;
 /**
  * How long the isExiting flag stays true after a close is triggered.
  * Must be ≥ the exit panel transition duration (175 ms) + a small buffer.
  */
-const EXIT_DURATION_MS = 190;
+const EXIT_DURATION_MS = duration.exit + 15;
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 export interface ModalTemplateProps {
   /**
-   * Hero component rendered at the top of the modal. Not scrollable — it
-   * stays pinned above the content area as the user scrolls the body.
+   * Optional hero component rendered at the top of the modal. Not scrollable —
+   * it stays pinned above the content area as the user scrolls the body.
    * The hero wrapper's height is driven by the `--modal-hero-height` CSS
    * custom property, enabling the pull-down zoom effect.
    * Pass any hero variant or a custom element (e.g. a placeholder image with
-   * an overlaid NavigationHeader).
+   * an overlaid NavigationHeader). When omitted the hero wrapper is not
+   * rendered and the MainLayout fills the modal from the top.
    */
-  hero: React.ReactNode;
+  hero?: React.ReactNode;
   /**
    * Content rendered inside the scrollable MainLayout container. This is an
    * open slot — pass any combination of components (cards, tiles, text, etc.)
@@ -81,9 +83,9 @@ export interface ModalTemplateProps {
  * MainLayout content area below (scrollable once content exceeds the max height).
  *
  * The modal renders over a full-screen `transBlack` overlay and is anchored to
- * the bottom of the viewport. Its height is driven by content, capped at 90 vh
- * — at which point the MainLayout body begins to scroll while the hero and any
- * pinned footer remain stationary.
+ * the bottom of the viewport. Its height is content-driven, capped at 90 vh —
+ * at which point the MainLayout body scrolls while the hero and any pinned
+ * footer remain stationary.
  *
  * ## Enter / exit animation
  * When `isOpen` is provided the component keeps itself in the DOM at all times
@@ -137,8 +139,19 @@ export const ModalTemplate: React.FC<ModalTemplateProps> = ({
    */
   const [isExiting, setIsExiting] = useState(false);
 
+  // Skip the effect on the initial mount — the useState initialiser already
+  // sets the correct starting state. Running the else-branch on mount with
+  // isOpen=false would set isExiting=true for EXIT_DURATION_MS, making the
+  // overlay briefly flash at full opacity on load.
+  const isFirstRenderRef = useRef(true);
+
   useEffect(() => {
     if (!isControlled) return;
+
+    if (isFirstRenderRef.current) {
+      isFirstRenderRef.current = false;
+      return;
+    }
 
     let timerId: ReturnType<typeof setTimeout> | undefined;
 
@@ -262,7 +275,7 @@ export const ModalTemplate: React.FC<ModalTemplateProps> = ({
         ...(isControlled && {
           opacity: overlayVisible ? 1 : 0,
           pointerEvents: overlayVisible ? "auto" : "none",
-          transition: isExiting ? "none" : "opacity 0.2s ease",
+          transition: isExiting ? "none" : `opacity ${duration.normal}ms ${easing.default}`,
           willChange: "opacity",
         }),
         ...style,
@@ -288,47 +301,51 @@ export const ModalTemplate: React.FC<ModalTemplateProps> = ({
           ...(isControlled && {
             transform: isVisible ? "translateY(0)" : "translateY(100%)",
             transition: isExiting
-              ? "transform 0.175s ease-in"
-              : "transform 0.35s cubic-bezier(0.32, 0.72, 0, 1)",
+              ? `transform ${duration.exit}ms ${easing.exit}`
+              : `transform ${duration.slow}ms ${easing.enter}`,
             willChange: "transform",
           }),
         }}
       >
-        {/* ── Hero slot ──────────────────────────────────────────────────── */}
-        <div
-          style={{
-            position: "relative",
-            zIndex: 0,
-            flexShrink: 0,
-            height: `var(--modal-hero-height, ${MODAL_HERO_HEIGHT}px)`,
-            transition: "var(--modal-hero-transition, none)",
-            overflow: "hidden",
-          }}
-        >
-          {hero}
-        </div>
+        {/* ── Hero slot (optional) ───────────────────────────────────────── */}
+        {hero && (
+          <div
+            style={{
+              position: "relative",
+              zIndex: 0,
+              flexShrink: 0,
+              height: `var(--modal-hero-height, ${MODAL_HERO_HEIGHT}px)`,
+              transition: "var(--modal-hero-transition, none)",
+              overflow: "hidden",
+            }}
+          >
+            {hero}
+          </div>
+        )}
 
         {/* ── Scrollable MainLayout ──────────────────────────────────────── */}
-        {/* Overlaps the hero by spacing[6] (24 px) with rounded top corners. */}
+        {/* When a hero is present, overlaps it by spacing[6] (24 px) with
+            rounded top corners. Without a hero, fills the modal from the top
+            with no overlap or negative margin. */}
         <div
           ref={scrollBodyRef}
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-          onPointerCancel={handlePointerUp}
+          onPointerDown={hero ? handlePointerDown : undefined}
+          onPointerMove={hero ? handlePointerMove : undefined}
+          onPointerUp={hero ? handlePointerUp : undefined}
+          onPointerCancel={hero ? handlePointerUp : undefined}
           style={{
             position: "relative",
             zIndex: 1,
             flex: 1,
-            marginTop: -spacing[6],
-            borderTopLeftRadius: radii.md,
-            borderTopRightRadius: radii.md,
+            marginTop: hero ? -spacing[6] : 0,
+            borderTopLeftRadius: hero ? radii.md : 0,
+            borderTopRightRadius: hero ? radii.md : 0,
             overflowY: "auto",
             overflowX: "hidden",
             WebkitOverflowScrolling: "touch",
             backgroundColor: palette.neutral50,
             paddingTop: space.pagePaddingVertical,
-            paddingBottom: footer ? 0 : space.pagePaddingVertical,
+            paddingBottom: footer ? spacing[8] : space.pagePaddingVertical,
             paddingLeft: space.pagePaddingHorizontal,
             paddingRight: space.pagePaddingHorizontal,
             display: "flex",
@@ -340,17 +357,16 @@ export const ModalTemplate: React.FC<ModalTemplateProps> = ({
         </div>
 
         {/* ── Pinned footer ─────────────────────────────────────────────── */}
-        {/* Pulled up by BUTTON_GROUP_GRADIENT_HEIGHT via negative marginTop so
-            the ButtonGroup's gradient veil physically overlaps the scroll body's
-            bottom content. z-index: 2 renders it on top of the z-index: 1 scroll
-            body. No background here — the ButtonGroup gradient provides it. */}
+        {/* The ButtonGroup's gradient veil is position:absolute bottom:100%,
+            so it extends upward by BUTTON_GROUP_GRADIENT_HEIGHT into the scroll
+            body's paddingBottom zone — no negative marginTop needed.
+            z-index:2 renders the footer above the z-index:1 scroll body. */}
         {footer && (
           <div
             style={{
               flexShrink: 0,
               position: "relative",
               zIndex: 2,
-              marginTop: -BUTTON_GROUP_GRADIENT_HEIGHT,
               paddingBottom: space.componentPaddingLG,
               paddingLeft: space.pagePaddingHorizontal,
               paddingRight: space.pagePaddingHorizontal,

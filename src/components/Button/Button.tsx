@@ -3,6 +3,7 @@ import { palette, colors } from "../../tokens/colors";
 import { textStyles } from "../../tokens/typography";
 import { spacing } from "../../tokens/spacing";
 import { radii } from "../../tokens/radii";
+import { duration, easing } from "../../tokens/animation";
 
 // ─── Figma colour tokens ───────────────────────────────────────────────────────
 // Source: YuLife App Storybook, node 12783:985
@@ -31,16 +32,27 @@ const N300 = "#BFBFC2";
 /** Neutral/N100 — secondary fill (disabled) */
 const N100 = "#E7E7EB";
 
+// Status colour fills — from the feedback semantic tokens
+const S_SUCCESS = colors.feedbackSuccess; // #66CC78
+const S_WARNING = colors.feedbackWarning; // #F19E22
+const S_ERROR   = colors.feedbackDanger;  // #FF5F5F
+const S_INFO    = colors.feedbackInfo;    // #5A89D8
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-export type ButtonColour  = "Primary" | "Secondary";
+export type ButtonColour  = "Primary" | "Secondary" | "Success" | "Warning" | "Error" | "Info";
 export type ButtonVariant = "Solid" | "Outline" | "Text";
 export type ButtonSize    = "Large" | "Small";
 
 export interface ButtonProps {
   /** Button label */
   children: React.ReactNode;
-  /** Color scheme — Primary (pink) or Secondary (neutral white) */
+  /**
+   * Color scheme.
+   * - `Primary` (pink) and `Secondary` (neutral white) are general-purpose.
+   * - `Success`, `Warning`, `Error`, `Info` are status colours intended for
+   *   use in InlineBanner action buttons. These are always flat (no shadow).
+   */
   colour?: ButtonColour;
   /** Visual style */
   variant?: ButtonVariant;
@@ -67,6 +79,8 @@ export interface ButtonProps {
 /** Drop-shadow height in px — the amount the button travels on press. */
 const SHADOW_DEPTH = 4;
 
+const STATUS_COLOURS: ButtonColour[] = ["Success", "Warning", "Error", "Info"];
+
 /**
  * Button
  *
@@ -75,6 +89,9 @@ const SHADOW_DEPTH = 4;
  *
  * Solid variants animate on press: the button travels down by the shadow depth
  * (4 px) while the drop-shadow collapses, giving a natural tactile feel.
+ *
+ * Status colour variants (Success/Warning/Error/Info) are flat — no shadow or
+ * press travel. They are used as action buttons inside InlineBanner.
  *
  * Figma reference: YuLife App Storybook, node 12783:985
  * https://www.figma.com/design/ERkTigxQV1eQ7jooI8pgQp/YuLife-App-Storybook?node-id=12783-985
@@ -95,7 +112,9 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const isLarge    = size   === "Large";
   const isPrimary  = colour === "Primary";
-  const hasShadow  = variant === "Solid" && !disabled;
+  const isStatus   = STATUS_COLOURS.includes(colour);
+  // Status buttons are flat — no shadow or press travel
+  const hasShadow  = variant === "Solid" && !disabled && !isStatus;
 
   const [pressed, setPressed] = useState(false);
   const isPressed = hasShadow && pressed;
@@ -128,14 +147,40 @@ export const Button: React.FC<ButtonProps> = ({
     // Press-down animation — only for shadow variants
     transform:      composedTransform,
     transition:     hasShadow
-      ? "transform 80ms ease-out, box-shadow 80ms ease-out, background-color 80ms ease-out"
+      ? `transform ${duration.fast}ms ${easing.spring}, box-shadow ${duration.fast}ms ${easing.spring}, background-color ${duration.fast}ms ${easing.spring}`
       : undefined,
   };
 
   // ── Variant-specific container styles ───────────────────────────────────────
   let containerStyle: React.CSSProperties;
 
-  if (variant === "Solid" && isPrimary) {
+  const statusFill = (() => {
+    if (colour === "Success") return S_SUCCESS;
+    if (colour === "Warning") return S_WARNING;
+    if (colour === "Error")   return S_ERROR;
+    if (colour === "Info")    return S_INFO;
+    return undefined;
+  })();
+
+  if (isStatus && variant === "Solid") {
+    containerStyle = {
+      ...containerBase,
+      border:          "none",
+      backgroundColor: disabled ? N100 : statusFill,
+    };
+  } else if (isStatus && variant === "Outline") {
+    containerStyle = {
+      ...containerBase,
+      backgroundColor: "transparent",
+      border:          `1px solid ${disabled ? N300 : statusFill}`,
+    };
+  } else if (isStatus && variant === "Text") {
+    containerStyle = {
+      ...containerBase,
+      backgroundColor: "transparent",
+      border:          "1px solid transparent",
+    };
+  } else if (variant === "Solid" && isPrimary) {
     containerStyle = {
       ...containerBase,
       border:          "none",
@@ -173,6 +218,8 @@ export const Button: React.FC<ButtonProps> = ({
 
   // ── Label colour ────────────────────────────────────────────────────────────
   const labelColor = (() => {
+    if (isStatus && variant === "Solid")   return palette.neutralWhite;
+    if (isStatus)                          return disabled ? N400 : statusFill;
     if (variant === "Solid" && isPrimary)  return palette.neutralWhite;
     if (variant === "Solid" && !isPrimary) return N800;
     if (isPrimary)                         return P700;

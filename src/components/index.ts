@@ -1,3 +1,4 @@
+export * from "./InlineBanner";
 export * from "./NavigationHeader";
 export * from "./Toggle";
 export * from "./Radio";
@@ -10,3 +11,5 @@ export * from "./Hero";
 export * from "./ProgressBar";
 export * from "./Tile";
 export * from "./YuCoinValue";
+export * from "./UnorderedList";
+export * from "./Popover";

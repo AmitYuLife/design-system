@@ -24,6 +24,8 @@ export { default as SettingsGearIcon }     from "./svg/SettingsGear.svg?react";
 export { default as InfoIcon }             from "./svg/Info.svg?react";
 export { default as StatusInfoIcon }       from "./svg/StatusInfo.svg?react";
 export { default as StatusSuccessIcon }    from "./svg/StatusSuccess.svg?react";
+export { default as StatusErrorIcon }      from "./svg/StatusError.svg?react";
+export { default as StatusWarningIcon }    from "./svg/StatusWarning.svg?react";
 export { default as StarFillIcon }         from "./svg/StarFill.svg?react";
 export { default as AvailableRewardsIcon } from "./svg/AvailableRewards.svg?react";
 export { default as QuestionOutlineIcon }  from "./svg/QuestionOutline.svg?react";
@@ -142,4 +144,8 @@ export {
   BellColourIcon,
   DuelsColourIcon,
   PhoneColourIcon,
+  YugiStatusErrorColourIcon,
+  YugiStatusWarningColourIcon,
+  YugiStatusSuccessColourIcon,
+  YugiStatusInfoColourIcon,
 } from "./colour";

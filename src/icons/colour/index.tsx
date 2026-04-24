@@ -1,5 +1,4 @@
 import React from "react";
-
 // ─── SVG assets ──────────────────────────────────────────────────────────────
 
 import yuCoinSrc           from "./svg/YuCoin.svg";
@@ -116,9 +115,12 @@ import duelsFrontSrc                from "./svg/Duels_front.svg";
 
 // ─── Shared types ─────────────────────────────────────────────────────────────
 
+/** Supported size steps for colour icons — 8 px increments from 16 to 48. */
+export type ColourIconSize = 16 | 24 | 32 | 40 | 48;
+
 export interface ColourIconProps {
   /** Rendered size in pixels (width and height). Default: 24. */
-  size?: number;
+  size?: ColourIconSize;
   /** Accessible label. When provided the element is announced as an image. */
   accessibilityLabel?: string;
   className?: string;
@@ -840,4 +842,52 @@ export function DuelsColourIcon({ size = 24, accessibilityLabel, className }: Co
       </div>
     </div>
   );
+}
+
+// ─── YugiStatus icons ─────────────────────────────────────────────────────────
+
+import yugiStatusErrorSrc   from "./png/Status=Error.png";
+import yugiStatusWarningSrc from "./png/Status=Warning.png";
+import yugiStatusSuccessSrc from "./png/Status=Success.png";
+import yugiStatusInfoSrc    from "./png/Status=Info.png";
+
+function YugiStatusPngIcon({
+  src,
+  size = 48,
+  accessibilityLabel,
+  className,
+}: ColourIconProps & { src: string }) {
+  const s = size as number;
+  return (
+    <img
+      src={src}
+      width={s}
+      height={s}
+      style={{ display: "block", flexShrink: 0 }}
+      className={className}
+      {...(accessibilityLabel
+        ? { role: "img" as const, "aria-label": accessibilityLabel }
+        : { "aria-hidden": true as const })}
+    />
+  );
+}
+
+/** YugiStatus Error — inline banner error state, notification, alert, danger */
+export function YugiStatusErrorColourIcon(p: ColourIconProps) {
+  return <YugiStatusPngIcon {...p} src={yugiStatusErrorSrc} />;
+}
+
+/** YugiStatus Warning — inline banner warning state, caution, alert */
+export function YugiStatusWarningColourIcon(p: ColourIconProps) {
+  return <YugiStatusPngIcon {...p} src={yugiStatusWarningSrc} />;
+}
+
+/** YugiStatus Success — inline banner success state, complete, done, confirmed */
+export function YugiStatusSuccessColourIcon(p: ColourIconProps) {
+  return <YugiStatusPngIcon {...p} src={yugiStatusSuccessSrc} />;
+}
+
+/** YugiStatus Info — inline banner info state, information, notice */
+export function YugiStatusInfoColourIcon(p: ColourIconProps) {
+  return <YugiStatusPngIcon {...p} src={yugiStatusInfoSrc} />;
 }

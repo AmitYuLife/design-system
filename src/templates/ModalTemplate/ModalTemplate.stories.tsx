@@ -214,9 +214,8 @@ as \`SinglePageTemplate\`: a **hero** at the top (not scrollable) and a scrollab
 
 The modal renders over a full-screen \`transBlack\` overlay (\`rgba(0,0,0,0.64)\`)
 and is anchored to the bottom of the viewport with a fixed \`zIndex: 1000\`, ensuring
-it sits on top of all other page content. Its height is content-driven and capped at
-**90 vh** — at which point the MainLayout body scrolls while the hero and optional
-pinned footer remain stationary.
+it sits on top of all other page content. Its height is content-driven and capped at **90 vh** — at which point the
+MainLayout body scrolls while the hero and optional pinned footer remain stationary.
 
 ### Composition
 

@@ -139,7 +139,7 @@ export const ColourIcon: Story = {
 export const SmallIllo: Story = {
   args: {
     leftAsset: "SmallIllo",
-    leftSlot: <LotusColourIcon size={64} />,
+    leftSlot: <LotusColourIcon size={48} />,
     title: "Your title here",
     description: "Your description copy goes here. Should be no more than three lines of copy.",
     rightSlot: trailing,
@@ -221,9 +221,9 @@ export const AllVariants: StoryObj = {
       <Card>
         <CardInfoContent
           leftAsset="SmallIllo"
-          leftSlot={<LotusColourIcon size={64} />}
+          leftSlot={<LotusColourIcon size={48} />}
           title="SmallIllo"
-          description="64 × 64 illustration, 8 px gap, top-aligned with the text block."
+          description="48 × 48 illustration, 8 px gap, top-aligned with the text block."
           rightSlot={trailing}
         />
       </Card>
